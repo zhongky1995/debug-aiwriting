@@ -1,7 +1,7 @@
 interface:
-  display_name: "中文去 AI 味写作"
+  display_name: "Debug AI Writing"
   short_description: "让中文表达贴合场景和个人口吻，硬清空话、假动作和 AI 腔"
-  default_prompt: "Use $de-ai-writing-zh to rewrite or ideate so it fits the reader, keeps my personal voice, removes AI tone, professional filler, fake actions, and unnatural verb-object pairs, avoids leaking internal wording, and filters out generic ideas."
+  default_prompt: "Use $debug-aiwriting to rewrite or ideate so it fits the reader, keeps my personal voice, removes AI tone, professional filler, fake actions, and unnatural verb-object pairs, avoids leaking internal wording, and filters out generic ideas."
 
 policy:
   allow_implicit_invocation: true

@@ -1,9 +1,9 @@
 ---
-name: de-ai-writing-zh
+name: debug-aiwriting
 description: Diagnose, rewrite, generate, and screen Chinese writing or creative ideas that should sound less AI-generated, less template-like, and more like a real author, brand, or consulting team. Use when the user asks to 去AI味, 消除AI味, 人味, AI腔, 机器味, 机翻腔, 白皮书腔, 高级空话, 套话太重, humanize Chinese writing, rewrite AI-generated Chinese drafts, 调整口径, 改口径, build or apply a personal/brand voice, 融合我的口吻, 学习我的表达习惯, apply previous Zhihu/Q&A writing samples, make my writing fit the scene and my habits, protect internal/external wording boundaries, 出创意, 创意方向, campaign ideas, slogan/theme/concept directions, or polish Chinese articles, social posts, client-facing proposals, strategy decks, integrated marketing plans, reports, emails, scripts, and public-facing copy while preserving meaning and facts.
 ---
 
-# 中文去 AI 味写作
+# Debug AI Writing
 
 ## Core Principle
 

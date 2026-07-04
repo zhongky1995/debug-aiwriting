@@ -1,4 +1,4 @@
-# de-ai-writing-zh
+# Debug AI Writing
 
 一个用于中文写作去 AI 味的 Codex Skill。
 
@@ -25,7 +25,7 @@
 ## 目录结构
 
 ```text
-de-ai-writing-zh/
+debug-aiwriting/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
@@ -45,14 +45,16 @@ de-ai-writing-zh/
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone https://github.com/zhongky1995/de-ai-writing-zh.git ~/.codex/skills/de-ai-writing-zh
+git clone https://github.com/zhongky1995/debug-aiwriting.git ~/.codex/skills/debug-aiwriting
 ```
 
 之后在 Codex 中可以直接提到：
 
 ```text
-[$de-ai-writing-zh] 帮我把这段话去 AI 味，并保留事实和口径
+[$debug-aiwriting] 帮我把这段话去 AI 味，并保留事实和口径
 ```
+
+说明：`debug-aiwriting` 是 Codex 识别用的 skill 机器名；`Debug AI Writing` 是对外展示名。
 
 ## 自定义
 
