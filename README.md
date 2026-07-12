@@ -11,6 +11,8 @@
 - 个人口吻或品牌口吻迁移
 - 对外材料的内部口径清理
 - 创意方向筛选，避免只停留在概念词
+- 多页文档、逐 P 稿、表格型方案的整篇覆盖检查
+- 参考稿 / PDF / 旧版方案的表达口径对齐
 
 ## 核心判断
 
@@ -21,6 +23,8 @@
 - 主体缺失：句子没有说清楚谁在做动作
 - 把结果写成动作：如“实现心智占位”“形成转化闭环”
 - 不可验收的动词：无法回答“怎么做、谁来做、做完看到什么变化”
+- 大面积改稿漏掉标题、表格、图注、版本说明等边角内容
+- 去 AI 味时把专业策划语言误改成过于口语的执行说明
 
 ## 目录结构
 
@@ -34,7 +38,10 @@ debug-aiwriting/
     ├── client-proposal-playbook.md
     ├── creative-ideation-filter.md
     ├── external-facing-check.md
+    ├── large-document-coverage.md
+    ├── marketing-strategy-register.md
     ├── plain-language-gate.md
+    ├── reference-style-calibration.md
     ├── rewrite-playbook.md
     └── zhihu-voice-profile.md
 ```
@@ -65,6 +72,9 @@ git clone https://github.com/zhongky1995/debug-aiwriting.git ~/.codex/skills/deb
 - `references/external-facing-check.md`
 - `references/client-proposal-playbook.md`
 - `references/plain-language-gate.md`
+- `references/large-document-coverage.md`
+- `references/marketing-strategy-register.md`
+- `references/reference-style-calibration.md`
 
 ## License
 
