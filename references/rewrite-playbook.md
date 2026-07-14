@@ -2,7 +2,13 @@
 
 Use this playbook for rewriting, generating, or matching Chinese style.
 
-## Pass 1: Rebuild Substance
+## Pass 0: Lock Scope And Register
+
+Use the L1-L4 rewrite scope in `SKILL.md`. For a bare "优化口径/调整表达/去 AI 味" request, preserve facts, section order, page roles, and strategy. Do not rebuild substance unless the existing sentence cannot be repaired without exposing a missing fact or broken argument.
+
+Choose the register before editing sentences. When a reference is present, first decide whether the user wants its logic, structure, register, rhythm, wording, or visual organization.
+
+## Pass 1: Rebuild Substance When Authorized
 
 1. Extract the real point in one sentence.
 2. List the reader, occasion, and desired action.
@@ -33,6 +39,7 @@ Choose the register before editing sentences.
 - Keep professional tone, but replace slogans with decisions, risks, evidence, and next actions.
 - Use headings that name the finding, not the category.
 - State uncertainty and assumptions plainly.
+- For executive, decision, research, or data-led material, also read `executive-report-register.md`.
 
 ### Proposal / Sales Material
 
@@ -41,6 +48,12 @@ Choose the register before editing sentences.
 - Keep credibility higher than excitement.
 - For client-facing marketing, operations, CRM, private-domain, KOC, or strategy decks, also read `client-proposal-playbook.md`.
 - Replace service-item language with a decision chain: client problem -> why it happens -> what mechanism solves it -> how it runs -> how it will be judged.
+
+### Whitepaper / Case Study
+
+- Separate confirmed case facts, observed results, interpretation, general method, and editorial suggestions.
+- Keep public editorial professionalism without turning the case into a capability brochure.
+- Read `whitepaper-case-register.md`.
 
 ### Social Post
 
@@ -53,6 +66,7 @@ Choose the register before editing sentences.
 - Make the ask, owner, deadline, and context explicit.
 - Use plain courtesy, not ornate politeness.
 - Remove defensive filler.
+- For SOPs, rollout plans, ownership tables, or project follow-ups, also read `internal-ops-register.md`.
 
 ### Script / Speech
 
@@ -81,6 +95,8 @@ Choose the register before editing sentences.
 ## Pass 4: Concrete Language Gate
 
 Before output, apply `plain-language-gate.md` when the text is formal, public-facing, case/whitepaper-style, or the user has complained that AI味 remains.
+
+Run the gate in the chosen register. Do not treat professional density as an error by itself.
 
 Fail and rewrite any sentence where:
 

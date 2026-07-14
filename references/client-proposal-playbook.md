@@ -8,6 +8,8 @@ The goal is not to make a proposal casual. The goal is to remove fake polish and
 2. Your strategy has a mechanism, not just a list of actions.
 3. The work can be executed, judged, and adjusted.
 
+Choose presentation density by page role. A strategy title, executive judgment, mechanism diagram, execution table, and narrative explanation should not all sound equally conversational. Use the professional marketing register for deck-like marketing plans.
+
 ## Proposal Substance Pass
 
 Before rewriting, extract these six items. If an item is missing, mark it as an assumption instead of inventing it.
@@ -108,6 +110,8 @@ Examples:
 - A CRM case proves that member growth, visit frequency, repurchase, targeted messages, and member-day campaigns need one clear record of who the user is and what happened before.
 
 ## Proposal Language Rules
+
+The examples below demonstrate semantic clarity, not one mandatory tone. Compress them into professional page language when the artifact is a strategy deck; keep fuller sentences when it is a narrative proposal or explanatory memo.
 
 - Prefer "先看清问题卡在哪，再决定从哪一段开始重建" over "提供一站式全域解决方案."
 - Prefer "把用户从咨询、成交到复购的记录留清楚，后面该回访、该提醒时还能找得到人" over "打造私域闭环."

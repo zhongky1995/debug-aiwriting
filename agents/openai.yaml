@@ -1,7 +1,7 @@
 interface:
   display_name: "Debug AI Writing"
-  short_description: "调试中文 AI 写作问题，兼顾场景语域、整篇覆盖和真实表达"
-  default_prompt: "Use $debug-aiwriting to rewrite or ideate so it fits the reader, keeps my personal voice, matches any provided reference register, covers long documents thoroughly, removes AI tone, professional filler, fake actions, and unnatural verb-object pairs, avoids leaking internal wording, and filters out generic ideas."
+  short_description: "按修改范围、场景语域和整篇覆盖调试中文 AI 写作"
+  default_prompt: "Use $debug-aiwriting to lock the rewrite scope, identify the artifact register and any reference dimensions, preserve facts and structure unless authorized, remove AI tone, fake actions, unnatural verb-object pairs, and internal wording, propagate user corrections across the full artifact, and verify every inventoried surface before completion."
 
 policy:
   allow_implicit_invocation: true

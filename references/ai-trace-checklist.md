@@ -67,4 +67,4 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 - **Medium**: structure is generic but content is usable. Rebuild section order and rewrite openings/endings.
 - **Heavy**: claims are empty or unsupported. Ask for source material, examples, data, or a sharper stance before rewriting.
 
-If the user has already complained that AI味 was not cleaned up, treat professional filler as **Heavy** even when the text is grammatically correct.
+If the user has already complained that AI味 was not cleaned up, treat unsupported professional filler as a **Heavy semantic risk**. Do not automatically delete scene-appropriate professional terms; test whether the surrounding page supplies a metric, role, mechanism, evidence, or execution object.

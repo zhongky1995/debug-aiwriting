@@ -1,6 +1,6 @@
 ---
 name: debug-aiwriting
-description: Diagnose, rewrite, generate, and screen Chinese writing or creative ideas that should sound less AI-generated, less template-like, and more like a real author, brand, or consulting team. Use when the user asks to 去AI味, 消除AI味, 人味, AI腔, 机器味, 机翻腔, 白皮书腔, 高级空话, 套话太重, humanize Chinese writing, rewrite AI-generated Chinese drafts, 调整口径, 改口径, build or apply a personal/brand voice, 融合我的口吻, 学习我的表达习惯, apply previous Zhihu/Q&A writing samples, make my writing fit the scene and my habits, protect internal/external wording boundaries, 出创意, 创意方向, campaign ideas, slogan/theme/concept directions, or polish Chinese articles, social posts, client-facing proposals, strategy decks, integrated marketing plans, reports, emails, scripts, and public-facing copy while preserving meaning and facts.
+description: Diagnose, rewrite, generate, and audit Chinese writing when the user explicitly asks to 去AI味, 消除AI味, 调整口径, 改口径, 去掉白皮书腔/套话/假大空, fix unnatural Chinese or verb-object pairs, match a personal/brand/reference style, protect internal/external wording boundaries, or screen creative directions for generic AI-like ideas. Supports short copy and large multi-page articles, whitepapers, case studies, reports, emails, scripts, client proposals, strategy decks, integrated marketing plans, KOC/KOS/UGC plans, social content, and internal SOPs while preserving facts, rewrite scope, scene register, and full-document coverage.
 ---
 
 # Debug AI Writing
@@ -9,7 +9,7 @@ description: Diagnose, rewrite, generate, and screen Chinese writing or creative
 
 Optimize for real reader trust, not detector evasion. Preserve facts, intent, genre expectations, and the user's personal voice. Do not add mistakes, fake anecdotes, invented data, or excessive slang to make text appear "human."
 
-Default behavior: fit the scene first, then apply the user's personal expression habits as a voice layer. Do not require the user to name a tone every time. Only override the personal voice when the user explicitly asks for another voice or when the situation demands a stricter register.
+Default behavior: fit the scene first. Apply a personal or brand voice only when the user asks for it, provides samples, or a local profile exists and the request clearly calls for that voice. Do not let an optional personal profile override the artifact's professional register.
 
 ## Workflow
 
@@ -21,19 +21,28 @@ Default behavior: fit the scene first, then apply the user's personal expression
    - **Large-document rewrite**: if the artifact has multiple pages, sections, tables, slides, or repeated blocks, create a coverage map before editing and verify every surface after editing.
    - **Creative ideation**: use divergent directions and product-specific filtering internally; expose the full direction pool only when the user asks for creative directions or screening rationale.
    - **Audit only**: return concise issues and concrete line-level revision advice.
-2. Classify the scene before writing: reader, relationship, channel, stakes, and desired action. If not specified, infer from the user's wording and the text itself.
-3. Classify the genre: article, analysis/report, client-facing proposal/deck, sales material, social post, email, speech/script, product copy, internal comms, or translation.
-4. For external-facing materials, anchor the reader and run the internal/external wording boundary check before final output.
-5. If a reference artifact is provided, extract its style contract before choosing wording. Do not equate "remove AI tone" with "make it more colloquial"; preserve the reference's authority level, page rhythm, and professional vocabulary when those are part of the desired scene.
-6. Apply the default personal voice profile from `references/zhihu-voice-profile.md` when the task is Chinese public writing, opinion writing, workplace/management/interview content, or when the user asks for "my writing/my tone." For formal client, report, or email contexts, keep the same decision logic but reduce bluntness and colloquial pressure.
-7. For client-facing proposals or decks, rebuild the decision chain before line editing: client question -> diagnosis -> strategy -> mechanism -> execution/proof -> boundary. The goal is credible decision support, not a warmer service menu.
-8. For marketing strategy proposals, KOC/UGC/community plans, integrated marketing decks, launch plans, or public-to-private-domain growth plans, use the professional marketing register: strategic terms are allowed when they name a page role, mechanism, metric, or execution object.
-9. For large documents, make a page/section coverage map and edit by surface: document title, page titles, openings, tables, captions, footnotes, summary rows, and final notes. Do not stop after rewriting body paragraphs.
-10. Apply a two-pass edit:
+2. Set the rewrite scope before editing:
+   - **L1 correction**: fix awkward wording, AI traces, and local collocation problems only.
+   - **L2 language rewrite**: rewrite sentences and paragraphs while preserving facts, section order, page roles, and strategy.
+   - **L3 structural rewrite**: reorder sections or rebuild page logic without adding unsupported facts.
+   - **L4 content development**: add analysis, methods, examples, or creative content from available evidence.
+   - Treat bare requests such as "优化口径/调整表达/去 AI 味" as L2. Do not enter L3 or L4 unless the user asks for restructuring, supplementation, or a new version.
+3. Classify the scene before writing: reader, relationship, channel, stakes, desired action, and artifact function. If not specified, infer from the user's wording and the text itself.
+4. Classify the genre and register: article, analysis/report, executive update, whitepaper/case, client-facing proposal/deck, sales material, social post, email, speech/script, product copy, internal comms/SOP, or translation.
+5. For external-facing materials, anchor the reader and run the internal/external wording boundary check before final output.
+6. If a reference artifact is provided, classify the requested reference dimension first: logic, structure, register, rhythm, wording, visual organization, or a combination. Extract a style contract only for those dimensions. Do not equate "remove AI tone" with "make it more colloquial."
+7. Choose the scene register before running the plain-language gate. Judge every important sentence on two separate axes: meaning concreteness and register fit. A sentence can be concrete but too casual, or professional but empty; fix the failing axis only.
+8. Load a personal voice profile only when the user asks for "my voice/my writing," provides samples, or the task explicitly calls for a known personal voice. Prefer `local/personal-voice-profile.md` when present. Otherwise build a temporary profile from the supplied samples; do not apply the bundled example as a default voice.
+9. For client-facing proposals or decks, rebuild the decision chain only at L3 or L4: client question -> diagnosis -> strategy -> mechanism -> execution/proof -> boundary. At L1 or L2, diagnose weaknesses but preserve the existing decision chain unless a sentence cannot be repaired locally.
+10. For marketing strategy proposals, KOC/UGC/community plans, integrated marketing decks, launch plans, or public-to-private-domain growth plans, use the professional marketing register: strategic terms are allowed when they name a page role, mechanism, metric, or execution object.
+11. For large documents, make a page/section coverage ledger and edit by surface: document title, page titles, openings, tables, captions, footnotes, summary rows, and final notes. Use `scripts/audit_surfaces.py` on supported text sources to inventory surfaces and residual high-risk phrases. Do not stop after rewriting body paragraphs.
+12. Apply a two-pass edit:
    - **Substance pass**: remove empty claims, surface the real point, add specificity only from provided context.
    - **Language pass**: reduce template transitions, corporate abstractions, over-balanced phrasing, and identical sentence rhythm.
-11. Run the concrete-language and verifiable-action gates. Any sentence with framework nouns but no actor, action, object, or result must be rewritten before output. Any sentence that turns a desired result into a fake action must be rewritten into something observable.
-12. Output in the user's requested format. If no format is specified:
+13. When the user flags a bad phrase, do not patch it locally and stop. Extract the general failure pattern, scan the entire current artifact and its live copy for analogous phrases, rewrite all matches, and treat the user's correction as a hard negative for the rest of the task.
+14. Run the concrete-language and verifiable-action gates in the chosen register. Apply actor/action requirements to explanatory claims, not mechanically to short headings, navigation labels, or table headers whose meaning is supported by the surrounding page.
+15. Stop only when there are no unresolved high-severity language problems, all inventoried surfaces have been reviewed or explicitly excluded, facts and numbers still match the source, and the output remains in the intended register.
+16. Output in the user's requested format. If no format is specified:
    - For 口径修改, polishing, rewriting, or clean copy requests, provide the single best final version first. Do not expose brainstorming, scoring, or elimination steps unless useful for review.
    - For short text, provide the rewritten version first, then 1-3 concise notes only if they clarify a non-obvious choice.
    - For long text, provide the revised draft first; add a brief diagnosis only when the user needs editing rationale.
@@ -46,9 +55,13 @@ Default behavior: fit the scene first, then apply the user's personal expression
 - Read `references/rewrite-playbook.md` when rewriting long text, matching a voice, or generating content from scratch.
 - Read `references/client-proposal-playbook.md` when polishing or generating client-facing proposals, strategy decks, integrated marketing plans, CRM/private-domain/KOC/community/content-growth plans, or sales materials that must convince a client.
 - Read `references/marketing-strategy-register.md` when the task involves marketing strategy decks, integrated marketing plans, launch plans, KOC/KOS/UGC/community operations, public-to-private-domain growth, search/content planning, or when the user says the output should sound like professional marketing planning rather than a plain execution memo.
+- Read `references/whitepaper-case-register.md` for public whitepapers, case studies, case submissions, industry reports with case evidence, or materials intended for later editorial extraction.
+- Read `references/executive-report-register.md` for executive summaries, decision briefs, management updates, research conclusions, performance reviews, or data-led reports.
+- Read `references/internal-ops-register.md` for internal execution plans, SOPs, project memos, meeting follow-ups, ownership tables, and operational handoffs.
 - Read `references/reference-style-calibration.md` whenever the user provides or points to a reference draft/PDF/page/style and asks to follow its expression, logic,口径, or professional feel.
 - Read `references/large-document-coverage.md` whenever rewriting more than one page/section, editing a deck-like document, replacing a Feishu/Docx document, or when the user says previous passes missed parts.
-- Read `references/zhihu-voice-profile.md` by default for Chinese writing tasks where the user wants their own expression habits, practical workplace reasoning, Zhihu-style Q&A, public-facing articles, or any "write like me" request. Also use it as a light voice layer for other Chinese writing unless the context clearly requires a neutral institutional voice.
+- Read `references/correction-propagation.md` whenever the user rejects a phrase or says a previous pass did not clean the same type of problem thoroughly.
+- Read `local/personal-voice-profile.md` when it exists and the user explicitly requests their own voice. If it does not exist, use `references/personal-voice-profile-example.md` only as a schema for extracting a temporary profile from user-provided samples.
 - Read `references/external-facing-check.md` for client emails, formal proposals, customer-facing decks, public releases, external statements, or any material where internal codes, metrics, names, unpublished data, or private judgments might leak.
 - Read `references/creative-ideation-filter.md` when the user asks for creative directions, campaign concepts, slogans/themes, content topics, social ideas, proposal creative, brand activations, or any "出创意" task.
 - Read `references/plain-language-gate.md` for final self-audit on formal reports, whitepaper/case writing, proposals, public-facing materials, or whenever the user says the output still has AI味, 空泛, 白皮书腔, 假大空, or "没修干净".
@@ -57,7 +70,7 @@ Default behavior: fit the scene first, then apply the user's personal expression
 
 - Keep the original facts, names, numbers, claims, and logical direction unless the user asks for substantive rewriting.
 - Replace vague evaluations with concrete consequences, scenarios, constraints, or examples already present in the source material.
-- Prefer active verbs and clear actors over abstract nouns.
+- Prefer active verbs and clear actors over abstract nouns when the sentence describes an action or causal claim. Do not force every professional heading or table label into conversational full sentences.
 - Vary paragraph openings and sentence length; do not force symmetrical "first/second/finally" structures.
 - Avoid overusing rhetorical pairs such as "不是...而是...", "既...又...", "不仅...更...", "一方面...另一方面..." unless the contrast is truly needed.
 - Do not flatten all writing into casual internet tone. Business reports can remain professional; the goal is to remove hollow polish, not professionalism.
@@ -68,7 +81,7 @@ Default behavior: fit the scene first, then apply the user's personal expression
 - Do not allow "高级空话" to pass just because it sounds professional. Terms such as 承接、整合、节点、触点、阵地、资产、沉淀、方法论、可复用、可迁移、经营、关系、链路、体系 must be tied to a concrete actor, action, object, timing, or result.
 - Treat "abstract verb + abstract noun" as a high-risk pattern: 赋能增长、激活心智、撬动势能、释放价值、构建闭环、完成转化前置. Keep it only when the next sentence names the actual action.
 - Do not replace one jargon phrase with another. Phrases such as 服务链路、沟通节奏、回访名单、接回链路、经营用户 sound unnatural unless the surrounding sentence says a normal person action such as "用户买完后知道去哪里咨询" or "快吃完时提醒补货."
-- Treat unnatural verbs as more severe than abstract nouns. Verbs such as 接回、打通、沉淀、激活、撬动、承接、触达, when paired with the wrong object, create fake action. Prefer ordinary verbs such as 放、写、发、问、答、记、提醒、联系、回访、下单.
+- Treat unnatural verbs as more severe than abstract nouns. Verbs such as 接回、打通、沉淀、激活、撬动、承接、触达 create fake action when paired with objects they do not naturally take. Prefer the most natural verb for the scene; ordinary verbs are often better for execution copy, while precise professional verbs may remain in strategy or analytical writing.
 - Do not write desired results as if they were actions. "实现心智占位" or "完成用户教育" must become the repeated messages, channels, scenes, or page changes that a team can actually execute and observe.
 - Every important claim should answer: who does it, what they do, to whom or what, when, and what visible change follows. If it cannot be assigned, observed, or checked, rewrite it.
 - When the source is thin, say that stronger human texture requires more source material instead of inventing details.
@@ -85,7 +98,7 @@ When samples are available, extract only usable style anchors:
 
 Apply the profile as constraints, not as imitation of a living writer unless the user owns or provides the writing as their own brand/persona.
 
-When the user refers to their own prior Zhihu answers or asks to use "my tone," load `references/zhihu-voice-profile.md` and treat it as the default personal voice profile unless the current task provides a newer or narrower sample.
+When the user refers to their own prior writing or asks to use "my tone," load `local/personal-voice-profile.md` when available. If the current task provides newer or narrower samples, treat those samples as higher priority.
 
 ## Scene And Voice Priority
 
@@ -93,7 +106,7 @@ Use this priority order:
 
 1. **Facts and intent**: do not change the user's meaning, claims, or evidence level.
 2. **Scene fit**: adapt to reader, channel, stakes, and genre.
-3. **Reference style contract**: if the user provides a reference, match its page role, authority level, rhythm, and professional vocabulary before line editing.
+3. **Reference dimension and style contract**: match only the logic, structure, register, rhythm, wording, or visual organization the user intends to borrow.
 4. **External boundary**: remove or translate information the reader should not see.
 5. **Personal voice**: apply the user's practical, direct, conditional reasoning style.
 6. **Anti-AI cleanup**: remove template structure, empty abstractions, and false polish without lowering the professional register.
@@ -132,4 +145,4 @@ Before answering, check whether the output still contains:
 - result-as-action phrases such as 实现心智占位、完成用户教育、实现转化闭环, when the sentence does not say what someone will actually do
 - claims that cannot answer "怎么做、谁来做、做完看到什么变化"
 
-Revise once if any of these are prominent.
+Continue revising until no high-severity item remains. For long documents, do not claim completion while any inventoried surface is unreviewed; report unreadable or intentionally excluded surfaces explicitly.

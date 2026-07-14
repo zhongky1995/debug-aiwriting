@@ -10,9 +10,22 @@ Third goal: check verbs harder than nouns. A wrong verb makes the sentence look 
 
 Fourth goal: reject fake actions. Many AI-like sentences turn a desired result into a verb phrase, but nobody can execute it directly.
 
+## Two-Axis Gate
+
+Judge meaning and register separately before rewriting:
+
+| Meaning | Register | Decision |
+| --- | --- | --- |
+| Concrete | Fits the scene | Keep it, even if it contains a professional term. |
+| Concrete | Wrong for the scene | Rephrase without changing the meaning. |
+| Abstract | Fits the scene | Keep the useful term, then add the metric, role, action, mechanism, or evidence that makes it real. |
+| Abstract | Wrong for the scene | Delete or rebuild the sentence. |
+
+Do not use this gate to flatten strategy, research, whitepaper, or executive writing into conversation. The target is natural Chinese **inside the intended artifact**, not one universal plain-speaking register.
+
 ## Sentence Gate
 
-Check every sentence that carries a claim. It must answer at least three of these six questions:
+Check every sentence that carries an execution, causal, value, or result claim. It should answer at least three of these six questions when the source supports them:
 
 - **Who** is acting?
 - **Does what**?
@@ -21,7 +34,7 @@ Check every sentence that carries a claim. It must answer at least three of thes
 - **What changes after the action**?
 - **What evidence, cost, result, or boundary supports it**?
 
-If a sentence only names a concept, framework, stage, object, value, method, or capability, rewrite it.
+If a claim only names a concept, framework, stage, object, value, method, or capability, rewrite it. Short headings, navigation labels, and table headers may remain compact when the surrounding page supplies their meaning.
 
 ## Verifiable Action Gate
 
@@ -110,7 +123,14 @@ If a sentence cannot answer "怎么做、谁来做、做完看到什么变化", 
 
 ## Natural Chinese Gate
 
-After a sentence passes the concrete-action test, read it as if speaking to a colleague. Fail it if it sounds like a meeting note, consulting deck, or platform operations report rather than natural Chinese.
+After a sentence passes the concrete-action test, read it in its intended scene:
+
+- For ordinary explanation, email, social writing, or execution copy, ask whether a colleague would naturally say it.
+- For a strategy deck, ask whether a competent planner would naturally present it to a client.
+- For a whitepaper or report, ask whether an editor or analyst would accept it as precise professional Chinese.
+- For an SOP, ask whether the assigned person can execute it without guessing.
+
+Fail unnatural imitation of professional writing. Do not fail a sentence merely because it sounds like a strategy deck, report, or operations document when that is the requested artifact.
 
 ## Verb Collocation Gate
 
@@ -128,11 +148,11 @@ Bad verb-object pairs:
 - 撬动复购 / 拉动心智
 - 承接用户 / 触达用户, when the actual action is "加微信、发消息、打电话、提醒、回访"
 
-Prefer ordinary verbs:
+Prefer ordinary verbs when they name the real operation more accurately:
 
 - 放卡片、写清楚、加微信、发消息、回答问题、记录购买时间、提醒补货、回访老客、再次下单.
 
-Rule: if a sentence can be rewritten with these ordinary verbs, use them first.
+Rule: use the most natural verb-object pair for the scene. Ordinary verbs usually win in execution copy; precise professional verbs may remain in strategy and analysis when they name a recognized planning action and the surrounding content makes it verifiable.
 
 Common unnatural replacements:
 
