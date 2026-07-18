@@ -96,14 +96,22 @@ def extract_scripts(docx: Path) -> list[dict[str, object]]:
         ]
         cells = [value for value in slots if value]
         if cells:
+            trailing_empty_count = 0
+            for value in reversed(slots):
+                if value:
+                    break
+                trailing_empty_count += 1
             scripts.append(
                 {
                     "title": current_title,
                     "persona": current_persona,
                     "voice": current_voice,
                     "speech_cells": cells,
+                    "speech_slots": slots,
                     "speech_slot_count": len(slots),
                     "empty_speech_slot_count": sum(not value for value in slots),
+                    "literal_final_speech_cell": slots[-1] if slots else "",
+                    "trailing_empty_speech_slot_count": trailing_empty_count,
                     "speech": "\n".join(cells),
                 }
             )
@@ -147,6 +155,7 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
     scripts_with: Counter[str] = Counter()
     endings = Counter()
     ending_examples: list[dict[str, str]] = []
+    blank_final_slot_examples: list[dict[str, object]] = []
     risk_examples: dict[str, list[dict[str, object]]] = {
         name: [] for name in PATTERNS
     }
@@ -172,6 +181,19 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
         for name in matched_names:
             scripts_with[name] += 1
         final_cell = str(script["speech_cells"][-1])
+        literal_final_cell = str(script.get("literal_final_speech_cell", ""))
+        if not literal_final_cell:
+            endings["blank_literal_final_slot"] += 1
+            if len(blank_final_slot_examples) < RISK_EXAMPLE_LIMIT:
+                blank_final_slot_examples.append(
+                    {
+                        "title": str(script["title"]),
+                        "trailing_empty_speech_slot_count": int(
+                            script.get("trailing_empty_speech_slot_count", 0)
+                        ),
+                        "last_nonempty_speech_cell": final_cell,
+                    }
+                )
         flags = []
         if re.search(PATTERNS["lesson_formula"], final_cell):
             endings["lesson"] += 1
@@ -210,6 +232,7 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
         "risk_examples": risk_examples,
         "ending_counts": endings,
         "ending_examples": ending_examples,
+        "blank_final_slot_examples": blank_final_slot_examples,
         "speech_slot_count": sum(
             int(item.get("speech_slot_count", len(item["speech_cells"])))
             for item in scripts
@@ -226,12 +249,52 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
     }
 
 
+def compare_endings(
+    baseline: list[dict[str, object]], revised: list[dict[str, object]]
+) -> dict[str, object]:
+    removed: list[dict[str, object]] = []
+    for index, (old, new) in enumerate(zip(baseline, revised), start=1):
+        old_final = str(old.get("literal_final_speech_cell", ""))
+        new_final = str(new.get("literal_final_speech_cell", ""))
+        if old_final and not new_final:
+            removed.append(
+                {
+                    "script_index": index,
+                    "title": str(new.get("title") or old.get("title") or ""),
+                    "baseline_ending": old_final,
+                    "revised_last_nonempty_speech_cell": str(
+                        new.get("speech_cells", [""])[-1]
+                    ),
+                    "revised_trailing_empty_speech_slot_count": int(
+                        new.get("trailing_empty_speech_slot_count", 0)
+                    ),
+                }
+            )
+    return {
+        "baseline_script_count": len(baseline),
+        "revised_script_count": len(revised),
+        "script_count_matches": len(baseline) == len(revised),
+        "removed_nonempty_final_count": len(removed),
+        "removed_nonempty_final_examples": removed[:RISK_EXAMPLE_LIMIT],
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("docx", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--baseline",
+        type=Path,
+        help="Optional source DOCX used to detect non-empty endings removed by the rewrite.",
+    )
     args = parser.parse_args()
-    report = audit(extract_scripts(args.docx))
+    revised_scripts = extract_scripts(args.docx)
+    report = audit(revised_scripts)
+    if args.baseline:
+        report["ending_comparison"] = compare_endings(
+            extract_scripts(args.baseline), revised_scripts
+        )
     payload = json.dumps(report, ensure_ascii=False, indent=2)
     if args.output:
         args.output.write_text(payload, encoding="utf-8")
