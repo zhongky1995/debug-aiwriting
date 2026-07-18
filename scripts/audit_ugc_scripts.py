@@ -150,6 +150,83 @@ PATTERNS = {
 RISK_EXAMPLE_LIMIT = 20
 
 
+def normalize_duplicate_text(value: str) -> str:
+    """Ignore layout whitespace while keeping wording and punctuation exact."""
+    return re.sub(r"\s+", "", value).strip()
+
+
+def duplicate_script_report(scripts: list[dict[str, object]]) -> dict[str, object]:
+    full_script_members: dict[str, list[dict[str, object]]] = {}
+    speech_cell_members: dict[str, list[dict[str, object]]] = {}
+
+    for script_index, script in enumerate(scripts, start=1):
+        speech = str(script.get("speech", ""))
+        normalized_script = normalize_duplicate_text(speech)
+        if len(normalized_script) >= 40:
+            full_script_members.setdefault(normalized_script, []).append(
+                {
+                    "script_index": script_index,
+                    "title": str(script.get("title", "")),
+                    "persona": str(script.get("persona", "")),
+                }
+            )
+
+        for cell_index, cell in enumerate(script.get("speech_cells", []), start=1):
+            cell_value = str(cell)
+            normalized_cell = normalize_duplicate_text(cell_value)
+            if len(normalized_cell) < 16:
+                continue
+            speech_cell_members.setdefault(normalized_cell, []).append(
+                {
+                    "script_index": script_index,
+                    "cell_index": cell_index,
+                    "title": str(script.get("title", "")),
+                    "persona": str(script.get("persona", "")),
+                }
+            )
+
+    full_groups = []
+    for normalized, members in full_script_members.items():
+        if len(members) < 2:
+            continue
+        full_groups.append(
+            {
+                "count": len(members),
+                "character_count": len(normalized),
+                "unique_persona_count": len({item["persona"] for item in members}),
+                "members": members,
+            }
+        )
+    full_groups.sort(key=lambda item: (-int(item["count"]), -int(item["character_count"])))
+
+    cell_groups = []
+    for normalized, members in speech_cell_members.items():
+        if len(members) < 2:
+            continue
+        cell_groups.append(
+            {
+                "count": len(members),
+                "text": normalized,
+                "unique_persona_count": len({item["persona"] for item in members}),
+                "members": members,
+            }
+        )
+    cell_groups.sort(key=lambda item: (-int(item["count"]), -len(str(item["text"]))))
+
+    return {
+        "exact_duplicate_script_group_count": len(full_groups),
+        "exact_duplicate_script_excess_count": sum(
+            int(group["count"]) - 1 for group in full_groups
+        ),
+        "exact_duplicate_script_groups": full_groups[:RISK_EXAMPLE_LIMIT],
+        "repeated_speech_cell_group_count": len(cell_groups),
+        "repeated_speech_cell_excess_count": sum(
+            int(group["count"]) - 1 for group in cell_groups
+        ),
+        "repeated_speech_cell_groups": cell_groups[:RISK_EXAMPLE_LIMIT],
+    }
+
+
 def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
     totals: Counter[str] = Counter()
     scripts_with: Counter[str] = Counter()
@@ -221,12 +298,31 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
 
     personas = [str(item["persona"]) for item in scripts if item["persona"]]
     voices = [str(item["voice"]) for item in scripts if item["voice"]]
+    voice_counts = Counter(voices)
+    dominant_voice, dominant_voice_count = (
+        voice_counts.most_common(1)[0] if voice_counts else ("", 0)
+    )
+    duplicate_report = duplicate_script_report(scripts)
     return {
         "script_count": len(scripts),
         "script_character_count": sum(len(str(item["speech"])) for item in scripts),
         "persona_count": len(personas),
         "unique_persona_count": len(set(personas)),
-        "voice_counts": Counter(voices),
+        "voice_counts": voice_counts,
+        "voice_stats": {
+            "script_count": len(scripts),
+            "voice_instruction_count": len(voices),
+            "missing_voice_instruction_count": len(scripts) - len(voices),
+            "unique_voice_instruction_count": len(voice_counts),
+            "dominant_voice_instruction": dominant_voice,
+            "dominant_voice_instruction_count": dominant_voice_count,
+            "dominant_voice_instruction_share": round(
+                dominant_voice_count / len(voices), 4
+            )
+            if voices
+            else 0,
+        },
+        "duplicate_stats": duplicate_report,
         "pattern_totals": totals,
         "scripts_with_pattern": scripts_with,
         "risk_examples": risk_examples,

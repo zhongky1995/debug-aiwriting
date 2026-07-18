@@ -57,6 +57,28 @@ For each recurring persona, define a small language system. Identity and values 
 
 Remove the persona labels from two scripts. If the lines can be swapped without feeling wrong, the persona work has failed. Change what each speaker notices, knows, omits, and how they form sentences; do not merely add slang or catchphrases.
 
+### Tone Must Exist In The Lines
+
+Age, gender, clothing, hairstyle, occupation, and TTS direction are production metadata. They do not prove that two people speak differently. A bank has not passed the persona check when the copy stays interchangeable but the labels say “职场爸爸 / 接送妈妈 / 退休男性” or the voice notes say “沉稳 / 温柔 / 松弛.”
+
+Require observable differences in the spoken copy itself:
+
+- **Attention**: a safety-focused parent notices a loose buckle or a child reaching for the door; a technical user notices failure recovery and operating conditions; a retired traveler notices time, distance, weather, and physical comfort.
+- **Sentence behavior**: one speaker may use quick action fragments, another may keep a chronological explanation, and another may stop after one sensory detail.
+- **Judgment style**: one speaker complains, one tests, one hesitates, one reports only what happened. Do not give every speaker the same calm, complete conclusion.
+- **Information boundary**: different people should not know, explain, or care about the same amount of information.
+
+Read only the voice-over column, with titles, persona cards, shot notes, and voice directions hidden. If a reviewer cannot identify at least the speaker family or scene mode above chance, rewrite the lines. Changing metadata is not a rewrite.
+
+### Use Persona And Scene As Two Axes
+
+A persona does not speak in one fixed tone in every scene. Define both:
+
+1. **Speaker system**: recurring attention, vocabulary, sentence shape, knowledge limit, and emotional baseline.
+2. **Scene mode**: rushed pickup, safety incident, product test, family disagreement, relaxed outing, or reflective recall.
+
+The scene may change speed and emotional pressure, but it should not erase the speaker's underlying habits. This prevents a different failure: forcing every “妈妈” to sound hurried or every “退休男性” to sound literary.
+
 ## Script Construction
 
 ### Start From An Event, Not A Metric Formula
@@ -144,11 +166,12 @@ Run that deletion test on the sentence, not on the table row. After deleting a g
 6. Run ending deletion tests per script. Keep questions only when specific and earned; never clear endings by persona group or index range.
 7. Run the persona-blind test across adjacent and distant scripts.
 8. Search the full bank for the rejected pattern, not just the sample the user flagged.
-9. Recheck duplicate full-script and shot-table copies after editing.
+9. Recheck duplicate full-script and shot-table copies after editing. Exact repeated voice-over across numbered scripts is a critical failure, even when titles, outfits, shots, or TTS labels differ.
 10. Compare every added scene detail against the source. Reject any new quote, action, object, location, number, reaction, or relationship detail without explicit support.
 11. Mark each shot row as `voice needed`, `image enough`, `ambient/pause`, or `continue previous sentence`; do not require narration in every row.
 12. Run the hidden-writer test on every surviving judgment: state the moral it implies, then delete or narrow the line if that moral is stronger than the event.
 13. Read every voice-over line aloud and repair unnatural verb-object pairs, written syntax, compressed parallels, and report-style lists.
+14. Sample at least five scripts from every recurring speaker family. Hide all metadata and verify that attention, syntax, judgment style, and endings do not collapse into one narrator.
 
 ## Batch Gates
 
@@ -157,6 +180,9 @@ Do not claim a large script bank is fully revised until all gates pass:
 - **Coverage gate**: every script and every duplicate surface has been reviewed or explicitly excluded.
 - **Conclusion gate**: no repeated “我终于明白 / 最重要 / 真正 / 这才是” ending formula remains without scene-specific justification.
 - **Persona gate**: recurring personas differ in attention, knowledge, syntax, and emotional temperature.
+- **Metadata-blind gate**: voice differences remain audible after hiding persona names, demographics, styling, shot descriptions, and TTS directions.
+- **Tone-distribution gate**: no single calm/explanatory/conclusive pattern dominates every speaker family; each major family has reviewed anchor samples.
+- **Duplicate-wording gate**: exact duplicate full scripts and repeated voice-over blocks are reported and resolved or explicitly excluded. Relabeling a duplicate is not resolution.
 - **Voice/image gate**: voice adds information the image cannot supply.
 - **Ending gate**: takeaways and questions are not mandatory template slots.
 - **Ending coverage gate**: compare literal final cells before and after the rewrite; every removed ending is either replaced with a source-supported final beat or explicitly marked as intentional silence.

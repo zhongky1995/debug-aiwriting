@@ -59,6 +59,34 @@ class AuditUgcScriptsTest(unittest.TestCase):
         self.assertEqual(report["empty_speech_slot_count"], 1)
         self.assertEqual(report["fully_filled_script_count"], 1)
 
+    def test_reports_voice_concentration(self) -> None:
+        report = audit(
+            [
+                sample_script("这是第一条足够长的口播内容。"),
+                sample_script("这是第二条足够长的口播内容。"),
+                sample_script("这是第三条足够长的口播内容。"),
+            ]
+        )
+
+        self.assertEqual(report["voice_stats"]["unique_voice_instruction_count"], 1)
+        self.assertEqual(report["voice_stats"]["dominant_voice_instruction_share"], 1.0)
+
+    def test_reports_exact_duplicate_scripts_and_cells(self) -> None:
+        repeated = "这是一段长度足够、会被完整复制到不同编号脚本里的口播内容。"
+        report = audit(
+            [
+                sample_script(repeated, "第二格也保持完全一致，用于检查整段重复。"),
+                sample_script(repeated, "第二格也保持完全一致，用于检查整段重复。"),
+            ]
+        )
+
+        self.assertEqual(
+            report["duplicate_stats"]["exact_duplicate_script_group_count"], 1
+        )
+        self.assertGreaterEqual(
+            report["duplicate_stats"]["repeated_speech_cell_group_count"], 2
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
