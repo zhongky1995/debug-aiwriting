@@ -39,6 +39,19 @@ For each line, ask:
 3. Would the line still sound natural without the title, persona label, and brand brief?
 4. Could the line be printed as a poster slogan or section heading with almost no change? If yes, it is high risk in ordinary UGC speech.
 
+## Run Source-Integrity Preflight Before Rewriting
+
+Before changing any line in a large bank, establish what the source actually contains. Count scripts, titles, persona labels, voice directions, shot rows, non-empty endings, exact duplicate scripts, repeated voice-over cells, and repeated ending shapes. Do this before creating new persona labels or voice notes.
+
+Choose one policy for every duplicate family:
+
+- **Intentional duplicate**: keep one canonical script, edit it once, and propagate the same approved wording. Do not count the copies as independent evidence of voice diversity.
+- **Accidental duplicate**: report the records and consolidate, remove, or replace them only with user approval.
+- **Same event, different speaker**: rewrite only when the source contains enough speaker-specific evidence. Changing demographics, clothing, or TTS direction is not enough.
+- **Insufficient source**: preserve the verified facts, flag the differentiation limit, and request more material. Do not invent a new quote, conflict, object, or reaction to force uniqueness.
+
+Preflight is not cleanup bureaucracy. It prevents two false successes: claiming hundreds of scripts were diversified when many are exact copies, and manufacturing fake personal details to hide source duplication.
+
 ## Build A Speaker Before Writing Lines
 
 For each recurring persona, define a small language system. Identity and values are not enough.
@@ -158,31 +171,33 @@ Run that deletion test on the sentence, not on the table row. After deleting a g
 
 ## Rewrite Procedure For A Script Bank
 
-1. Inventory every script and duplicate surface: title, persona, voice direction, full script, shot table, caption, and ending.
-2. Group recurring personas and write one language-system card per group.
-3. Mark each first-person sentence as action, perception, reaction, uncertainty, limited judgment, or conclusion.
-4. Keep or sharpen the first five types. Delete or rewrite unsupported conclusions.
-5. Compare image and voice line by line; remove direct duplication.
-6. Run ending deletion tests per script. Keep questions only when specific and earned; never clear endings by persona group or index range.
-7. Run the persona-blind test across adjacent and distant scripts.
-8. Search the full bank for the rejected pattern, not just the sample the user flagged.
-9. Recheck duplicate full-script and shot-table copies after editing. Exact repeated voice-over across numbered scripts is a critical failure, even when titles, outfits, shots, or TTS labels differ.
+1. Run source-integrity preflight: count scripts, metadata gaps, duplicate families, repeated cells, non-empty endings, and concentrated ending shapes.
+2. Decide the duplicate policy for every family before rewriting: canonical propagation, approved consolidation, evidence-based differentiation, or explicit exclusion.
+3. Group recurring personas and write one language-system card per group, then add the current scene mode separately.
+4. Rewrite 3-5 anchor scripts for each major speaker family. Hide all metadata and check whether the actual lines differ before scaling.
+5. Mark each first-person sentence as action, perception, reaction, uncertainty, limited judgment, or conclusion.
+6. Keep or sharpen the first five types. Delete or rewrite unsupported conclusions.
+7. Compare image and voice line by line; remove direct duplication.
+8. Run ending deletion tests per script. Keep questions only when specific and earned; never clear endings by persona group or index range.
+9. Search the full bank for the rejected pattern, not just the sample the user flagged.
 10. Compare every added scene detail against the source. Reject any new quote, action, object, location, number, reaction, or relationship detail without explicit support.
 11. Mark each shot row as `voice needed`, `image enough`, `ambient/pause`, or `continue previous sentence`; do not require narration in every row.
 12. Run the hidden-writer test on every surviving judgment: state the moral it implies, then delete or narrow the line if that moral is stronger than the event.
 13. Read every voice-over line aloud and repair unnatural verb-object pairs, written syntax, compressed parallels, and report-style lists.
-14. Sample at least five scripts from every recurring speaker family. Hide all metadata and verify that attention, syntax, judgment style, and endings do not collapse into one narrator.
+14. Re-run the duplicate, metadata, ending-shape, and final-cell audits after editing. Compare against the source baseline.
+15. Sample at least five scripts from every recurring speaker family. Hide all metadata and verify that attention, syntax, judgment style, and endings do not collapse into one narrator.
 
 ## Batch Gates
 
 Do not claim a large script bank is fully revised until all gates pass:
 
 - **Coverage gate**: every script and every duplicate surface has been reviewed or explicitly excluded.
+- **Source-integrity gate**: metadata gaps and duplicate families were reported before rewriting; each duplicate family has a documented policy.
 - **Conclusion gate**: no repeated “我终于明白 / 最重要 / 真正 / 这才是” ending formula remains without scene-specific justification.
 - **Persona gate**: recurring personas differ in attention, knowledge, syntax, and emotional temperature.
 - **Metadata-blind gate**: voice differences remain audible after hiding persona names, demographics, styling, shot descriptions, and TTS directions.
 - **Tone-distribution gate**: no single calm/explanatory/conclusive pattern dominates every speaker family; each major family has reviewed anchor samples.
-- **Duplicate-wording gate**: exact duplicate full scripts and repeated voice-over blocks are reported and resolved or explicitly excluded. Relabeling a duplicate is not resolution.
+- **Duplicate-wording gate**: exact duplicate full scripts and repeated voice-over blocks are resolved by canonical propagation, approved consolidation, evidence-based differentiation, or explicit exclusion. Relabeling a duplicate is not resolution.
 - **Voice/image gate**: voice adds information the image cannot supply.
 - **Ending gate**: takeaways and questions are not mandatory template slots.
 - **Ending coverage gate**: compare literal final cells before and after the rewrite; every removed ending is either replaced with a source-supported final beat or explicitly marked as intentional silence.
@@ -195,7 +210,7 @@ Do not claim a large script bank is fully revised until all gates pass:
 
 ## Minimal Revision Rule
 
-When source detail is limited, deletion is safer than fabrication. Remove the generic lesson and let the concrete scene stand. Do not manufacture dialect, typos, family conflict, or vulnerability merely to simulate authenticity.
+When source detail is limited, deletion is safer than fabrication. Remove the generic lesson and let the concrete scene stand. Do not manufacture dialect, typos, family conflict, or vulnerability merely to simulate authenticity. If the remaining lines cannot support a distinct speaker voice, report that limit instead of claiming the persona pass is complete.
 
 When a shot already shows the only verified fact, leave the voice-over blank or keep the previous sentence running only after confirming the image completes the script. In table deliverables, represent intentional silence explicitly when an empty final cell would otherwise look like missing work. A complete table is not more important than believable speech, but unexplained deletion is not intentional silence.
 

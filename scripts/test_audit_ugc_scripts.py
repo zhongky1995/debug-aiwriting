@@ -8,12 +8,19 @@ import unittest
 from audit_ugc_scripts import audit
 
 
-def sample_script(*cells: str, empty_slots: int = 0) -> dict[str, object]:
+def sample_script(
+    *cells: str,
+    empty_slots: int = 0,
+    title: str = "示例脚本",
+    persona: str = "普通家庭成员",
+    voice: str = "自然口播",
+) -> dict[str, object]:
     return {
-        "title": "示例脚本",
-        "persona": "普通家庭成员",
-        "voice": "自然口播",
+        "title": title,
+        "persona": persona,
+        "voice": voice,
         "speech_cells": list(cells),
+        "literal_final_speech_cell": cells[-1] if cells and not empty_slots else "",
         "speech_slot_count": len(cells) + empty_slots,
         "empty_speech_slot_count": empty_slots,
         "speech": "\n".join(cells),
@@ -86,6 +93,35 @@ class AuditUgcScriptsTest(unittest.TestCase):
         self.assertGreaterEqual(
             report["duplicate_stats"]["repeated_speech_cell_group_count"], 2
         )
+
+    def test_reports_metadata_gaps_and_repeated_titles(self) -> None:
+        report = audit(
+            [
+                sample_script("第一条。", title="同名脚本"),
+                sample_script("第二条。", title="同名脚本", persona="", voice=""),
+                sample_script("第三条。", title=""),
+            ]
+        )
+
+        stats = report["metadata_stats"]
+        self.assertEqual(stats["missing_title_count"], 1)
+        self.assertEqual(stats["missing_persona_count"], 1)
+        self.assertEqual(stats["missing_voice_instruction_count"], 1)
+        self.assertEqual(stats["repeated_title_group_count"], 1)
+
+    def test_reports_ending_shape_concentration(self) -> None:
+        report = audit(
+            [
+                sample_script("我终于明白，安排得周全才最重要。"),
+                sample_script("我觉得，家里人舒服最重要。"),
+                sample_script("回家以后，我先把票根收好。"),
+            ]
+        )
+
+        stats = report["ending_style_stats"]
+        self.assertEqual(stats["dominant_ending_mode"], "first_person_judgment")
+        self.assertEqual(stats["dominant_ending_mode_count"], 2)
+        self.assertEqual(stats["dominant_ending_mode_share"], 0.6667)
 
 
 if __name__ == "__main__":

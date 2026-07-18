@@ -150,6 +150,81 @@ PATTERNS = {
 RISK_EXAMPLE_LIMIT = 20
 
 
+def ending_mode(value: str) -> str:
+    """Classify the visible shape of an ending without judging its quality."""
+    text = value.strip()
+    if re.search(r"[？?]\s*$", text):
+        return "question"
+    if re.search(r"[“\"]|(?:说|问|回了句|念叨)[：:]?", text):
+        return "quote_or_dialogue"
+    if re.search(
+        r"我(?:才|终于|后来)?(?:发现|明白|意识到|懂得|觉得|认为)|"
+        r"对我来说|最重要的是|真正的.{0,10}是|这才是|这就是",
+        text,
+    ):
+        return "first_person_judgment"
+    if re.search(
+        r"以后|下次|这次.{0,12}(?:对了|值了|值得)|才算|就够了|就行了",
+        text,
+    ):
+        return "tidy_resolution"
+    if re.match(
+        r"^(?:先|再|等|回去|回家|到家|临走|出门|下次|明天|改天|"
+        r"我(?:先|再|去|把|准备|打算|还得))",
+        text,
+    ):
+        return "next_action"
+    if re.search(
+        r"(?:他|她|爸|妈|孩子|老人|外婆|外公).{0,10}"
+        r"(?:笑|点头|摇头|停下|回头|坐下|走|看|拿|放|问|说)",
+        text,
+    ):
+        return "observed_action_or_reaction"
+    return "other"
+
+
+def ending_lead(value: str) -> str:
+    """Return a compact opening fragment for spotting repeated ending syntax."""
+    text = re.sub(r"^[\s，。！？；：、“”\"']+", "", value)
+    if not text:
+        return ""
+    first_clause = re.split(r"[，,。！？!?；;：:\n]", text, maxsplit=1)[0]
+    return first_clause[:10]
+
+
+def metadata_report(scripts: list[dict[str, object]]) -> dict[str, object]:
+    titles = [str(item.get("title", "")).strip() for item in scripts]
+    personas = [str(item.get("persona", "")).strip() for item in scripts]
+    voices = [str(item.get("voice", "")).strip() for item in scripts]
+    title_counts = Counter(value for value in titles if value)
+    persona_counts = Counter(value for value in personas if value)
+
+    repeated_titles = [
+        {"title": title, "count": count}
+        for title, count in title_counts.most_common()
+        if count > 1
+    ]
+    dominant_persona, dominant_persona_count = (
+        persona_counts.most_common(1)[0] if persona_counts else ("", 0)
+    )
+    return {
+        "missing_title_count": sum(not value for value in titles),
+        "missing_persona_count": sum(not value for value in personas),
+        "missing_voice_instruction_count": sum(not value for value in voices),
+        "unique_title_count": len(title_counts),
+        "repeated_title_group_count": len(repeated_titles),
+        "repeated_title_examples": repeated_titles[:RISK_EXAMPLE_LIMIT],
+        "unique_persona_count": len(persona_counts),
+        "dominant_persona": dominant_persona,
+        "dominant_persona_count": dominant_persona_count,
+        "dominant_persona_share": round(
+            dominant_persona_count / len([value for value in personas if value]), 4
+        )
+        if persona_counts
+        else 0,
+    }
+
+
 def normalize_duplicate_text(value: str) -> str:
     """Ignore layout whitespace while keeping wording and punctuation exact."""
     return re.sub(r"\s+", "", value).strip()
@@ -233,6 +308,8 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
     endings = Counter()
     ending_examples: list[dict[str, str]] = []
     blank_final_slot_examples: list[dict[str, object]] = []
+    ending_modes: Counter[str] = Counter()
+    ending_leads: Counter[str] = Counter()
     risk_examples: dict[str, list[dict[str, object]]] = {
         name: [] for name in PATTERNS
     }
@@ -258,6 +335,10 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
         for name in matched_names:
             scripts_with[name] += 1
         final_cell = str(script["speech_cells"][-1])
+        ending_modes[ending_mode(final_cell)] += 1
+        lead = ending_lead(final_cell)
+        if lead:
+            ending_leads[lead] += 1
         literal_final_cell = str(script.get("literal_final_speech_cell", ""))
         if not literal_final_cell:
             endings["blank_literal_final_slot"] += 1
@@ -303,6 +384,14 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
         voice_counts.most_common(1)[0] if voice_counts else ("", 0)
     )
     duplicate_report = duplicate_script_report(scripts)
+    dominant_ending_mode, dominant_ending_mode_count = (
+        ending_modes.most_common(1)[0] if ending_modes else ("", 0)
+    )
+    repeated_ending_leads = [
+        {"lead": lead, "count": count}
+        for lead, count in ending_leads.most_common()
+        if count > 1
+    ]
     return {
         "script_count": len(scripts),
         "script_character_count": sum(len(str(item["speech"])) for item in scripts),
@@ -322,11 +411,27 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
             if voices
             else 0,
         },
+        "metadata_stats": metadata_report(scripts),
         "duplicate_stats": duplicate_report,
         "pattern_totals": totals,
         "scripts_with_pattern": scripts_with,
         "risk_examples": risk_examples,
         "ending_counts": endings,
+        "ending_style_stats": {
+            "ending_mode_counts": ending_modes,
+            "dominant_ending_mode": dominant_ending_mode,
+            "dominant_ending_mode_count": dominant_ending_mode_count,
+            "dominant_ending_mode_share": round(
+                dominant_ending_mode_count / len(scripts), 4
+            )
+            if scripts
+            else 0,
+            "unique_ending_lead_count": len(ending_leads),
+            "repeated_ending_lead_group_count": len(repeated_ending_leads),
+            "repeated_ending_lead_examples": repeated_ending_leads[
+                :RISK_EXAMPLE_LIMIT
+            ],
+        },
         "ending_examples": ending_examples,
         "blank_final_slot_examples": blank_final_slot_examples,
         "speech_slot_count": sum(
