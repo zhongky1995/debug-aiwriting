@@ -22,6 +22,23 @@ Treat these as high risk:
 - a final question added only to request comments
 - a polished life lesson no real speaker would formulate while the event is happening
 
+### Surface Cleanup Is Not Acceptance
+
+Removing phrases such as “我终于明白” does not solve the problem when the same thesis returns as a polished action pair:
+
+- “路线由我安排，座位让他自己挑。”
+- “不让任何一边变成顺路。”
+- “分两天，座位舒服，聊天从容。”
+
+These lines contain concrete nouns, but the hidden writer is still summarizing respect, fairness, or good parenting for the audience. Treat **implicit moral conclusions** as seriously as explicit lessons.
+
+For each line, ask:
+
+1. What happened that made the speaker say this now?
+2. Is the speaker reporting an event, adding unseen context, reacting, deciding, or merely presenting an admirable principle?
+3. Would the line still sound natural without the title, persona label, and brand brief?
+4. Could the line be printed as a poster slogan or section heading with almost no change? If yes, it is high risk in ordinary UGC speech.
+
 ## Build A Speaker Before Writing Lines
 
 For each recurring persona, define a small language system. Identity and values are not enough.
@@ -63,6 +80,30 @@ For every line, ask what the viewer can already see.
 
 If voice and image say the same thing, delete or redirect the voice. “I opened the trunk” adds nothing when the shot shows the trunk opening. “I had already repacked it twice” adds unseen context.
 
+### Do Not Fill Every Time Slot
+
+A shot table is an editing container, not a requirement that every row contain a complete sentence. Allow:
+
+- music or ambient sound only
+- a sentence to continue across two shots
+- a short quote instead of narration
+- a deliberate pause after a visible reaction
+- an empty voice-over cell when the image already carries the information
+
+If every 3-7 second row contains a self-contained point, the script will read like a sequence of captions or management summaries. Do not compress unused facts into balanced slogans merely to occupy the cell.
+
+### Run A Spoken-Chinese Gate
+
+Read the line aloud without the shot description. Reject or rewrite it when:
+
+- the verb does not naturally take the object: “把兴趣问清”“遇到现场演出”“只扶手肘”“订一顿午餐”
+- the line sounds like a plan, report, caption, or campaign claim rather than something this person would say
+- two clauses are unnaturally balanced: “A 由我安排，B 让他自己挑”
+- several short clauses form a polished slogan: “分两天，座位舒服，聊天从容”
+- deleting the clause leaves the event intact and removes only the writer's judgment
+
+Do not simulate speech by adding filler words. Natural speech comes from a believable reason to speak, ordinary collocation, incomplete knowledge, and scene-specific attention.
+
 ### Let The Ending Stay In The Scene
 
 Prefer one of these endings:
@@ -89,6 +130,9 @@ Do not force elevation. If deleting the last sentence makes the script stronger 
 8. Search the full bank for the rejected pattern, not just the sample the user flagged.
 9. Recheck duplicate full-script and shot-table copies after editing.
 10. Compare every added scene detail against the source. Reject any new quote, action, object, location, number, reaction, or relationship detail without explicit support.
+11. Mark each shot row as `voice needed`, `image enough`, `ambient/pause`, or `continue previous sentence`; do not require narration in every row.
+12. Run the hidden-writer test on every surviving judgment: state the moral it implies, then delete or narrow the line if that moral is stronger than the event.
+13. Read every voice-over line aloud and repair unnatural verb-object pairs, written syntax, compressed parallels, and report-style lists.
 
 ## Batch Gates
 
@@ -99,6 +143,9 @@ Do not claim a large script bank is fully revised until all gates pass:
 - **Persona gate**: recurring personas differ in attention, knowledge, syntax, and emotional temperature.
 - **Voice/image gate**: voice adds information the image cannot supply.
 - **Ending gate**: takeaways and questions are not mandatory template slots.
+- **Hidden-thesis gate**: explicit lesson formulas have not merely been replaced by polished statements of respect, fairness, independence, taste, or family values.
+- **Slot-pressure gate**: the shot table contains only necessary speech; empty, ambient, and continuation rows are allowed.
+- **Spoken-Chinese gate**: every line has a plausible reason to be said now and uses natural verb-object relations when read aloud.
 - **TTS gate**: the text can be spoken naturally; punctuation does not hide written-language syntax.
 - **Fact gate**: no invented experiences, reactions, dialogue, or product results were added.
 - **Provenance gate**: every newly added concrete noun, action, quote, number, and observed reaction can be pointed back to the original script, shot description, persona card, or approved fact sheet. "Plausible" is not evidence.
@@ -106,5 +153,7 @@ Do not claim a large script bank is fully revised until all gates pass:
 ## Minimal Revision Rule
 
 When source detail is limited, deletion is safer than fabrication. Remove the generic lesson and let the concrete scene stand. Do not manufacture dialect, typos, family conflict, or vulnerability merely to simulate authenticity.
+
+When a shot already shows the only verified fact, leave the voice-over blank or keep the previous sentence running. A complete table is not more important than believable speech.
 
 Do not convert an unsupported lesson into an invented cinematic beat. If the source only says “这次安排就对了,” a rewrite may delete that sentence or keep the preceding verified action. It may not add “他笑着拍了拍我” or a new direct quote unless the source already contains it.

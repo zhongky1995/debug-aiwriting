@@ -61,6 +61,17 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 - Formality mismatch: small practical topics are written like white papers; serious reports are forced into internet slang.
 - "你会发现 / 我们不难发现 / 这背后其实是" appears as a generic reveal device.
 
+## UGC / Character Voice Traces
+
+- Explicit lessons are removed, but return as polished action pairs: “路线由我安排，座位让他自己挑.”
+- Concrete nouns are packed into report-style lists that no person has a reason to recite aloud.
+- Every time-coded row contains a complete sentence even when the image, music, or a pause would be enough.
+- Several short clauses form a caption or slogan: “分两天，座位舒服，聊天从容.”
+- The speaker presents an admirable principle instead of recalling what happened in the scene.
+- Verbs and objects look compressed rather than spoken: “把兴趣问清”“遇到现场演出”“只扶手肘”“订一顿午餐.”
+- The line passes a keyword scan but fails when read aloud without its title, persona label, and shot description.
+- A weak source is filled with invented texture or tidy conclusions instead of leaving the voice-over sparse.
+
 ## Severity Guide
 
 - **Light**: a few template transitions or stiff phrases. Line edit is enough.

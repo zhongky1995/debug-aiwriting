@@ -1,7 +1,7 @@
 interface:
   display_name: "Debug AI Writing"
   short_description: "按场景、人物声音和整篇覆盖调试中文 AI 写作"
-  default_prompt: "Use $debug-aiwriting to lock the rewrite scope, identify the artifact register and speaker when relevant, preserve facts and structure unless authorized, remove AI tone, fake actions, unnatural verb-object pairs, conclusion-heavy first-person narration, interchangeable persona voices, and internal wording, propagate corrections across the full artifact, and verify every inventoried surface before completion."
+  default_prompt: "Use $debug-aiwriting to lock the rewrite scope, identify the artifact register and speaker when relevant, preserve facts and structure unless authorized, remove AI tone, fake actions, unnatural verb-object pairs, explicit or implicit moral conclusions, compressed slogan-like speech, interchangeable persona voices, forced voice-over in every shot row, and internal wording, propagate corrections across the full artifact, and verify every inventoried surface with spoken-language and scene-fit checks before completion."
 
 policy:
   allow_implicit_invocation: true

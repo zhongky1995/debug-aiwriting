@@ -89,11 +89,12 @@ def extract_scripts(docx: Path) -> list[dict[str, object]]:
                 break
         if speech_column is None:
             continue
-        cells = [
-            row[speech_column].strip()
+        slots = [
+            row[speech_column].strip() if speech_column < len(row) else ""
             for row in rows[header_index + 1 :]
-            if speech_column < len(row) and row[speech_column].strip()
+            if any(value.strip() for value in row)
         ]
+        cells = [value for value in slots if value]
         if cells:
             scripts.append(
                 {
@@ -101,6 +102,8 @@ def extract_scripts(docx: Path) -> list[dict[str, object]]:
                     "persona": current_persona,
                     "voice": current_voice,
                     "speech_cells": cells,
+                    "speech_slot_count": len(slots),
+                    "empty_speech_slot_count": sum(not value for value in slots),
                     "speech": "\n".join(cells),
                 }
             )
@@ -115,7 +118,28 @@ PATTERNS = {
     "forced_contrast": r"不是.{0,36}而是|不仅.{0,36}(?:而且|更)",
     "audience_question": r"你(?:家|们|会|觉得|最|通常|一般).{0,32}[？?]",
     "tts_mechanical": r"机械音|网红音|TTS",
+    "hidden_author_thesis": (
+        r"没替.{0,12}做主|不让.{0,24}变成|"
+        r"(?:路线|行程|时间).{0,8}(?:由我|我来)安排|"
+        r"(?:座位|选择).{0,8}让.{0,8}自己(?:挑|选|决定)|"
+        r"谁都不用|两边.{0,16}都能|这次安排(?:就|才)?对了|"
+        r"兴致才能|聊天从容"
+    ),
+    "unnatural_collocation": (
+        r"把兴趣问清|遇到现场演出|只扶手肘|"
+        r"订一顿(?:安静)?(?:午餐|晚餐)|变成顺路"
+    ),
+    "compressed_slogan": (
+        r"(?:^|[。！？])[^，,。！？\n]{2,12}[，,]"
+        r"[^，,。！？\n]{2,12}[，,][^，,。！？\n]{2,12}(?:[。！？]|$)"
+    ),
+    "report_checklist": (
+        r"(?:提前)?(?:确认|负责|安排|准备|检查|问清).{0,12}"
+        r"(?:、[^。；\n]{1,14}){2,}"
+    ),
 }
+
+RISK_EXAMPLE_LIMIT = 20
 
 
 def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
@@ -123,14 +147,30 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
     scripts_with: Counter[str] = Counter()
     endings = Counter()
     ending_examples: list[dict[str, str]] = []
+    risk_examples: dict[str, list[dict[str, object]]] = {
+        name: [] for name in PATTERNS
+    }
 
     for script in scripts:
-        speech = str(script["speech"])
-        for name, pattern in PATTERNS.items():
-            hits = re.findall(pattern, speech, flags=re.S)
-            if hits:
+        matched_names: set[str] = set()
+        for cell_index, cell_value in enumerate(script["speech_cells"], start=1):
+            cell = str(cell_value)
+            for name, pattern in PATTERNS.items():
+                hits = list(re.finditer(pattern, cell))
+                if not hits:
+                    continue
                 totals[name] += len(hits)
-                scripts_with[name] += 1
+                matched_names.add(name)
+                if len(risk_examples[name]) < RISK_EXAMPLE_LIMIT:
+                    risk_examples[name].append(
+                        {
+                            "title": str(script["title"]),
+                            "cell_index": cell_index,
+                            "text": cell,
+                        }
+                    )
+        for name in matched_names:
+            scripts_with[name] += 1
         final_cell = str(script["speech_cells"][-1])
         flags = []
         if re.search(PATTERNS["lesson_formula"], final_cell):
@@ -142,6 +182,12 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
         if re.search(r"[？?]\s*$", final_cell):
             endings["question"] += 1
             flags.append("question")
+        if re.search(
+            r"以后|下次|这次.{0,12}(?:对了|值了|值得)|才算|就够了|就行了",
+            final_cell,
+        ):
+            endings["tidy_resolution"] += 1
+            flags.append("tidy_resolution")
         if flags:
             ending_examples.append(
                 {
@@ -161,8 +207,21 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
         "voice_counts": Counter(voices),
         "pattern_totals": totals,
         "scripts_with_pattern": scripts_with,
+        "risk_examples": risk_examples,
         "ending_counts": endings,
         "ending_examples": ending_examples,
+        "speech_slot_count": sum(
+            int(item.get("speech_slot_count", len(item["speech_cells"])))
+            for item in scripts
+        ),
+        "empty_speech_slot_count": sum(
+            int(item.get("empty_speech_slot_count", 0)) for item in scripts
+        ),
+        "fully_filled_script_count": sum(
+            int(item.get("speech_slot_count", len(item["speech_cells"]))) > 1
+            and int(item.get("empty_speech_slot_count", 0)) == 0
+            for item in scripts
+        ),
         "scripts": scripts,
     }
 
