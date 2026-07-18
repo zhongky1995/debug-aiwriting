@@ -11,6 +11,7 @@
 - 个人口吻或品牌口吻迁移
 - 对外材料的内部口径清理
 - 创意方向筛选，避免只停留在概念词
+- UGC、KOC、KOS、短视频口播和人物独白优化
 - 多页文档、逐 P 稿、表格型方案的整篇覆盖检查
 - 参考稿 / PDF / 旧版方案的表达口径对齐
 
@@ -27,6 +28,30 @@
 - 去 AI 味时把专业策划语言误改成过于口语的执行说明
 - 用户指出一个问题后，只改原句，没有检查全文同类表达
 - “参考思路”和“参考表达”没有分开，导致结构、事实或语气被一起照搬
+- 人设标签不同，人物实际说话时却仍像同一个文案作者
+- 第一人称只负责总结意义、输出价值判断，缺少动作、感受和当下反应
+- 旁白重复画面已经展示的信息，没有补充动机、背景或犹豫
+- 每条口播都用感悟、反问或互动问题结尾
+- 为了让人物“更真实”而编造原稿没有提供的动作、对话和生活细节
+
+## UGC / 人设口播调试
+
+这类脚本的问题通常不只是“第一人称太多”，而是**第一人称的功能过于单一**：不同人物都用“我”替画面总结意义、给出完整判断，最后再补一句感悟或反问。人设名称变了，背后的文案口吻没有变。
+
+处理时会重点检查：
+
+- **第一人称功能**：区分动作、感受、反应、犹豫、有限判断和空泛结论；优先删除没有场景支撑的结论。
+- **去标签互换测试**：拿掉人设名称后，如果两段台词可以互换，说明人物没有真正写开。
+- **人物语言系统**：分别定义人物在意什么、知道什么、不知道什么、句子长短、常用词和情绪温度，不靠方言或口头禅冒充人设。
+- **画面 / 旁白分工**：画面交代动作和现场，旁白补充看不见的动机、前因、犹豫或后果，不复述画面。
+- **结尾删除测试**：删掉最后一句后内容更自然、事实没有损失，就不保留强行升华或互动提问。
+- **来源核对**：新增的动作、物件、对话、数字和人物反应必须能在原稿、人设卡或确认过的资料中找到依据。
+
+调用示例：
+
+```text
+[$debug-aiwriting] 检查这批 UGC 人物口播：重点看不同人设是否仍在说同一种话、第一人称是否在替人物下结论、旁白是否复述画面、结尾是否强行升华或提问。保留原始事实，不要为了自然感补写未经提供的生活细节。
+```
 
 ## 目录结构
 
@@ -36,7 +61,8 @@ debug-aiwriting/
 ├── agents/
 │   └── openai.yaml
 ├── scripts/
-│   └── audit_surfaces.py
+│   ├── audit_surfaces.py
+│   └── audit_ugc_scripts.py
 └── references/
     ├── ai-trace-checklist.md
     ├── client-proposal-playbook.md
@@ -51,6 +77,7 @@ debug-aiwriting/
     ├── plain-language-gate.md
     ├── reference-style-calibration.md
     ├── rewrite-playbook.md
+    ├── ugc-persona-script-register.md
     └── whitepaper-case-register.md
 ```
 
@@ -83,6 +110,14 @@ python3 scripts/audit_surfaces.py <文件路径> --output <清单.json>
 
 用户明确否定某个词或短语时，可通过 `--term` 将它作为本轮硬性排除项扫描。脚本只负责覆盖检查和风险提示，最终是否保留专业术语仍要结合场景判断。
 
+检查表格型 DOCX 口播脚本库时，可以先生成确定性的风险报告：
+
+```bash
+python3 scripts/audit_ugc_scripts.py <脚本.docx> --output <报告.json>
+```
+
+报告会统计脚本数量、人设数量、第一人称结论公式、比较式判断、固定反问结尾和机械配音提示。它用于定位批量问题，不代替逐条理解人物和场景。
+
 如果用于公司材料，建议重点维护：
 
 - `references/external-facing-check.md`
@@ -91,6 +126,7 @@ python3 scripts/audit_surfaces.py <文件路径> --output <清单.json>
 - `references/large-document-coverage.md`
 - `references/marketing-strategy-register.md`
 - `references/reference-style-calibration.md`
+- `references/ugc-persona-script-register.md`
 - `references/whitepaper-case-register.md`
 - `references/executive-report-register.md`
 - `references/internal-ops-register.md`
