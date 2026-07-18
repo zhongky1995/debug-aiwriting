@@ -192,6 +192,29 @@ def ending_lead(value: str) -> str:
     return first_clause[:10]
 
 
+ENDING_TAIL_PATTERNS = {
+    "unfinished_continuation": (
+        r"还没|还在|等着|继续|又(?:翻|问|看|说|走|拿|坐|聊|等)"
+    ),
+    "routine_logistics": (
+        r"(?:往|走向|走到|回到|到了?|去).{0,10}"
+        r"(?:停车区|停车场|车里|出口|门口|电梯|休息区|书店)|"
+        r"(?:散场|结束|看完|逛完|人少).{0,20}"
+        r"(?:离场|回去|回家|上车|停车区|走)|"
+        r"(?:收拾|打包|拿好|装好).{0,12}(?:离开|回去|回家|上车)?"
+    ),
+}
+
+
+def ending_tail_flags(value: str) -> list[str]:
+    """Return warning-only signals that the final line may trail past the payoff."""
+    return [
+        name
+        for name, pattern in ENDING_TAIL_PATTERNS.items()
+        if re.search(pattern, value)
+    ]
+
+
 def metadata_report(scripts: list[dict[str, object]]) -> dict[str, object]:
     titles = [str(item.get("title", "")).strip() for item in scripts]
     personas = [str(item.get("persona", "")).strip() for item in scripts]
@@ -310,6 +333,8 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
     blank_final_slot_examples: list[dict[str, object]] = []
     ending_modes: Counter[str] = Counter()
     ending_leads: Counter[str] = Counter()
+    ending_tail_counts: Counter[str] = Counter()
+    ending_tail_examples: list[dict[str, object]] = []
     risk_examples: dict[str, list[dict[str, object]]] = {
         name: [] for name in PATTERNS
     }
@@ -352,7 +377,22 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
                         "last_nonempty_speech_cell": final_cell,
                     }
                 )
-        flags = []
+        tail_flags = ending_tail_flags(final_cell)
+        for tail_flag in tail_flags:
+            ending_tail_counts[tail_flag] += 1
+        if tail_flags and len(ending_tail_examples) < RISK_EXAMPLE_LIMIT:
+            speech_cells = [str(value) for value in script["speech_cells"]]
+            ending_tail_examples.append(
+                {
+                    "title": str(script["title"]),
+                    "previous_speech_cell": speech_cells[-2]
+                    if len(speech_cells) > 1
+                    else "",
+                    "ending": final_cell,
+                    "flags": tail_flags,
+                }
+            )
+        flags = [f"tail:{tail_flag}" for tail_flag in tail_flags]
         if re.search(PATTERNS["lesson_formula"], final_cell):
             endings["lesson"] += 1
             flags.append("lesson")
@@ -431,6 +471,8 @@ def audit(scripts: list[dict[str, object]]) -> dict[str, object]:
             "repeated_ending_lead_examples": repeated_ending_leads[
                 :RISK_EXAMPLE_LIMIT
             ],
+            "ending_tail_risk_counts": ending_tail_counts,
+            "ending_tail_risk_examples": ending_tail_examples,
         },
         "ending_examples": ending_examples,
         "blank_final_slot_examples": blank_final_slot_examples,

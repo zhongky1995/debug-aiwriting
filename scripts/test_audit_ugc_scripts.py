@@ -123,6 +123,24 @@ class AuditUgcScriptsTest(unittest.TestCase):
         self.assertEqual(stats["dominant_ending_mode_count"], 2)
         self.assertEqual(stats["dominant_ending_mode_share"], 0.6667)
 
+    def test_reports_unfinished_and_logistical_ending_tails(self) -> None:
+        report = audit(
+            [
+                sample_script(
+                    "散场后他只说了一句：现场还是不一样。",
+                    "人少一点以后，我们才慢慢往停车区走。",
+                ),
+                sample_script(
+                    "一个讲笔触，一个讲自己看见了什么。",
+                    "走到书店，孩子还没问完。外公又翻了几页，我们就在旁边等着。",
+                ),
+            ]
+        )
+
+        risks = report["ending_style_stats"]["ending_tail_risk_counts"]
+        self.assertEqual(risks["routine_logistics"], 2)
+        self.assertEqual(risks["unfinished_continuation"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
