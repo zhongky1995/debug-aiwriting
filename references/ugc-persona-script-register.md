@@ -88,6 +88,7 @@ Do not force elevation. If deleting the last sentence makes the script stronger 
 7. Run the persona-blind test across adjacent and distant scripts.
 8. Search the full bank for the rejected pattern, not just the sample the user flagged.
 9. Recheck duplicate full-script and shot-table copies after editing.
+10. Compare every added scene detail against the source. Reject any new quote, action, object, location, number, reaction, or relationship detail without explicit support.
 
 ## Batch Gates
 
@@ -100,7 +101,10 @@ Do not claim a large script bank is fully revised until all gates pass:
 - **Ending gate**: takeaways and questions are not mandatory template slots.
 - **TTS gate**: the text can be spoken naturally; punctuation does not hide written-language syntax.
 - **Fact gate**: no invented experiences, reactions, dialogue, or product results were added.
+- **Provenance gate**: every newly added concrete noun, action, quote, number, and observed reaction can be pointed back to the original script, shot description, persona card, or approved fact sheet. "Plausible" is not evidence.
 
 ## Minimal Revision Rule
 
 When source detail is limited, deletion is safer than fabrication. Remove the generic lesson and let the concrete scene stand. Do not manufacture dialect, typos, family conflict, or vulnerability merely to simulate authenticity.
+
+Do not convert an unsupported lesson into an invented cinematic beat. If the source only says “这次安排就对了,” a rewrite may delete that sentence or keep the preceding verified action. It may not add “他笑着拍了拍我” or a new direct quote unless the source already contains it.

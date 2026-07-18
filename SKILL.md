@@ -91,6 +91,7 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 - Do not define a persona only with identity and values. Give each recurring speaker a language system: sentence length, vocabulary, attention pattern, knowledge limit, emotional temperature, and what they avoid saying. If scripts remain interchangeable after persona labels are removed, rewrite them.
 - Keep image and voice complementary. Let the image carry visible facts and actions; let voice add motive, uncertainty, off-camera context, or reaction. Delete voice-over that merely narrates the frame.
 - Do not force every short-video script to end with a takeaway or audience question. A concrete action, quote, unfinished reaction, or visual beat can end the script. Keep a question only when this speaker would plausibly ask it and the preceding scene creates a specific answer space.
+- Do not invent "human texture." Every added quote, action, object, location, number, reaction, or relationship detail must already appear in the source material or an approved fact sheet. If the source does not support a scene-specific replacement, delete the generic conclusion, narrow the claim, or mark the missing source; never fabricate a vivid ending to make the script feel real.
 - When the source is thin, say that stronger human texture requires more source material instead of inventing details.
 
 ## Voice Matching
@@ -152,5 +153,6 @@ Before answering, check whether the output still contains:
 - result-as-action phrases such as 实现心智占位、完成用户教育、实现转化闭环, when the sentence does not say what someone will actually do
 - claims that cannot answer "怎么做、谁来做、做完看到什么变化"
 - for character/UGC scripts: first-person lines that summarize the writer's lesson instead of the character's live experience; different personas that still share the same syntax, values, and endings; voice-over that duplicates the image; forced comment questions; or conclusions that can be deleted without losing the scene
+- for character/UGC rewrites: new dialogue, behavior, props, locations, numbers, product reactions, or emotional details that cannot be traced to the supplied script, shot list, persona card, or fact sheet
 
 Continue revising until no high-severity item remains. For long documents, do not claim completion while any inventoried surface is unreviewed; report unreadable or intentionally excluded surfaces explicitly.
