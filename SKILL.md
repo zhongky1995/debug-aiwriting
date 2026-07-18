@@ -1,6 +1,6 @@
 ---
 name: debug-aiwriting
-description: Diagnose, rewrite, generate, and audit Chinese writing when the user explicitly asks to 去AI味, 消除AI味, 调整口径, 改口径, 去掉白皮书腔/套话/假大空, fix unnatural Chinese or verb-object pairs, match a personal/brand/reference style, protect internal/external wording boundaries, or screen creative directions for generic AI-like ideas. Supports short copy and large multi-page articles, whitepapers, case studies, reports, emails, scripts, client proposals, strategy decks, integrated marketing plans, KOC/KOS/UGC plans, social content, and internal SOPs while preserving facts, rewrite scope, scene register, and full-document coverage.
+description: Diagnose, rewrite, generate, and audit Chinese writing when the user explicitly asks to 去AI味, 消除AI味, 调整口径, 改口径, 去掉白皮书腔/套话/假大空, fix unnatural Chinese or verb-object pairs, reduce identical AI-sounding persona voices or conclusion-heavy first-person narration, match a personal/brand/reference style, protect internal/external wording boundaries, or screen creative directions for generic AI-like ideas. Supports short copy and large multi-page articles, whitepapers, case studies, reports, emails, speeches, character scripts, short-video/UGC/KOC/KOS voice-over scripts, client proposals, strategy decks, integrated marketing plans, social content, and internal SOPs while preserving facts, rewrite scope, scene register, persona differences, and full-document coverage.
 ---
 
 # Debug AI Writing
@@ -29,6 +29,7 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
    - Treat bare requests such as "优化口径/调整表达/去 AI 味" as L2. Do not enter L3 or L4 unless the user asks for restructuring, supplementation, or a new version.
 3. Classify the scene before writing: reader, relationship, channel, stakes, desired action, and artifact function. If not specified, infer from the user's wording and the text itself.
 4. Classify the genre and register: article, analysis/report, executive update, whitepaper/case, client-facing proposal/deck, sales material, social post, email, speech/script, product copy, internal comms/SOP, or translation.
+   - For character, UGC, KOC, KOS, short-video, vlog, spoken-word, or TTS scripts, classify the speaker before rewriting: what they know, what they want, what just happened, what they would actually say aloud, and what should be left to the image.
 5. For external-facing materials, anchor the reader and run the internal/external wording boundary check before final output.
 6. If a reference artifact is provided, classify the requested reference dimension first: logic, structure, register, rhythm, wording, visual organization, or a combination. Extract a style contract only for those dimensions. Do not equate "remove AI tone" with "make it more colloquial."
 7. Choose the scene register before running the plain-language gate. Judge every important sentence on two separate axes: meaning concreteness and register fit. A sentence can be concrete but too casual, or professional but empty; fix the failing axis only.
@@ -36,6 +37,7 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 9. For client-facing proposals or decks, rebuild the decision chain only at L3 or L4: client question -> diagnosis -> strategy -> mechanism -> execution/proof -> boundary. At L1 or L2, diagnose weaknesses but preserve the existing decision chain unless a sentence cannot be repaired locally.
 10. For marketing strategy proposals, KOC/UGC/community plans, integrated marketing decks, launch plans, or public-to-private-domain growth plans, use the professional marketing register: strategic terms are allowed when they name a page role, mechanism, metric, or execution object.
 11. For large documents, make a page/section coverage ledger and edit by surface: document title, page titles, openings, tables, captions, footnotes, summary rows, and final notes. Use `scripts/audit_surfaces.py` on supported text sources to inventory surfaces and residual high-risk phrases. Do not stop after rewriting body paragraphs.
+    - For script banks, inventory every title, persona line, voice direction, full-script paragraph, shot table, voice-over cell, on-screen caption, and ending. Use `scripts/audit_ugc_scripts.py` for `.docx` script banks when possible; keep duplicate full-script and shot-table versions synchronized.
 12. Apply a two-pass edit:
    - **Substance pass**: remove empty claims, surface the real point, add specificity only from provided context.
    - **Language pass**: reduce template transitions, corporate abstractions, over-balanced phrasing, and identical sentence rhythm.
@@ -58,6 +60,7 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 - Read `references/whitepaper-case-register.md` for public whitepapers, case studies, case submissions, industry reports with case evidence, or materials intended for later editorial extraction.
 - Read `references/executive-report-register.md` for executive summaries, decision briefs, management updates, research conclusions, performance reviews, or data-led reports.
 - Read `references/internal-ops-register.md` for internal execution plans, SOPs, project memos, meeting follow-ups, ownership tables, and operational handoffs.
+- Read `references/ugc-persona-script-register.md` for character voice-over, short-video, UGC/KOC/KOS scripts, vlog narration, TTS copy, persona banks, or when the user says every persona sounds alike, the first-person voice is too conclusive, the ending always elevates the meaning, or the voice-over repeats the image.
 - Read `references/reference-style-calibration.md` whenever the user provides or points to a reference draft/PDF/page/style and asks to follow its expression, logic,口径, or professional feel.
 - Read `references/large-document-coverage.md` whenever rewriting more than one page/section, editing a deck-like document, replacing a Feishu/Docx document, or when the user says previous passes missed parts.
 - Read `references/correction-propagation.md` whenever the user rejects a phrase or says a previous pass did not clean the same type of problem thoroughly.
@@ -84,6 +87,10 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 - Treat unnatural verbs as more severe than abstract nouns. Verbs such as 接回、打通、沉淀、激活、撬动、承接、触达 create fake action when paired with objects they do not naturally take. Prefer the most natural verb for the scene; ordinary verbs are often better for execution copy, while precise professional verbs may remain in strategy or analytical writing.
 - Do not write desired results as if they were actions. "实现心智占位" or "完成用户教育" must become the repeated messages, channels, scenes, or page changes that a team can actually execute and observe.
 - Every important claim should answer: who does it, what they do, to whom or what, when, and what visible change follows. If it cannot be assigned, observed, or checked, rewrite it.
+- In character scripts, do not use first person as a universal conclusion machine. Prefer first person for actions, perceptions, partial judgments, hesitation, mistakes, and immediate reactions. Treat lines such as "我终于明白 / 对我来说 / 最重要的是 / 这才是 / 真正的 X 是" as high risk unless that exact speaker has earned the conclusion through the scene and would naturally say it aloud.
+- Do not define a persona only with identity and values. Give each recurring speaker a language system: sentence length, vocabulary, attention pattern, knowledge limit, emotional temperature, and what they avoid saying. If scripts remain interchangeable after persona labels are removed, rewrite them.
+- Keep image and voice complementary. Let the image carry visible facts and actions; let voice add motive, uncertainty, off-camera context, or reaction. Delete voice-over that merely narrates the frame.
+- Do not force every short-video script to end with a takeaway or audience question. A concrete action, quote, unfinished reaction, or visual beat can end the script. Keep a question only when this speaker would plausibly ask it and the preceding scene creates a specific answer space.
 - When the source is thin, say that stronger human texture requires more source material instead of inventing details.
 
 ## Voice Matching
@@ -144,5 +151,6 @@ Before answering, check whether the output still contains:
 - unnatural verb-object pairs such as 重新接回用户/链路、打通触点、沉淀用户、激活关系、撬动复购, when a simpler verb can name the real action
 - result-as-action phrases such as 实现心智占位、完成用户教育、实现转化闭环, when the sentence does not say what someone will actually do
 - claims that cannot answer "怎么做、谁来做、做完看到什么变化"
+- for character/UGC scripts: first-person lines that summarize the writer's lesson instead of the character's live experience; different personas that still share the same syntax, values, and endings; voice-over that duplicates the image; forced comment questions; or conclusions that can be deleted without losing the scene
 
 Continue revising until no high-severity item remains. For long documents, do not claim completion while any inventoried surface is unreviewed; report unreadable or intentionally excluded surfaces explicitly.
