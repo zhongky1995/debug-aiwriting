@@ -10,6 +10,10 @@ Choose the register before editing sentences. When a reference is present, first
 
 ## Pass 1: Rebuild Substance When Authorized
 
+For fiction or narrative nonfiction, do not reduce the story to one "real point" or make every detail serve an explicit thesis. Use the scene, POV, character, information, and whole-work gates in `fiction-narrative-register.md` and preserve productive ambiguity.
+
+For nonfiction:
+
 1. Extract the real point in one sentence.
 2. List the reader, occasion, and desired action.
 3. Keep source facts fixed. Mark missing facts instead of filling them in.
@@ -60,6 +64,14 @@ Choose the register before editing sentences.
 - Start close to the user's lived scene or contradiction.
 - Keep rhythm varied; not every line needs to be a punchline.
 - Avoid fake intimacy, fake confession, and excessive emoji unless the platform style requires it.
+
+### Fiction / Narrative Nonfiction
+
+- Read `fiction-narrative-register.md` before editing.
+- Lock POV, narrative distance, character knowledge, time handling, and genre promise.
+- Diagnose scene change, character choice, information release, dialogue action, world pressure, interiority, and ending before line-level cleanup.
+- Preserve plot beats and scene order at L1/L2. Report upstream L3/L4 problems instead of disguising them with cleaner prose.
+- Do not apply the business actor/action gate or a banned-word list mechanically to narration.
 
 ### Email / Internal Comms
 

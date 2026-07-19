@@ -72,10 +72,24 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 - The line passes a keyword scan but fails when read aloud without its title, persona label, and shot description.
 - A weak source is filled with invented texture or tidy conclusions instead of leaving the voice-over sparse.
 
+## Fiction / Narrative Traces
+
+- The narrator interprets the emotion, theme, or social meaning before the scene gives the reader evidence.
+- Characters explain backstory or truth more clearly than their knowledge, motive, safety, memory, or vocabulary allows.
+- Dialogue can be exchanged between characters because everyone is equally articulate, restrained, witty, or thematic.
+- Events arrive because the plot needs them; character choices, defenses, mistakes, and costs do not cause the next pressure.
+- A sympathetic first-person narrator observes every wrong but gains no benefit, makes no harmful compromise, and pays no cost.
+- Settings and objects are concrete but decorative: they do not affect action, visibility, timing, status, information, or relationship.
+- Every feeling is converted into the same gestures, silence, weather beat, or object touch after psychological verbs are removed.
+- Repeated objects or phrases are explained after the scene has already made their changed meaning clear.
+- Major information is delivered free by one fully articulate witness or withheld until the ending without fair earlier traces.
+- Chapters repeatedly close with a moral, epiphany, swallowed sentence, prop close-up, or polished one-liner.
+- The prose passes a blacklist but reads uniformly dry, clipped, solemn, or "crafted" because local rules erased emotional carry and cadence variation.
+
 ## Severity Guide
 
 - **Light**: a few template transitions or stiff phrases. Line edit is enough.
-- **Medium**: structure is generic but content is usable. Rebuild section order and rewrite openings/endings.
-- **Heavy**: claims are empty or unsupported. Ask for source material, examples, data, or a sharper stance before rewriting.
+- **Medium**: structure or scene logic is generic but the material is usable. Rebuild only within the authorized scope; otherwise diagnose the needed L3 move.
+- **Heavy**: claims are unsupported, or narrative quality depends on broken POV, missing character agency, unfair revelation, or absent scene causality. Ask for source material or authorization before inventing evidence, scenes, or character choices.
 
 If the user has already complained that AI味 was not cleaned up, treat unsupported professional filler as a **Heavy semantic risk**. Do not automatically delete scene-appropriate professional terms; test whether the surrounding page supplies a metric, role, mechanism, evidence, or execution object.
