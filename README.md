@@ -18,6 +18,7 @@
 - 邮件、社交内容、演讲和个人文章
 - 品牌口吻、个人口吻和参考稿风格对齐
 - 创意方向、活动主题和内容选题筛选
+- 小说、短篇和叙事非虚构的视角、人物、对白、描写与章尾调试
 - UGC/KOC/KOS、短视频口播和人物独白
 
 不同文体分别加载对应的参考规则，不互相挪用。
@@ -72,6 +73,7 @@
 | 管理汇报与研究结论 | 决策信息、数据口径、风险和建议 | `references/executive-report-register.md` |
 | 内部执行材料 | 责任、动作、时间、交付和异常处理 | `references/internal-ops-register.md` |
 | 参考稿对齐 | 参考维度、风格合同和事实隔离 | `references/reference-style-calibration.md` |
+| 小说与叙事非虚构 | 场景发动、视角边界、人物选择、信息释放和整体读感 | `references/fiction-narrative-register.md` |
 | 人物与短视频脚本 | 人物声音、口语、画面分工和叙事结尾 | `references/ugc-persona-script-register.md` |
 
 ## 使用示例
@@ -80,6 +82,12 @@
 
 ```text
 [$debug-aiwriting] 帮我优化这段表达，保留事实和专业程度，只处理语言问题。
+```
+
+小说诊断：
+
+```text
+[$debug-aiwriting] 帮我看这一章为什么还有 AI 味，区分语言问题和结构、人物、视角问题，不要未经允许改剧情。
 ```
 
 客户方案：
@@ -174,6 +182,7 @@ debug-aiwriting/
     ├── whitepaper-case-register.md
     ├── executive-report-register.md
     ├── internal-ops-register.md
+    ├── fiction-narrative-register.md
     ├── reference-style-calibration.md
     ├── large-document-coverage.md
     ├── external-facing-check.md
