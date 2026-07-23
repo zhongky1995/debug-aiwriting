@@ -1,6 +1,6 @@
 ---
 name: debug-aiwriting
-description: Diagnose, rewrite, generate, and audit Chinese writing when the user asks to 去AI味, 消除AI味, 调整口径, 改口径, 去白皮书腔/套话/假大空, fix unnatural Chinese or verb-object pairs, reduce identical persona voices or conclusion-heavy narration, match a personal/brand/reference style, protect internal/external wording boundaries, or screen generic creative ideas. Supports short copy; articles, novels and narrative nonfiction; whitepapers, cases and reports; emails and speeches; character/short-video/UGC/KOC/KOS scripts; client proposals, strategy decks, marketing plans, social content and internal SOPs. Preserve facts and evidence; for fiction also preserve point of view, character knowledge, plot causality and scene order unless structural rewriting is authorized.
+description: Diagnose, rewrite, generate, and audit Chinese writing when the user asks to 去AI味, 消除AI味, 调整口径, 改口径, 去白皮书腔/套话/假大空, fix unnatural Chinese or verb-object pairs, rebuild a client deck whose 逻辑不闭环/故事线弱/观点堆叠/页面可互换, reduce identical persona voices or conclusion-heavy narration, match a personal/brand/reference style, protect internal/external wording boundaries, or screen generic creative ideas. Supports short copy; articles, novels and narrative nonfiction; whitepapers, cases and reports; emails and speeches; character/short-video/UGC/KOC/KOS scripts; client proposals, strategy decks, marketing plans, social content and internal SOPs. Preserve facts and evidence; for fiction also preserve point of view, character knowledge, plot causality and scene order unless structural rewriting is authorized.
 ---
 
 # Debug AI Writing
@@ -37,15 +37,17 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 7. Choose the scene register before running the plain-language gate. Judge every important sentence on two separate axes: meaning concreteness and register fit. A sentence can be concrete but too casual, or professional but empty; fix the failing axis only.
 8. Load a personal voice profile only when the user asks for "my voice/my writing," provides samples, or the task explicitly calls for a known personal voice. Prefer `local/personal-voice-profile.md` when present. Otherwise build a temporary profile from the supplied samples; do not apply the bundled example as a default voice.
 9. For client-facing proposals or decks, rebuild the decision chain only at L3 or L4: client question -> diagnosis -> strategy -> mechanism -> execution/proof -> boundary. At L1 or L2, diagnose weaknesses but preserve the existing decision chain unless a sentence cannot be repaired locally.
+   - For a multi-page client deck at L3 or L4, read `references/client-deck-narrative-gate.md`. Create a narrative contract and causal page ledger before drafting page copy. Keep story, evidence, and visual-production status separate. Do not hand the deck to layout/build skills while the narrative gate is blocked.
 10. For marketing strategy proposals, KOC/UGC/community plans, integrated marketing decks, launch plans, or public-to-private-domain growth plans, use the professional marketing register: strategic terms are allowed when they name a page role, mechanism, metric, or execution object.
 11. For large documents, make a page/section coverage ledger and edit by surface: document title, page titles, openings, tables, captions, footnotes, summary rows, and final notes. Use `scripts/audit_surfaces.py` on supported text sources to inventory surfaces and residual high-risk phrases. Do not stop after rewriting body paragraphs.
     - For script banks, load `references/ugc-persona-script-register.md`, run source-integrity and duplicate preflight, calibrate anchor scripts with metadata hidden, and use `scripts/audit_ugc_scripts.py` when possible. Treat automated findings as diagnostic leads, not proof of natural speech.
-12. Apply a two-pass edit:
+12. Apply a three-pass edit:
    - **Substance/story pass**: for nonfiction, remove empty claims and surface the real point; for narrative, test scene change, character agency, POV, information boundaries, dialogue action, and earned consequences. Add specificity only from provided context.
    - **Language pass**: reduce template transitions, corporate abstractions, over-balanced phrasing, and identical sentence rhythm.
+   - **Surface-residue pass**: after meaning and register are stable, check significance inflation, vague attribution, tail-end pseudo-analysis, copula avoidance, synonym cycling, false scope, collaboration residue, and formatting traces. Treat them as diagnostic signals, not a universal blacklist.
 13. When the user flags a bad phrase, do not patch it locally and stop. Extract the general failure pattern, scan the entire current artifact and its live copy for analogous phrases, rewrite all matches, and treat the user's correction as a hard negative for the rest of the task.
 14. Run the gate for the chosen genre. Apply the concrete-language and verifiable-action gates to explanatory claims, not mechanically to headings, labels, or narrative prose. For fiction, use the scene/POV/dialogue/interiority/whole-work gates in `references/fiction-narrative-register.md`.
-15. Stop only when there are no unresolved high-severity language problems, all inventoried surfaces have been reviewed or explicitly excluded, facts and numbers still match the source, and the output remains in the intended register.
+15. Stop only when there are no unresolved high-severity language problems, all inventoried surfaces have been reviewed or explicitly excluded, facts and numbers still match the source, and the output remains in the intended register. For multi-page client decks at L3 or L4, also require narrative, evidence, and external-boundary gates to pass; mechanical export or visual polish alone is not completion. A writer's own `PASS` label is not evidence: run the adversarial merge/delete challenge in `references/client-deck-narrative-gate.md`, verify that result, process, implemented-system, and business-effect claims are not being promoted across evidence levels, and downgrade ambiguous results to `NEEDS_WORK` until independently reviewed or concretely defended.
 16. Output in the user's requested format. If no format is specified:
    - For 口径修改, polishing, rewriting, or clean copy requests, provide the single best final version first. Do not expose brainstorming, scoring, or elimination steps unless useful for review.
    - For short text, provide the rewritten version first, then 1-3 concise notes only if they clarify a non-obvious choice.
@@ -56,8 +58,10 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 ## Resource Use
 
 - Read `references/ai-trace-checklist.md` when diagnosing a draft or doing final self-audit.
+- Read `references/surface-trace-catalog.md` after the substantive rewrite for nonfiction, proposals, reports, public copy, emails, and social writing that still feels generated despite concrete wording. Use it only as the final surface pass; genre and evidence rules take priority.
 - Read `references/rewrite-playbook.md` when rewriting long text, matching a voice, or generating content from scratch.
 - Read `references/client-proposal-playbook.md` when polishing or generating client-facing proposals, strategy decks, integrated marketing plans, CRM/private-domain/KOC/community/content-growth plans, or sales materials that must convince a client.
+- Read `references/client-deck-narrative-gate.md` whenever a client-facing deck has weak story logic, piled-up viewpoints, delayed proof, interchangeable pages, or a prior visual pass that did not improve persuasion.
 - Read `references/marketing-strategy-register.md` when the task involves marketing strategy decks, integrated marketing plans, launch plans, KOC/KOS/UGC/community operations, public-to-private-domain growth, search/content planning, or when the user says the output should sound like professional marketing planning rather than a plain execution memo.
 - Read `references/whitepaper-case-register.md` for public whitepapers, case studies, case submissions, industry reports with case evidence, or materials intended for later editorial extraction.
 - Read `references/executive-report-register.md` for executive summaries, decision briefs, management updates, research conclusions, performance reviews, or data-led reports.
@@ -75,11 +79,13 @@ Default behavior: fit the scene first. Apply a personal or brand voice only when
 ## Editing Rules
 
 - Keep the original facts, names, numbers, claims, and logical direction unless the user asks for substantive rewriting.
+- Never invent dates, quantities, product features, research samples, quotations, reactions, anecdotes, or personal experience to make an abstract sentence sound specific. Narrow, qualify, or delete the claim when the source cannot support a concrete replacement.
 - Replace vague evaluations with concrete consequences, scenarios, constraints, or examples already present in the source material.
 - Prefer active verbs and clear actors over abstract nouns when the sentence describes an action or causal claim. Do not force every professional heading or table label into conversational full sentences.
 - Vary paragraph openings and sentence length; do not force symmetrical "first/second/finally" structures.
 - Avoid overusing rhetorical pairs such as "不是...而是...", "既...又...", "不仅...更...", "一方面...另一方面..." unless the contrast is truly needed.
 - Do not flatten all writing into casual internet tone. Business reports can remain professional; the goal is to remove hollow polish, not professionalism.
+- Do not inject first person, humor, slang, digressions, deliberate messiness, or emotional ambivalence merely to make text feel human. Voice must come from the requested scene, supplied samples, and the writer's actual stance.
 - Do not remove useful professional strategy language merely because it is abstract. Terms such as 目标拆解、策略总图、全域联动、节点样板、搜索占位、角色协同, or 内容矩阵 can stay when they define a real planning object and are supported by numbers, roles, stages, or execution proof.
 - For proposals, keep every claim at the proof level available in the source: fact, inference, hypothesis, or suggested next step. Do not turn a weak reference into a guaranteed result.
 - For external-facing materials, translate internal-only language into reader-facing language or delete it. Never expose internal codenames, internal KPIs, private names, unpublished data, or internal complaints unless the user explicitly approves disclosure.
@@ -147,6 +153,7 @@ Before answering, check whether the output still contains:
 - when a reference style was requested: wording that is cleaner but no longer matches the reference's register, page rhythm, or professional vocabulary
 - when editing a long document: untouched titles, table cells, captions, notes, or repeated blocks that still use the old口径
 - for proposals: a service list without a client decision question, a mechanism without execution proof, or a case reference that does not say what it proves
+- for multi-page client decks: no single reader question, no mother claim, proof appearing too late, more than two consecutive theory pages, pages that can be swapped or removed without changing the argument, a case used only to decorate a prior claim, or a closing page that merely repeats terminology
 - for external-facing materials: internal codenames, internal metrics, internal names, unpublished numbers, private complaints, or statements the reader cannot understand
 - for creative ideas: concepts that still work unchanged for a competitor, directions not tied to a product fact or user scene, or names that sound good but do not make the user do/see/get anything
 - professional-sounding filler such as 用户承接、内容整合、复购节点、服务角色、方法论沉淀、可迁移价值, unless the sentence says who does what to whom, when, and what changes
@@ -157,5 +164,6 @@ Before answering, check whether the output still contains:
 - claims that cannot answer "怎么做、谁来做、做完看到什么变化"
 - for fiction/narrative: plot moved by author convenience rather than character choice; POV or knowledge leakage; explanatory dialogue; interchangeable voices; decorative world detail; moralized psychology; an over-innocent narrator protected from consequential choices; or mechanical action/object endings introduced by over-cleaning
 - for character/UGC scripts only: interchangeable persona voices, hidden moral conclusions, image/voice duplication, forced narration, invented details, or a routine final action added after the real narrative endpoint
+- for nonfiction and public-facing copy: inflated historical or industry significance, unnamed authority, sentence tails that add unsupported meaning, avoidance of simple `是/有/包括`, terminology drift caused by synonym cycling, false `从 A 到 B` ranges, assistant-chat residue, or formatting used as a substitute for hierarchy
 
 Continue revising until no high-severity item remains. For long documents, do not claim completion while any inventoried surface is unreviewed; report unreadable or intentionally excluded surfaces explicitly.

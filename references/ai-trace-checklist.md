@@ -5,9 +5,12 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 ## Structural Traces
 
 - Opens with a broad definition, era claim, or universal statement before saying anything concrete.
+- Inflates a local fact into an industry shift, historical turning point, era symbol, broader trend, or lasting legacy without evidence.
 - Uses a predictable "提出问题 -> 分析原因 -> 给出建议 -> 总结升华" structure for every topic.
+- Adds a formulaic "挑战与未来展望" section that names generic difficulties and ends in generic optimism.
 - Relies on "首先、其次、最后、综上所述、总的来说、值得注意的是" as visible scaffolding.
 - Headings are too symmetrical: "不只是 X，更是 Y", "从 A 到 B", "重新定义 X".
+- Uses "从 A 到 B" when A and B do not form a real scale, sequence, time range, or category boundary.
 - Every section ends with a mini-summary or slogan-like takeaway.
 - The ending merely repeats the thesis with grander words.
 
@@ -21,6 +24,9 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 - The verb itself is unnatural: 接回、接住、打通、沉淀、激活、撬动、承接、触达 are paired with objects they would not naturally take in spoken or clear written Chinese.
 - Results are written as actions: 实现心智占位、完成用户教育、形成转化闭环, without saying what a team or user actually does.
 - The subject is missing: the sentence says "实现、完成、形成、释放", but no person, team, user, page, channel, or material performs the action.
+- A factual sentence is followed by a pseudo-analytical tail such as "从而确保、进而推动、进一步彰显、这也体现了", but the added consequence is unsupported or merely restates importance.
+- Simple `是、有、包括、位于、可以` constructions are replaced by inflated forms such as "作为……的载体、充当……的重要空间、拥有……的能力".
+- The same actor or object is renamed repeatedly to avoid lexical repetition, causing terms such as 项目/计划/方案/机制 or 用户/客群/受众 to drift.
 - Sentences are correct but consequence-free: they sound plausible without naming who does what, when, where, or under what constraint.
 - Phrases hedge too much: 在一定程度上、可以说、某种意义上、相对而言、不可忽视.
 - Phrases overclaim too much: 无疑、显著、深刻、全面、极大、革命性、前所未有.
@@ -30,6 +36,8 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 ## Evidence Traces
 
 - Gives recommendations without tradeoffs, prerequisites, or failure cases.
+- Borrows unnamed authority through "行业报告显示、有研究表明、专家认为、业内人士指出、相关数据显示" without a source, date, sample, or evidence class.
+- Lists media names, awards, follower counts, or institutional prestige without saying what was reported, measured, or argued.
 - Mentions "用户、品牌、企业、团队、市场" without narrowing the actor.
 - Uses examples that are categories rather than examples: "比如在营销、运营、管理等场景".
 - Turns weak material into confident conclusions.
@@ -53,6 +61,15 @@ Use this checklist to diagnose Chinese text that feels generated, over-polished,
 - Every paragraph begins with a connective phrase.
 - The draft is too smooth: no emphasis, no friction, no local judgment.
 - Bullets are parallel but interchangeable.
+- The prose states a fact, explains its meaning, and then restates that meaning as a takeaway even though one layer would be enough.
+
+## Presentation And Output Residue
+
+- Assistant-chat language remains inside the artifact: "当然可以、希望这对你有帮助、如果你需要我可以、请告诉我是否需要调整".
+- Model disclaimers remain inside the artifact instead of naming the missing source, date, field, or assumption.
+- Every list item begins with a bold mini-heading and colon even when the hierarchy adds no information.
+- Emoji, em dashes, quotation marks, or standalone slogans are repeated as decorative structure.
+- Cleanup removes obvious templates but leaves uniformly neutral, dry writing with no scene-appropriate emphasis, stance, uncertainty, or rhythm.
 
 ## Chinese-Specific Traces
 

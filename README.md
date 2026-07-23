@@ -42,6 +42,9 @@
 - 动词和宾语不自然，如“重新接回链路”“场景释放价值”
 - 把结果伪装成动作，如“实现心智占位”“完成用户教育”
 - 主体缺失，不知道谁在什么时间做什么
+- 句子说完事实后，又用“从而确保、进一步彰显、这也体现了”硬加一层意义
+- “行业报告显示、专家认为”等没有明确来源的权威借用
+- 回避简单的“是、有、包括”，以及为避免重复而造成的同义词漂移
 - 结论强于事实，把推测写成已验证结果
 - 句式过度工整，段落、标题和结尾都使用同一模板
 - 删除显眼套话后，又换成更隐蔽的精致空话
@@ -73,6 +76,7 @@
 | 管理汇报与研究结论 | 决策信息、数据口径、风险和建议 | `references/executive-report-register.md` |
 | 内部执行材料 | 责任、动作、时间、交付和异常处理 | `references/internal-ops-register.md` |
 | 参考稿对齐 | 参考维度、风格合同和事实隔离 | `references/reference-style-calibration.md` |
+| 表层痕迹复核 | 句尾伪分析、模糊归因、虚假范围、聊天与格式残留 | `references/surface-trace-catalog.md` |
 | 小说与叙事非虚构 | 场景发动、视角边界、人物选择、信息释放和整体读感 | `references/fiction-narrative-register.md` |
 | 人物与短视频脚本 | 人物声音、口语、画面分工和叙事结尾 | `references/ugc-persona-script-register.md` |
 
@@ -130,7 +134,7 @@
 python3 scripts/audit_surfaces.py <文件路径> --output <清单.json>
 ```
 
-用于盘点标题、表格、图注、总结行和高风险表达。用户明确否定某个词或短语时，可通过 `--term` 加入本轮扫描。
+用于盘点标题、表格、图注、总结行和高风险表达，包括抽象假动作、模糊归因、句尾伪分析、聊天残留和部分格式痕迹。用户明确否定某个词或短语时，可通过 `--term` 加入本轮扫描。
 
 ### DOCX 人物脚本库
 
@@ -173,21 +177,28 @@ debug-aiwriting/
 ├── agents/openai.yaml
 ├── scripts/
 │   ├── audit_surfaces.py
+│   ├── test_audit_surfaces.py
 │   ├── audit_ugc_scripts.py
 │   └── test_audit_ugc_scripts.py
 └── references/
     ├── rewrite-playbook.md
     ├── client-proposal-playbook.md
+    ├── client-deck-narrative-gate.md
     ├── marketing-strategy-register.md
     ├── whitepaper-case-register.md
     ├── executive-report-register.md
     ├── internal-ops-register.md
     ├── fiction-narrative-register.md
     ├── reference-style-calibration.md
+    ├── surface-trace-catalog.md
     ├── large-document-coverage.md
     ├── external-facing-check.md
     └── ugc-persona-script-register.md
 ```
+
+## 参考与致谢
+
+表层痕迹目录参考了 [op7418/humanizer-zh](https://github.com/op7418/humanizer-zh)、[blader/humanizer](https://github.com/blader/humanizer) 和 [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 的问题分类，并按中文场景重新整理。`debug-aiwriting` 不采用“默认增加第一人称、幽默、混乱感”的做法，也不会为了具体而补写原稿没有的事实。
 
 ## License
 

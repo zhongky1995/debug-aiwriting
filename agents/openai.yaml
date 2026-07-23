@@ -1,7 +1,7 @@
 interface:
   display_name: "Debug AI Writing"
-  short_description: "按场景、文体、叙事规则和整篇覆盖系统调试中文写作质量"
-  default_prompt: "Use $debug-aiwriting to diagnose and rewrite this Chinese draft in its actual genre, preserving facts and scope; for narrative work also preserve POV, character knowledge, causality, and earned interiority, then verify voice, evidence, endings, and full-artifact coverage."
+  short_description: "调试中文表达、客户材料故事线、证据关系与整篇覆盖"
+  default_prompt: "Use $debug-aiwriting to diagnose and rewrite this Chinese artifact in its actual genre, preserving facts and evidence; pass any required narrative and evidence gates first, then check language, surface AI traces, external boundaries, and full-artifact coverage without inventing specificity or forcing a universal personal voice."
 
 policy:
   allow_implicit_invocation: true

@@ -59,6 +59,90 @@ RISK_PATTERNS = {
         "我们不难发现",
         "这背后其实是",
     ],
+    "inflated_significance": [
+        "标志着重要转变",
+        "成为时代缩影",
+        "彰显其深远意义",
+        "反映更广泛趋势",
+        "奠定坚实基础",
+        "不可磨灭的印记",
+        "不断演变的格局",
+    ],
+    "vague_attribution": [
+        "行业报告显示",
+        "有研究表明",
+        "专家认为",
+        "业内人士指出",
+        "观察者指出",
+        "相关数据显示",
+        "多项研究显示",
+    ],
+    "tail_pseudo_analysis": [
+        "从而确保",
+        "进而推动",
+        "进一步彰显",
+        "这也体现了",
+        "这也意味着",
+        "有效促进",
+    ],
+    "generic_outlook": [
+        "挑战与未来展望",
+        "未来依然可期",
+        "这只是一个开始",
+        "迈出了坚实一步",
+        "释放更大价值",
+    ],
+    "collaboration_residue": [
+        "当然可以",
+        "希望这对你有帮助",
+        "希望这对您有帮助",
+        "如果你需要，我还可以",
+        "如果您需要，我还可以",
+        "请告诉我是否需要调整",
+        "你说得完全正确",
+        "您说得完全正确",
+    ],
+    "model_disclaimer": [
+        "根据我最后的训练数据",
+        "截至我的知识更新时间",
+        "基于现有有限信息",
+    ],
+}
+
+RISK_REGEX_PATTERNS = {
+    "copula_avoidance": [
+        (
+            re.compile(
+                r"(?:作为|充当)[^，。；！？\n]{0,20}"
+                r"(?:载体|空间|平台|抓手|证明|体现|象征)"
+            ),
+            "作为/充当……载体、空间、平台或证明",
+        ),
+        (
+            re.compile(r"拥有[^，。；！？\n]{0,16}(?:能力|可能性)"),
+            "拥有……能力/可能性",
+        ),
+    ],
+    "formatting_trace": [
+        (
+            re.compile(r"^(?:[-*+]\s+)?\*\*[^*]{1,24}[：:]\*\*"),
+            "粗体小标题加冒号",
+        ),
+        (
+            re.compile(r"(?:—[^—\n]*){2,}"),
+            "单个文本面内重复使用破折号",
+        ),
+        (
+            re.compile(r"[🚀✅💡🔥🎯📌📍✨🌟⚡]"),
+            "装饰性表情符号",
+        ),
+    ],
+}
+
+TERM_DRIFT_GROUPS = {
+    "项目称谓": ["项目", "计划", "方案", "机制", "体系"],
+    "用户称谓": ["用户", "消费者", "客群", "人群", "受众"],
+    "组织称谓": ["公司", "企业", "品牌", "组织"],
 }
 
 
@@ -216,6 +300,30 @@ def find_hits(surfaces: Iterable[Surface], custom_terms: list[str]) -> list[dict
                             "text": surface.text,
                         }
                     )
+        for category, regex_patterns in RISK_REGEX_PATTERNS.items():
+            for regex, label in regex_patterns:
+                if regex.search(surface.text):
+                    hits.append(
+                        {
+                            "category": category,
+                            "pattern": label,
+                            "surface_kind": surface.kind,
+                            "location": surface.location,
+                            "text": surface.text,
+                        }
+                    )
+        for group_name, terms in TERM_DRIFT_GROUPS.items():
+            matched_terms = [term for term in terms if term in surface.text]
+            if len(matched_terms) >= 3:
+                hits.append(
+                    {
+                        "category": "term_drift_review",
+                        "pattern": f"{group_name}: {'/'.join(matched_terms)}",
+                        "surface_kind": surface.kind,
+                        "location": surface.location,
+                        "text": surface.text,
+                    }
+                )
     return hits
 
 
