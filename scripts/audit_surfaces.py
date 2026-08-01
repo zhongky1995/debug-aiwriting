@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Inventory text surfaces and flag residual high-risk Chinese writing patterns.
+"""Inventory document surfaces and flag residual Chinese writing risks.
 
-This is a coverage backstop for Markdown, plain text, XML, and HTML sources. It
-does not decide whether a phrase is wrong in context; the writing agent must
-still apply the selected scene register and evidence rules.
+Supports Markdown, plain text, XML/HTML, DOCX, and PPTX. Findings are a coverage
+backstop, not proof that wording is wrong in its scene or genre.
 """
 
 from __future__ import annotations
@@ -12,138 +11,18 @@ import argparse
 import json
 import re
 import sys
+import zipfile
 from collections import Counter
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Iterable
+from xml.etree import ElementTree
 
 
-RISK_PATTERNS = {
-    "abstract_action": [
-        "赋能增长",
-        "激活心智",
-        "撬动势能",
-        "沉淀资产",
-        "释放价值",
-        "构建闭环",
-        "完成转化前置",
-        "实现心智占位",
-        "完成用户教育",
-        "实现转化闭环",
-    ],
-    "unnatural_collocation": [
-        "重新接回",
-        "接住用户关系",
-        "接住经营动作",
-        "内容完成用户教育",
-        "场景释放产品价值",
-        "打通触点",
-        "打通复购",
-        "沉淀用户",
-        "沉淀方法论",
-        "激活关系",
-        "撬动复购",
-        "拉动心智",
-        "进入沟通节奏",
-        "沉淀回访名单",
-        "搭建内容承接",
-    ],
-    "template_scaffold": [
-        "首先，",
-        "其次，",
-        "最后，",
-        "综上所述",
-        "总的来说",
-        "值得注意的是",
-        "我们不难发现",
-        "这背后其实是",
-    ],
-    "inflated_significance": [
-        "标志着重要转变",
-        "成为时代缩影",
-        "彰显其深远意义",
-        "反映更广泛趋势",
-        "奠定坚实基础",
-        "不可磨灭的印记",
-        "不断演变的格局",
-    ],
-    "vague_attribution": [
-        "行业报告显示",
-        "有研究表明",
-        "专家认为",
-        "业内人士指出",
-        "观察者指出",
-        "相关数据显示",
-        "多项研究显示",
-    ],
-    "tail_pseudo_analysis": [
-        "从而确保",
-        "进而推动",
-        "进一步彰显",
-        "这也体现了",
-        "这也意味着",
-        "有效促进",
-    ],
-    "generic_outlook": [
-        "挑战与未来展望",
-        "未来依然可期",
-        "这只是一个开始",
-        "迈出了坚实一步",
-        "释放更大价值",
-    ],
-    "collaboration_residue": [
-        "当然可以",
-        "希望这对你有帮助",
-        "希望这对您有帮助",
-        "如果你需要，我还可以",
-        "如果您需要，我还可以",
-        "请告诉我是否需要调整",
-        "你说得完全正确",
-        "您说得完全正确",
-    ],
-    "model_disclaimer": [
-        "根据我最后的训练数据",
-        "截至我的知识更新时间",
-        "基于现有有限信息",
-    ],
-}
-
-RISK_REGEX_PATTERNS = {
-    "copula_avoidance": [
-        (
-            re.compile(
-                r"(?:作为|充当)[^，。；！？\n]{0,20}"
-                r"(?:载体|空间|平台|抓手|证明|体现|象征)"
-            ),
-            "作为/充当……载体、空间、平台或证明",
-        ),
-        (
-            re.compile(r"拥有[^，。；！？\n]{0,16}(?:能力|可能性)"),
-            "拥有……能力/可能性",
-        ),
-    ],
-    "formatting_trace": [
-        (
-            re.compile(r"^(?:[-*+]\s+)?\*\*[^*]{1,24}[：:]\*\*"),
-            "粗体小标题加冒号",
-        ),
-        (
-            re.compile(r"(?:—[^—\n]*){2,}"),
-            "单个文本面内重复使用破折号",
-        ),
-        (
-            re.compile(r"[🚀✅💡🔥🎯📌📍✨🌟⚡]"),
-            "装饰性表情符号",
-        ),
-    ],
-}
-
-TERM_DRIFT_GROUPS = {
-    "项目称谓": ["项目", "计划", "方案", "机制", "体系"],
-    "用户称谓": ["用户", "消费者", "客群", "人群", "受众"],
-    "组织称谓": ["公司", "企业", "品牌", "组织"],
-}
+DEFAULT_PATTERN_FILE = (
+    Path(__file__).resolve().parents[1] / "references" / "trace-patterns.json"
+)
 
 
 @dataclass(frozen=True)
@@ -267,6 +146,244 @@ def parse_plain(text: str) -> list[Surface]:
     ]
 
 
+def local_name(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1]
+
+
+def element_text(element: ElementTree.Element) -> str:
+    parts: list[str] = []
+    for item in element.iter():
+        name = local_name(item.tag)
+        if name == "t" and item.text:
+            parts.append(item.text)
+        elif name == "tab":
+            parts.append("\t")
+        elif name in {"br", "cr"}:
+            parts.append("\n")
+    return normalize_space("".join(parts))
+
+
+def parent_map(root: ElementTree.Element) -> dict[ElementTree.Element, ElementTree.Element]:
+    return {child: parent for parent in root.iter() for child in parent}
+
+
+def has_ancestor(
+    element: ElementTree.Element,
+    parents: dict[ElementTree.Element, ElementTree.Element],
+    names: set[str],
+) -> bool:
+    current = parents.get(element)
+    while current is not None:
+        if local_name(current.tag) in names:
+            return True
+        current = parents.get(current)
+    return False
+
+
+def first_descendant(
+    element: ElementTree.Element, name: str
+) -> ElementTree.Element | None:
+    return next((item for item in element.iter() if local_name(item.tag) == name), None)
+
+
+def attr_by_local_name(element: ElementTree.Element, name: str) -> str | None:
+    for key, value in element.attrib.items():
+        if local_name(key) == name:
+            return value
+    return None
+
+
+def natural_part_key(name: str) -> tuple[object, ...]:
+    return tuple(int(part) if part.isdigit() else part for part in re.split(r"(\d+)", name))
+
+
+def read_xml_part(archive: zipfile.ZipFile, name: str) -> ElementTree.Element:
+    try:
+        return ElementTree.fromstring(archive.read(name))
+    except (KeyError, ElementTree.ParseError) as error:
+        raise ValueError(f"Cannot parse OOXML part {name}: {error}") from error
+
+
+def word_paragraph_kind(
+    paragraph: ElementTree.Element,
+    parents: dict[ElementTree.Element, ElementTree.Element],
+    part_name: str,
+) -> str:
+    if has_ancestor(paragraph, parents, {"tc"}):
+        return "table_cell"
+    if "footnote" in part_name or "endnote" in part_name:
+        return "footnote"
+    if "comment" in part_name:
+        return "comment"
+    if "header" in part_name:
+        return "header"
+    if "footer" in part_name:
+        return "footer"
+
+    properties = first_descendant(paragraph, "pPr")
+    style = first_descendant(properties, "pStyle") if properties is not None else None
+    style_value = attr_by_local_name(style, "val") if style is not None else None
+    normalized_style = (style_value or "").lower()
+    if normalized_style.startswith("heading") or normalized_style.startswith("标题"):
+        return "heading"
+    if normalized_style in {"caption", "题注"}:
+        return "caption"
+    return "body"
+
+
+def parse_docx(path: Path) -> list[Surface]:
+    surfaces: list[Surface] = []
+    try:
+        archive = zipfile.ZipFile(path)
+    except zipfile.BadZipFile as error:
+        raise ValueError(f"Invalid DOCX archive: {path}") from error
+
+    with archive:
+        part_names = [
+            name
+            for name in archive.namelist()
+            if re.fullmatch(
+                r"word/(?:document|header\d+|footer\d+|footnotes|endnotes|comments)\.xml",
+                name,
+            )
+        ]
+        if "word/document.xml" not in part_names:
+            raise ValueError(f"DOCX is missing word/document.xml: {path}")
+
+        for part_name in sorted(part_names, key=natural_part_key):
+            root = read_xml_part(archive, part_name)
+            parents = parent_map(root)
+            paragraph_index = 0
+            for element in root.iter():
+                if local_name(element.tag) != "p":
+                    continue
+                text = element_text(element)
+                if not text:
+                    continue
+                paragraph_index += 1
+                surfaces.append(
+                    Surface(
+                        word_paragraph_kind(element, parents, part_name),
+                        f"{part_name}:p:{paragraph_index}",
+                        text,
+                    )
+                )
+
+            alt_index = 0
+            for element in root.iter():
+                if local_name(element.tag) not in {"docPr", "cNvPr"}:
+                    continue
+                alt = element.attrib.get("descr") or element.attrib.get("title")
+                if alt and normalize_space(alt):
+                    alt_index += 1
+                    surfaces.append(
+                        Surface(
+                            "caption",
+                            f"{part_name}:alt:{alt_index}",
+                            normalize_space(alt),
+                        )
+                    )
+    return surfaces
+
+
+def presentation_paragraph_kind(
+    paragraph: ElementTree.Element,
+    parents: dict[ElementTree.Element, ElementTree.Element],
+    part_name: str,
+) -> str:
+    if has_ancestor(paragraph, parents, {"tc"}):
+        return "table_cell"
+    if "/notesSlides/" in part_name:
+        return "note"
+
+    current = parents.get(paragraph)
+    while current is not None:
+        if local_name(current.tag) in {"sp", "graphicFrame"}:
+            placeholder = first_descendant(current, "ph")
+            placeholder_type = (
+                attr_by_local_name(placeholder, "type") if placeholder is not None else None
+            )
+            if placeholder_type in {"title", "ctrTitle"}:
+                return "heading"
+            break
+        current = parents.get(current)
+    return "body"
+
+
+def parse_pptx(path: Path) -> list[Surface]:
+    surfaces: list[Surface] = []
+    try:
+        archive = zipfile.ZipFile(path)
+    except zipfile.BadZipFile as error:
+        raise ValueError(f"Invalid PPTX archive: {path}") from error
+
+    with archive:
+        slide_parts = [
+            name
+            for name in archive.namelist()
+            if re.fullmatch(r"ppt/(?:slides/slide\d+|notesSlides/notesSlide\d+)\.xml", name)
+        ]
+        if not any(name.startswith("ppt/slides/") for name in slide_parts):
+            raise ValueError(f"PPTX has no slide XML: {path}")
+
+        for part_name in sorted(slide_parts, key=natural_part_key):
+            root = read_xml_part(archive, part_name)
+            parents = parent_map(root)
+            paragraph_index = 0
+            for element in root.iter():
+                if local_name(element.tag) != "p":
+                    continue
+                text = element_text(element)
+                if not text:
+                    continue
+                paragraph_index += 1
+                surfaces.append(
+                    Surface(
+                        presentation_paragraph_kind(element, parents, part_name),
+                        f"{part_name}:p:{paragraph_index}",
+                        text,
+                    )
+                )
+
+            alt_index = 0
+            for element in root.iter():
+                if local_name(element.tag) != "cNvPr":
+                    continue
+                alt = element.attrib.get("descr") or element.attrib.get("title")
+                if alt and normalize_space(alt):
+                    alt_index += 1
+                    surfaces.append(
+                        Surface(
+                            "caption",
+                            f"{part_name}:alt:{alt_index}",
+                            normalize_space(alt),
+                        )
+                    )
+
+        chart_parts = sorted(
+            (
+                name
+                for name in archive.namelist()
+                if re.fullmatch(r"ppt/charts/chart\d+\.xml", name)
+            ),
+            key=natural_part_key,
+        )
+        for part_name in chart_parts:
+            root = read_xml_part(archive, part_name)
+            value_index = 0
+            for element in root.iter():
+                if local_name(element.tag) not in {"t", "v"} or not element.text:
+                    continue
+                text = normalize_space(element.text)
+                if not text:
+                    continue
+                value_index += 1
+                surfaces.append(
+                    Surface("chart_text", f"{part_name}:value:{value_index}", text)
+                )
+    return surfaces
+
+
 def extract_surfaces(path: Path, text: str) -> list[Surface]:
     suffix = path.suffix.lower()
     if suffix in {".md", ".markdown"}:
@@ -276,48 +393,89 @@ def extract_surfaces(path: Path, text: str) -> list[Surface]:
     return parse_plain(text)
 
 
+def extract_path_surfaces(path: Path) -> list[Surface]:
+    suffix = path.suffix.lower()
+    if suffix == ".docx":
+        return parse_docx(path)
+    if suffix == ".pptx":
+        return parse_pptx(path)
+    text = path.read_text(encoding="utf-8", errors="replace")
+    return extract_surfaces(path, text)
+
+
 def normalized_duplicate_key(text: str) -> str:
     text = re.sub(r"[\s，。；：、,.!?！？:;()（）\[\]【】\"'“”‘’]+", "", text)
     return text.lower()
 
 
-def find_hits(surfaces: Iterable[Surface], custom_terms: list[str]) -> list[dict[str, str]]:
-    patterns = {**RISK_PATTERNS}
-    if custom_terms:
-        patterns["user_hard_negative"] = custom_terms
+def load_pattern_catalog(path: Path = DEFAULT_PATTERN_FILE) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("schema_version") != 1:
+        raise ValueError(f"Unsupported pattern schema in {path}")
+    if not isinstance(payload.get("categories"), dict):
+        raise ValueError(f"Missing pattern categories in {path}")
+    if not isinstance(payload.get("term_drift_groups"), dict):
+        raise ValueError(f"Missing term drift groups in {path}")
+    return payload
+
+
+def find_hits(
+    surfaces: Iterable[Surface],
+    custom_terms: list[str],
+    catalog: dict[str, Any],
+) -> list[dict[str, str]]:
+    categories = catalog["categories"]
+    term_drift_groups = catalog["term_drift_groups"]
 
     hits: list[dict[str, str]] = []
     for surface in surfaces:
-        for category, terms in patterns.items():
-            for term in terms:
+        for category, spec in categories.items():
+            severity = str(spec.get("severity", "medium"))
+            for term in spec.get("terms", []):
                 if term and term in surface.text:
                     hits.append(
                         {
                             "category": category,
+                            "severity": severity,
                             "pattern": term,
                             "surface_kind": surface.kind,
                             "location": surface.location,
                             "text": surface.text,
                         }
                     )
-        for category, regex_patterns in RISK_REGEX_PATTERNS.items():
-            for regex, label in regex_patterns:
+            for regex_spec in spec.get("regex", []):
+                regex = re.compile(str(regex_spec["pattern"]))
+                label = str(regex_spec["label"])
                 if regex.search(surface.text):
                     hits.append(
                         {
                             "category": category,
+                            "severity": severity,
                             "pattern": label,
                             "surface_kind": surface.kind,
                             "location": surface.location,
                             "text": surface.text,
                         }
                     )
-        for group_name, terms in TERM_DRIFT_GROUPS.items():
+        for term in custom_terms:
+            if term and term in surface.text:
+                hits.append(
+                    {
+                        "category": "user_hard_negative",
+                        "severity": "high",
+                        "pattern": term,
+                        "surface_kind": surface.kind,
+                        "location": surface.location,
+                        "text": surface.text,
+                    }
+                )
+        for group_name, terms in term_drift_groups.items():
             matched_terms = [term for term in terms if term in surface.text]
             if len(matched_terms) >= 3:
                 hits.append(
                     {
                         "category": "term_drift_review",
+                        "severity": "low",
                         "pattern": f"{group_name}: {'/'.join(matched_terms)}",
                         "surface_kind": surface.kind,
                         "location": surface.location,
@@ -327,9 +485,13 @@ def find_hits(surfaces: Iterable[Surface], custom_terms: list[str]) -> list[dict
     return hits
 
 
-def audit(path: Path, custom_terms: list[str]) -> dict[str, object]:
-    text = path.read_text(encoding="utf-8", errors="replace")
-    surfaces = extract_surfaces(path, text)
+def audit(
+    path: Path,
+    custom_terms: list[str],
+    pattern_path: Path = DEFAULT_PATTERN_FILE,
+) -> dict[str, object]:
+    surfaces = extract_path_surfaces(path)
+    catalog = load_pattern_catalog(pattern_path)
     counts = Counter(surface.kind for surface in surfaces)
 
     duplicate_groups: dict[str, list[Surface]] = {}
@@ -356,7 +518,8 @@ def audit(path: Path, custom_terms: list[str]) -> dict[str, object]:
         "format": path.suffix.lower().lstrip(".") or "plain",
         "surface_counts": dict(sorted(counts.items())),
         "total_surfaces": len(surfaces),
-        "high_risk_hits": find_hits(surfaces, custom_terms),
+        "pattern_catalog": str(pattern_path.resolve()),
+        "high_risk_hits": find_hits(surfaces, custom_terms, catalog),
         "repeated_surfaces": repeated[:20],
     }
 
@@ -372,6 +535,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=[],
         help="User-rejected phrase to scan as a hard negative; repeat as needed.",
     )
+    parser.add_argument(
+        "--patterns",
+        type=Path,
+        default=DEFAULT_PATTERN_FILE,
+        help="Machine-readable pattern catalog.",
+    )
     parser.add_argument("--output", type=Path, help="Write JSON to this file.")
     parser.add_argument("--compact", action="store_true", help="Emit compact JSON.")
     return parser
@@ -384,7 +553,11 @@ def main() -> int:
         print(f"Missing input file(s): {', '.join(missing)}", file=sys.stderr)
         return 2
 
-    results = [audit(path, args.term) for path in args.paths]
+    try:
+        results = [audit(path, args.term, args.patterns) for path in args.paths]
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        print(f"Pattern catalog error: {error}", file=sys.stderr)
+        return 2
     payload: object = results[0] if len(results) == 1 else results
     rendered = json.dumps(
         payload,

@@ -106,7 +106,7 @@ Choose the register before editing sentences.
 
 ## Pass 4: Concrete Language Gate
 
-Before output, apply `plain-language-gate.md` when the text is formal, public-facing, case/whitepaper-style, or the user has complained that AI味 remains.
+Before output, apply `core-quality-gates.md`. When the meaning is already sound but the draft still feels generated, run the final surface pass against `trace-patterns.json`.
 
 Run the gate in the chosen register. Do not treat professional density as an error by itself.
 

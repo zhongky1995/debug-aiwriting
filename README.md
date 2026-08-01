@@ -38,18 +38,17 @@
 
 重点检查：
 
-- 抽象动词加抽象名词，如“赋能增长”“激活心智”“构建闭环”
-- 动词和宾语不自然，如“重新接回链路”“场景释放价值”
-- 把结果伪装成动作，如“实现心智占位”“完成用户教育”
-- 主体缺失，不知道谁在什么时间做什么
-- 句子说完事实后，又用“从而确保、进一步彰显、这也体现了”硬加一层意义
-- “行业报告显示、专家认为”等没有明确来源的权威借用
-- 回避简单的“是、有、包括”，以及为避免重复而造成的同义词漂移
-- 结论强于事实，把推测写成已验证结果
-- 句式过度工整，段落、标题和结尾都使用同一模板
-- 删除显眼套话后，又换成更隐蔽的精致空话
+- 主体、动作、对象、条件和可见结果之间是否成立
+- 动词和宾语是否符合真实中文
+- 结果是否被伪装成可执行动作
+- 结论和因果是否超过原始证据
+- 句尾是否强行追加意义或价值判断
+- 权威归因是否有明确来源
+- 术语是否为了避免重复而漂移
+- 结构、段落、标题和结尾是否套用同一模板
+- 清理以后是否变成统一、干硬、没有场景差异的语气
 
-专业术语不是一律删除。只要它确实对应目标、机制、角色、阶段、指标或执行对象，就可以保留。
+专业术语不是一律删除。只要它确实对应目标、机制、角色、阶段、指标或执行对象，就可以保留。可机器匹配的短语和正则只维护在 `references/trace-patterns.json`，避免多份清单互相漂移。
 
 ### 4. 整篇覆盖与修正传播
 
@@ -69,14 +68,15 @@
 
 | 任务 | 主要检查 | 参考文件 |
 | --- | --- | --- |
-| 通用改写与生成 | 事实、结构、节奏、具体程度 | `references/rewrite-playbook.md` |
+| 通用说明性写作 | 责任关系、证据、语域和自然中文 | `references/core-quality-gates.md` |
+| 长文改写与生成 | 结构、节奏、口吻和具体程度 | `references/rewrite-playbook.md` |
 | 客户方案与策略稿 | 客户问题、判断、机制、执行证据 | `references/client-proposal-playbook.md` |
 | 营销策划 | 目标、策略、角色、节点、平台与验收 | `references/marketing-strategy-register.md` |
 | 白皮书与案例 | 行业价值、证据层级、可摘用表达 | `references/whitepaper-case-register.md` |
 | 管理汇报与研究结论 | 决策信息、数据口径、风险和建议 | `references/executive-report-register.md` |
 | 内部执行材料 | 责任、动作、时间、交付和异常处理 | `references/internal-ops-register.md` |
 | 参考稿对齐 | 参考维度、风格合同和事实隔离 | `references/reference-style-calibration.md` |
-| 表层痕迹复核 | 句尾伪分析、模糊归因、虚假范围、聊天与格式残留 | `references/surface-trace-catalog.md` |
+| 表层痕迹复核 | 句尾伪分析、模糊归因、聊天与格式残留 | `references/trace-patterns.json` |
 | 小说与叙事非虚构 | 场景发动、视角边界、人物选择、信息释放和整体读感 | `references/fiction-narrative-register.md` |
 | 人物与短视频脚本 | 人物声音、口语、画面分工和叙事结尾 | `references/ugc-persona-script-register.md` |
 
@@ -134,7 +134,7 @@
 python3 scripts/audit_surfaces.py <文件路径> --output <清单.json>
 ```
 
-用于盘点标题、表格、图注、总结行和高风险表达，包括抽象假动作、模糊归因、句尾伪分析、聊天残留和部分格式痕迹。用户明确否定某个词或短语时，可通过 `--term` 加入本轮扫描。
+支持 Markdown、纯文本、HTML/XML、DOCX 和 PPTX。用于盘点标题、正文、表格、图注、脚注、讲者备注和高风险表达。用户明确否定某个词或短语时，可通过 `--term` 加入本轮扫描。
 
 ### DOCX 人物脚本库
 
@@ -149,6 +149,14 @@ python3 scripts/audit_ugc_scripts.py <改稿.docx> --baseline <原稿.docx> --ou
 ```
 
 该工具检查重复脚本、元数据缺口、结论公式、口吻集中、末格误删和疑似结尾拖尾。报告是复核线索，不会自动证明稿件已经自然。
+
+### 行为回归语料
+
+```bash
+python3 scripts/validate_behavior_cases.py
+```
+
+`evals/behavior_cases.json` 包含 20–30 条跨场景用例，记录修改范围、应加载的参考规则、必须保留和删除的内容，以及禁止补写的事实。它不规定唯一标准答案，主要检查场景路由、范围控制和事实边界是否因 skill 更新而退化。
 
 ## 安装
 
@@ -175,12 +183,18 @@ local/personal-voice-profile.md
 debug-aiwriting/
 ├── SKILL.md
 ├── agents/openai.yaml
+├── evals/
+│   └── behavior_cases.json
 ├── scripts/
 │   ├── audit_surfaces.py
 │   ├── test_audit_surfaces.py
 │   ├── audit_ugc_scripts.py
-│   └── test_audit_ugc_scripts.py
+│   ├── test_audit_ugc_scripts.py
+│   ├── validate_behavior_cases.py
+│   └── test_validate_behavior_cases.py
 └── references/
+    ├── core-quality-gates.md
+    ├── trace-patterns.json
     ├── rewrite-playbook.md
     ├── client-proposal-playbook.md
     ├── client-deck-narrative-gate.md
@@ -189,11 +203,13 @@ debug-aiwriting/
     ├── executive-report-register.md
     ├── internal-ops-register.md
     ├── fiction-narrative-register.md
+    ├── ugc-persona-script-register.md
     ├── reference-style-calibration.md
-    ├── surface-trace-catalog.md
+    ├── creative-ideation-filter.md
     ├── large-document-coverage.md
     ├── external-facing-check.md
-    └── ugc-persona-script-register.md
+    ├── correction-propagation.md
+    └── personal-voice-profile-example.md
 ```
 
 ## 参考与致谢

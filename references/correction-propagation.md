@@ -12,24 +12,16 @@ Use this whenever the user rejects a phrase, verb, sentence pattern, register ch
 6. Treat the correction as a hard negative for the rest of the task. Do not reintroduce it in later sections, summaries, captions, or status messages.
 7. Read back the final artifact and verify both the exact phrase and the broader pattern.
 
-## Example
+## Pattern Expansion
 
-User rejects:
+Do not search only for the rejected literal. Expand it by function:
 
-```text
-重新接回服务链路
-```
+- the same verb with nearby objects
+- upgraded synonyms that preserve the same false action
+- the same sentence template with different nouns
+- headings, tables, captions, and summaries that restate the failure
 
-Do not search only for that exact phrase. Also inspect:
-
-- 接回用户
-- 接住用户关系
-- 打通服务触点
-- 沉淀回访名单
-- 进入沟通节奏
-- 重新承接复购关系
-
-The correction is not "replace 接回 with 承接." The correction is to name what a person or team actually does, using a verb that fits the object and the current register.
+Use `references/trace-patterns.json` for known categories and `scripts/audit_surfaces.py --term` for the current hard negative. The correction is never “swap one suspicious word for a more polished synonym.” Name the real action, evidence, or scene-appropriate expression.
 
 ## Stop Rule
 
