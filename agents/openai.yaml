@@ -1,7 +1,7 @@
 interface:
   display_name: "Debug AI Writing"
   short_description: "按范围、场景、证据和整篇覆盖调试中文写作"
-  default_prompt: "Use $debug-aiwriting to lock rewrite scope, genre, reader, facts, and evidence first; load only the primary route and necessary cross-cutting gates, rewrite without invented specificity or a universal voice, then verify surface traces and every required document surface."
+  default_prompt: "Use $debug-aiwriting to lock rewrite scope, genre, reader, facts, material, and evidence first; load only the primary route and necessary cross-cutting gates, rewrite without invented specificity, repeated padding, or a universal voice, then verify paragraph progress and every required document surface."
 
 policy:
   allow_implicit_invocation: true

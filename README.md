@@ -42,11 +42,14 @@
 - 动词和宾语是否符合真实中文
 - 结果是否被伪装成可执行动作
 - 结论和因果是否超过原始证据
+- 现有材料是否足以支撑目标篇幅和章节数量
+- 新段落是否增加了事实、动作、例子、区别、条件、后果或决策
 - 句尾是否强行追加意义或价值判断
 - 权威归因是否有明确来源
 - 术语是否为了避免重复而漂移
 - 结构、段落、标题和结尾是否套用同一模板
 - 清理以后是否变成统一、干硬、没有场景差异的语气
+- 具体细节是否真的改变理解，而不是用天气、神态和精确时间装饰现场
 
 专业术语不是一律删除。只要它确实对应目标、机制、角色、阶段、指标或执行对象，就可以保留。可机器匹配的短语和正则只维护在 `references/trace-patterns.json`，避免多份清单互相漂移。
 
@@ -59,6 +62,8 @@
 使用参考稿前，先区分用户想借的是逻辑、结构、专业程度、节奏、措辞还是视觉组织，避免把“参考思路”误做成全文仿写。
 
 个人口吻只在用户明确要求、提供样本或存在本地口吻档案时启用。开源版不默认携带任何人的私人写作风格。
+
+没有第一人称也可以有明确声音。Skill 会检查谁在作判断、依据来自哪里、哪些内容仍是推断，以及判断到哪里为止，不会用虚构亲历替文章增加“人感”。
 
 ### 6. 事实与内外口径
 
@@ -136,6 +141,14 @@ python3 scripts/audit_surfaces.py <文件路径> --output <清单.json>
 
 支持 Markdown、纯文本、HTML/XML、DOCX 和 PPTX。用于盘点标题、正文、表格、图注、脚注、讲者备注和高风险表达。用户明确否定某个词或短语时，可通过 `--term` 加入本轮扫描。
 
+检查文章、长帖或连续叙事文本时，可显式启用长文形状检查：
+
+```bash
+python3 scripts/audit_surfaces.py <文章路径> --profile prose --output <清单.json>
+```
+
+`prose` 模式会额外提示主干过晚、长句中 `的` 过密、重复段首、连续短促单句段、段落节奏过于统一和短距离混用多套比喻。它们都是人工复核线索，不是硬错误；PPT、表格、SOP 和特殊版式默认不启用这组检查。
+
 ### DOCX 人物脚本库
 
 ```bash
@@ -156,7 +169,7 @@ python3 scripts/audit_ugc_scripts.py <改稿.docx> --baseline <原稿.docx> --ou
 python3 scripts/validate_behavior_cases.py
 ```
 
-`evals/behavior_cases.json` 包含 20–30 条跨场景用例，记录修改范围、应加载的参考规则、必须保留和删除的内容，以及禁止补写的事实。它不规定唯一标准答案，主要检查场景路由、范围控制和事实边界是否因 skill 更新而退化。
+`evals/behavior_cases.json` 包含 30 条跨场景用例，记录修改范围、应加载的参考规则、必须保留和删除的内容，以及禁止补写的事实。它不规定唯一标准答案，主要检查场景路由、范围控制、材料充足度、段落推进、说话位置和事实边界是否因 skill 更新而退化。
 
 ## 安装
 
@@ -214,7 +227,7 @@ debug-aiwriting/
 
 ## 参考与致谢
 
-表层痕迹目录参考了 [op7418/humanizer-zh](https://github.com/op7418/humanizer-zh)、[blader/humanizer](https://github.com/blader/humanizer) 和 [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 的问题分类，并按中文场景重新整理。`debug-aiwriting` 不采用“默认增加第一人称、幽默、混乱感”的做法，也不会为了具体而补写原稿没有的事实。
+表层痕迹目录参考了 [op7418/humanizer-zh](https://github.com/op7418/humanizer-zh)、[blader/humanizer](https://github.com/blader/humanizer) 和 [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) 的问题分类；材料充足度、段落推进和自然中文形状检查参考了 [KKKKhazix/human-writing](https://github.com/KKKKhazix/human-writing) 的公开思路，并按多场景改写需求重新实现。`debug-aiwriting` 不采用“默认增加第一人称、幽默、混乱感”的做法，也不会为了具体而补写原稿没有的事实；同时不采用全局禁用冒号、破折号、转折句式或专业术语的规则。
 
 ## License
 

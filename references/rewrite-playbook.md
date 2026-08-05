@@ -16,9 +16,20 @@ For nonfiction:
 
 1. Extract the real point in one sentence.
 2. List the reader, occasion, and desired action.
-3. Keep source facts fixed. Mark missing facts instead of filling them in.
-4. Cut claims that do not change reader understanding.
-5. Add specificity only when it is grounded in the prompt, files, examples, or user-provided context.
+3. Build a private material ledger: facts, actions, numbers, examples, contrasts, conditions, failures, costs, and results that the source actually supports.
+4. Match the planned length and section count to that ledger. Research, ask, narrow, or shorten when the material cannot carry the requested expansion.
+5. Keep source facts fixed. Mark missing facts instead of filling them in.
+6. Cut claims and paragraphs that do not change reader understanding or action.
+7. Add specificity only when it is grounded in the prompt, files, examples, or user-provided context.
+
+Before drafting a personal, opinion, forum, brand, or public-facing article, also set the knowledge position:
+
+- who is speaking or responsible for the judgment
+- why they know or care about this subject now
+- what evidence changed or supports the judgment
+- what remains inference or uncertainty
+
+Do not expose this as a questionnaire in the final copy. Use only the parts supported by the source. A visible knowledge position may be carried by evidence selection and judgment boundaries without adding `我`.
 
 Useful replacements:
 
@@ -34,7 +45,7 @@ Choose the register before editing sentences.
 ### Article / Opinion
 
 - Lead with a concrete observation or claim.
-- Let paragraphs develop one idea, not one template step.
+- Let each paragraph add a fact, action, example, distinction, condition, consequence, decision, or useful answer. Rephrasing the previous paragraph is not development.
 - Use examples and limits to make the stance believable.
 - Avoid "本文将" and "通过本文".
 
@@ -103,6 +114,21 @@ Choose the register before editing sentences.
 - Keep some asymmetry: one short sentence can carry emphasis better than another polished clause.
 - Remove performative certainty where evidence is limited.
 - In proposals, turn "we can provide X" into "X changes this client-side link in this way" when the source supports it.
+- Let the actor or action arrive before long conditions when the current sentence makes the reader wait too long for its main clause.
+- Check clause handoffs: the next sentence should clearly continue from the person, object, action, result, or question just introduced.
+- Review long sentences with dense `的`, repeated paragraph openers, queues of short one-sentence paragraphs, and identical closing beats. Vary only where the material and genre call for it.
+- Read scripts, speeches, dialogue, and conversational prose aloud. A sentence that is clear on paper but difficult to say still needs revision.
+
+## Detail Function Gate
+
+Concrete writing is not automatically human writing. Keep a detail only when it changes at least one of these:
+
+- what happened or what happens next
+- how the reader understands cause, risk, cost, relationship, or choice
+- what a character notices or can do in the current scene
+- what a user, client, operator, or decision-maker needs to judge
+
+For nonfiction, unsupported times, weather, gestures, rooms, dialogue, customer reactions, and personal experience are fake specificity. For fiction, details may be invented when authorized, but they must belong to the viewpoint, pressure, action, or atmosphere of the scene rather than decorate every passage in the same way.
 
 ## Pass 4: Concrete Language Gate
 

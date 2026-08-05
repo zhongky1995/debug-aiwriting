@@ -11,11 +11,15 @@ from pathlib import Path
 from audit_surfaces import audit
 
 
-def audit_text(text: str, custom_terms: list[str] | None = None) -> dict[str, object]:
+def audit_text(
+    text: str,
+    custom_terms: list[str] | None = None,
+    profile: str = "surface",
+) -> dict[str, object]:
     with tempfile.TemporaryDirectory() as directory:
         path = Path(directory) / "sample.md"
         path.write_text(text, encoding="utf-8")
-        return audit(path, custom_terms or [])
+        return audit(path, custom_terms or [], profile=profile)
 
 
 def audit_archive(extension: str, parts: dict[str, str]) -> dict[str, object]:
@@ -81,6 +85,51 @@ class AuditSurfacesTest(unittest.TestCase):
         )
 
         self.assertEqual(report["high_risk_hits"], [])
+
+    def test_prose_profile_flags_sentence_and_paragraph_shape_risks(self) -> None:
+        report = audit_text(
+            """
+其实这件事不难。
+
+其实问题已经出现。
+
+其实团队也知道。
+
+其实大家都在等。
+
+在经历了多个部门反复讨论却始终没有明确负责人和交付时间的情况下，最终让项目继续推进的，是客户临时提出的一次确认。
+
+这个由团队在过去三个月里不断修改的、缺少明确对象的、没有固定负责人跟进的、无法按期验收的方案，最后仍然没有说明谁来做。
+
+团队把增长看成赛道，又把组织说成齿轮，最后希望用一场浪潮解决问题。
+
+下一段仍然很短。
+
+这里也只有一句。
+
+全文继续保持同样节奏。
+""",
+            profile="prose",
+        )
+
+        categories = {
+            str(item["category"])
+            for item in report["prose_shape_warnings"]  # type: ignore[index]
+        }
+        self.assertIn("dense_modifier_review", categories)
+        self.assertIn("late_main_clause_review", categories)
+        self.assertIn("repeated_opener_review", categories)
+        self.assertIn("short_paragraph_streak_review", categories)
+        self.assertIn("uniform_paragraph_rhythm_review", categories)
+        self.assertIn("mixed_metaphor_fields_review", categories)
+
+    def test_surface_profile_does_not_apply_prose_shape_rules(self) -> None:
+        report = audit_text(
+            "其实一句。\n\n其实两句。\n\n其实三句。\n\n其实四句。",
+        )
+
+        self.assertEqual(report["profile"], "surface")
+        self.assertEqual(report["prose_shape_warnings"], [])
 
     def test_keeps_custom_hard_negative_scan(self) -> None:
         report = audit_text("用户重新进入服务链路。", ["服务链路"])

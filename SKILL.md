@@ -11,6 +11,8 @@ Optimize for reader trust, not detector evasion. Removing AI tone means restorin
 
 For important explanatory claims, make clear enough of this chain for the sentence's role: **who acts or claims -> based on what -> does what -> to which object -> under what condition -> what visible change or decision follows**. If the source cannot support a concrete claim, narrow it, label the uncertainty, or delete it. Never invent specificity.
 
+For long nonfiction, the requested length must be earned by distinct material. A new paragraph should add a supported fact, action, example, distinction, condition, consequence, decision, or useful question. Restating the same idea does not count as progress. When the material is thin, research, ask, narrow, or shorten instead of padding.
+
 For fiction and narrative work, preserve point of view, character knowledge, motive, causality, information release, scene order, and earned interiority unless structural rewriting is authorized. Do not force narrative prose through a business-writing actor/action template.
 
 Fit the actual scene. Professional writing may remain professional; personal writing may retain first person. Do not add humor, slang, anecdotes, mistakes, deliberate disorder, or emotional ambivalence merely to appear human.
@@ -40,7 +42,7 @@ Task modes:
 
 1. **Lock the contract**: reader, relationship, channel, stakes, desired action, genre, artifact function, facts, evidence level, and `L1-L4` scope.
 2. **Route references**: use the matrix below. Load one primary genre reference plus only the cross-cutting references the task actually needs.
-3. **Diagnose positively**: identify the missing actor, action, evidence, causal step, viewpoint limit, scene consequence, decision, or ending function before scanning bad phrases.
+3. **Diagnose positively**: identify the missing actor, action, evidence, material, causal step, paragraph advance, knowledge position, viewpoint limit, scene consequence, decision, or ending function before scanning bad phrases.
 4. **Rewrite in three passes**:
    - substance/story: repair meaning within scope; add no unsupported detail
    - language: fix register, collocation, syntax, rhythm, and terminology
@@ -99,6 +101,8 @@ Never improve item 7 by damaging items 1-6.
 - Do not make every genre conversational. Register fit and meaning concreteness are separate checks.
 - Do not expose internal codes, metrics, names, unpublished data, assignments, or complaints in external material without approval.
 - Do not let reference material contribute facts unless the user authorizes factual reuse.
+- Do not let a requested length authorize unsupported expansion or repeated explanation. For proposals and plans, label new analysis and recommendations as proposed work rather than observed fact.
+- Concrete detail must change understanding, action, risk, relationship, or judgment. Do not add decorative precision, scenery, anecdotes, or first-person history merely to make the writing feel lived-in.
 - For creative work, every surviving direction must state what the user does, sees, receives, feels, or decides, and which product fact or audience scene makes it specific.
 - For scripts and narrative, distinguish the last chronological action from the real ending. Preserve ending function and vary ending shape.
 
@@ -112,8 +116,8 @@ Never improve item 7 by damaging items 1-6.
 
 ## Deterministic Tools
 
-- `scripts/audit_surfaces.py`: inventory and scan Markdown, text, XML/HTML, DOCX, and PPTX surfaces. Findings are review leads, not proof.
+- `scripts/audit_surfaces.py`: inventory and scan Markdown, text, XML/HTML, DOCX, and PPTX surfaces. Use `--profile prose` only for continuous prose shape warnings. Findings are review leads, not proof.
 - `scripts/audit_ugc_scripts.py`: inspect DOCX script banks for duplication, persona concentration, provenance, and ending risks.
 - `scripts/validate_behavior_cases.py`: validate the cross-genre regression corpus and check literal output invariants.
 
-Completion requires no unresolved high-severity issue, complete required-surface review, and a final draft that still belongs to its intended genre and writer.
+Completion requires no unresolved high-severity issue, complete required-surface review, enough distinct material for the delivered length, and a final draft that still belongs to its intended genre and writer.

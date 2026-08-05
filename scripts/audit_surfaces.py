@@ -24,6 +24,38 @@ DEFAULT_PATTERN_FILE = (
     Path(__file__).resolve().parents[1] / "references" / "trace-patterns.json"
 )
 
+PROSE_OPENERS = (
+    "其实",
+    "不过",
+    "当然",
+    "所以",
+    "但是",
+    "后来",
+    "当时",
+    "很多人",
+    "问题是",
+    "更重要的是",
+    "说到这里",
+)
+
+LATE_MAIN_CLAUSE_PATTERNS = (
+    re.compile(
+        r"(?:^|[。！？]\s*)在[^，。！？\n]{12,70}"
+        r"(?:以后|之后|之前|以前|过程中|情况下|背景下)，"
+    ),
+    re.compile(r"(?:^|[。！？]\s*)(?:真正|最终|最后)让[^，。！？\n]{8,70}的，是"),
+)
+
+METAPHOR_FIELDS = {
+    "温度": ("降温", "升温", "冷却", "余温"),
+    "战争": ("战场", "开火", "引爆", "弹药"),
+    "建筑": ("坍塌", "崩塌", "地基", "支柱"),
+    "仓储": ("仓库", "货架", "入库", "库存"),
+    "道路竞赛": ("赛道", "岔路", "十字路口", "终点线"),
+    "机器身体": ("齿轮", "引擎", "血管", "骨架"),
+    "海洋航行": ("蓝海", "浪潮", "潮水", "灯塔", "彼岸"),
+}
+
 
 @dataclass(frozen=True)
 class Surface:
@@ -408,6 +440,180 @@ def normalized_duplicate_key(text: str) -> str:
     return text.lower()
 
 
+def han_count(text: str) -> int:
+    return len(re.findall(r"[\u4e00-\u9fff]", text))
+
+
+def sentence_count(text: str) -> int:
+    return max(1, len(re.findall(r"[。！？!?]", text)))
+
+
+def prose_bodies(surfaces: Iterable[Surface]) -> list[Surface]:
+    return [
+        surface
+        for surface in surfaces
+        if surface.kind == "body" and han_count(surface.text) >= 4
+    ]
+
+
+def metaphor_cluster(
+    bodies: list[Surface], distance: int = 800
+) -> tuple[list[tuple[int, str, str]], set[str], str] | None:
+    parts: list[str] = []
+    spans: list[tuple[int, int, str]] = []
+    cursor = 0
+    for surface in bodies:
+        if parts:
+            parts.append("\n")
+            cursor += 1
+        start = cursor
+        parts.append(surface.text)
+        cursor += len(surface.text)
+        spans.append((start, cursor, surface.location))
+
+    text = "".join(parts)
+    hits: list[tuple[int, str, str]] = []
+    for field, words in METAPHOR_FIELDS.items():
+        for word in words:
+            hits.extend(
+                (match.start(), field, word)
+                for match in re.finditer(re.escape(word), text)
+            )
+    hits.sort()
+
+    for index, (start, _, _) in enumerate(hits):
+        window = [hit for hit in hits[index:] if hit[0] - start <= distance]
+        fields = {hit[1] for hit in window}
+        if len(fields) < 3:
+            continue
+        location = next(
+            (location for left, right, location in spans if left <= start < right),
+            bodies[0].location if bodies else "unknown",
+        )
+        return window, fields, location
+    return None
+
+
+def prose_shape_warnings(surfaces: Iterable[Surface]) -> list[dict[str, object]]:
+    """Locate prose-shape risks. These are review leads, never hard failures."""
+
+    bodies = prose_bodies(surfaces)
+    warnings: list[dict[str, object]] = []
+    if not bodies:
+        return warnings
+
+    dense_de = [
+        surface
+        for surface in bodies
+        if han_count(surface.text) >= 38 and surface.text.count("的") >= 4
+    ]
+    if dense_de:
+        warnings.append(
+            {
+                "category": "dense_modifier_review",
+                "severity": "review",
+                "pattern": "长句包含四个以上的“的”",
+                "locations": [surface.location for surface in dense_de[:8]],
+                "guidance": "检查主语、对象或动作是否来得太晚；不要机械拆短。",
+            }
+        )
+
+    late_main_clause: list[Surface] = []
+    for surface in bodies:
+        if any(pattern.search(surface.text) for pattern in LATE_MAIN_CLAUSE_PATTERNS):
+            late_main_clause.append(surface)
+    if late_main_clause:
+        warnings.append(
+            {
+                "category": "late_main_clause_review",
+                "severity": "review",
+                "pattern": "长前置条件或“……的，是……”结构",
+                "locations": [surface.location for surface in late_main_clause[:8]],
+                "guidance": "确认读者是否需要等待太久才知道谁做了什么。",
+            }
+        )
+
+    opener_counts: Counter[str] = Counter()
+    opener_locations: dict[str, list[str]] = {}
+    for surface in bodies:
+        value = surface.text.lstrip("“‘\"（(")
+        opener = next((item for item in PROSE_OPENERS if value.startswith(item)), None)
+        if opener:
+            opener_counts[opener] += 1
+            opener_locations.setdefault(opener, []).append(surface.location)
+    repeated_openers = {
+        opener: count for opener, count in opener_counts.items() if count >= 4
+    }
+    if repeated_openers:
+        warnings.append(
+            {
+                "category": "repeated_opener_review",
+                "severity": "review",
+                "pattern": repeated_openers,
+                "locations": [
+                    location
+                    for opener in repeated_openers
+                    for location in opener_locations[opener][:4]
+                ],
+                "guidance": "检查段落是否依靠固定路标排队，而不是由对象、动作或问题自然接续。",
+            }
+        )
+
+    streak: list[Surface] = []
+    short_streak: list[Surface] = []
+    for surface in bodies:
+        if han_count(surface.text) <= 24 and sentence_count(surface.text) <= 1:
+            streak.append(surface)
+            if len(streak) >= 4:
+                short_streak = list(streak)
+                break
+        else:
+            streak = []
+    if short_streak:
+        warnings.append(
+            {
+                "category": "short_paragraph_streak_review",
+                "severity": "review",
+                "pattern": f"连续 {len(short_streak)} 个短促单句段",
+                "locations": [surface.location for surface in short_streak],
+                "guidance": "检查是否在连续喊结论；确有停顿作用时可以保留。",
+            }
+        )
+
+    if len(bodies) >= 10:
+        one_sentence_ratio = sum(
+            sentence_count(surface.text) <= 1 for surface in bodies
+        ) / len(bodies)
+        if one_sentence_ratio >= 0.75:
+            warnings.append(
+                {
+                    "category": "uniform_paragraph_rhythm_review",
+                    "severity": "review",
+                    "pattern": f"{one_sentence_ratio:.0%} 的正文段落只有一句话",
+                    "locations": [surface.location for surface in bodies[:8]],
+                    "guidance": "检查全文是否被统一切成同一节奏；短文、诗歌和特殊版式不适用。",
+                }
+            )
+
+    cluster = metaphor_cluster(bodies)
+    if cluster:
+        hits, fields, location = cluster
+        warnings.append(
+            {
+                "category": "mixed_metaphor_fields_review",
+                "severity": "review",
+                "pattern": {
+                    "fields": sorted(fields),
+                    "terms": list(dict.fromkeys(hit[2] for hit in hits)),
+                },
+                "locations": [location],
+                "guidance": "检查这些词是在写本义，还是短距离内借用多套比喻包装同一概念。",
+            }
+        )
+
+    return warnings
+
+
 def load_pattern_catalog(path: Path = DEFAULT_PATTERN_FILE) -> dict[str, Any]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if payload.get("schema_version") != 1:
@@ -489,7 +695,10 @@ def audit(
     path: Path,
     custom_terms: list[str],
     pattern_path: Path = DEFAULT_PATTERN_FILE,
+    profile: str = "surface",
 ) -> dict[str, object]:
+    if profile not in {"surface", "prose"}:
+        raise ValueError(f"Unsupported audit profile: {profile}")
     surfaces = extract_path_surfaces(path)
     catalog = load_pattern_catalog(pattern_path)
     counts = Counter(surface.kind for surface in surfaces)
@@ -516,11 +725,15 @@ def audit(
     return {
         "file": str(path.resolve()),
         "format": path.suffix.lower().lstrip(".") or "plain",
+        "profile": profile,
         "surface_counts": dict(sorted(counts.items())),
         "total_surfaces": len(surfaces),
         "pattern_catalog": str(pattern_path.resolve()),
         "high_risk_hits": find_hits(surfaces, custom_terms, catalog),
         "repeated_surfaces": repeated[:20],
+        "prose_shape_warnings": (
+            prose_shape_warnings(surfaces) if profile == "prose" else []
+        ),
     }
 
 
@@ -541,6 +754,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=DEFAULT_PATTERN_FILE,
         help="Machine-readable pattern catalog.",
     )
+    parser.add_argument(
+        "--profile",
+        choices=("surface", "prose"),
+        default="surface",
+        help="Use prose to add paragraph rhythm, sentence-shape, and metaphor review warnings.",
+    )
     parser.add_argument("--output", type=Path, help="Write JSON to this file.")
     parser.add_argument("--compact", action="store_true", help="Emit compact JSON.")
     return parser
@@ -554,9 +773,9 @@ def main() -> int:
         return 2
 
     try:
-        results = [audit(path, args.term, args.patterns) for path in args.paths]
+        results = [audit(path, args.term, args.patterns, args.profile) for path in args.paths]
     except (OSError, ValueError, json.JSONDecodeError) as error:
-        print(f"Pattern catalog error: {error}", file=sys.stderr)
+        print(f"Audit error: {error}", file=sys.stderr)
         return 2
     payload: object = results[0] if len(results) == 1 else results
     rendered = json.dumps(

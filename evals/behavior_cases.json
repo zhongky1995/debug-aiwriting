@@ -22,12 +22,12 @@
       "genre": "general_nonfiction",
       "scope": "L2",
       "request": "去掉 AI 味，保留原意。",
-      "source": "行业报告显示，这项调整标志着重要转变，从而确保团队能够持续释放价值。",
+      "source": "行业报告显示，这项调整标志着重要转变，从而确保团队能够持续释放价值。这项调整十分重要，它的重要性还体现在团队可以持续获得价值。",
       "required_routes": ["core-quality-gates.md", "trace-patterns.json"],
       "must_preserve": ["这项调整", "团队"],
-      "must_remove": ["行业报告显示", "标志着重要转变", "释放价值"],
+      "must_remove": ["行业报告显示", "标志着重要转变", "释放价值", "这项调整十分重要"],
       "forbidden_additions": ["具体报告名称", "调查样本"],
-      "behavior_checks": ["删除无来源权威", "不虚构新的证据"]
+      "behavior_checks": ["删除无来源权威", "不虚构新的证据", "合并没有新增信息的同义重复"]
     },
     {
       "id": "product-copy-evidence",
@@ -50,12 +50,12 @@
       "genre": "client_proposal",
       "scope": "L2",
       "request": "优化对客口径，不要重排方案结构。",
-      "source": "本项目分为诊断、试点、复盘三部分。通过全域协同构建增长闭环。",
+      "source": "实施路径：本项目分为诊断、试点、复盘三部分。通过全域协同构建增长闭环。",
       "required_routes": ["client-proposal-playbook.md", "core-quality-gates.md"],
-      "must_preserve": ["诊断、试点、复盘三部分"],
+      "must_preserve": ["实施路径：", "诊断、试点、复盘三部分"],
       "must_remove": ["构建增长闭环"],
       "forbidden_additions": ["新增第四阶段", "保证销售增长"],
-      "behavior_checks": ["保留章节职责", "不得进入结构重组"]
+      "behavior_checks": ["保留章节职责", "不得进入结构重组", "不要机械删除专业材料中有用的冒号"]
     },
     {
       "id": "client-deck-l2-no-rebuild",
@@ -330,12 +330,12 @@
       "genre": "translation",
       "scope": "L2",
       "request": "改成自然中文，保留技术含义。",
-      "source": "系统具有处理每分钟1000个请求的能力，并在这个时间点提供一个可用的接口。",
+      "source": "在经过三个月、覆盖两个机房的压力测试后，系统具有处理每分钟1000个请求的能力，并在这个时间点提供一个可用的接口。",
       "required_routes": ["core-quality-gates.md"],
-      "must_preserve": ["每分钟1000个请求", "可用的接口"],
-      "must_remove": ["具有处理", "在这个时间点"],
+      "must_preserve": ["三个月", "两个机房", "每分钟1000个请求", "可用的接口"],
+      "must_remove": ["系统具有处理", "在这个时间点"],
       "forbidden_additions": ["99.9%可用性", "低延迟"],
-      "behavior_checks": ["使用自然系动和动词", "不改变技术指标"]
+      "behavior_checks": ["使用自然系动和动词", "不改变技术指标", "必要时让主体和动作早于长前置条件出现"]
     },
     {
       "id": "audit-only-no-rewrite",
@@ -385,13 +385,41 @@
       "task_type": "rewrite",
       "genre": "general_nonfiction",
       "scope": "L2",
-      "request": "把这句话写具体。",
+      "request": "把这句话写具体；没有事实就收窄，不要补装饰性的现场细节。",
       "source": "本次更新提升了用户体验。没有提供具体功能、测试反馈或数据。",
       "required_routes": ["core-quality-gates.md"],
       "must_preserve": ["没有提供具体功能、测试反馈或数据"],
       "must_remove": ["提升了用户体验"],
-      "forbidden_additions": ["批处理", "快捷键", "测试用户", "任务完成速度"],
-      "behavior_checks": ["指出材料不足或收窄句子", "不得为了具体而编造"]
+      "forbidden_additions": ["批处理", "快捷键", "测试用户", "任务完成速度", "凌晨", "焦虑", "办公室"],
+      "behavior_checks": ["指出材料不足或收窄句子", "不得为了具体而编造", "具体细节必须改变理解或判断"]
+    },
+    {
+      "id": "long-nonfiction-material-sufficiency",
+      "title": "材料不足不能靠重复完成长文",
+      "task_type": "generation",
+      "genre": "general_nonfiction",
+      "scope": "L4",
+      "request": "根据现有材料写一篇2000字行业文章，不允许搜索或追问。",
+      "source": "现有材料只有三点：录入更方便、声音保留语气、旧内容可以搜索。没有案例、数据、产品流程或用户经历。",
+      "required_routes": ["rewrite-playbook.md", "core-quality-gates.md"],
+      "must_preserve": ["录入更方便", "声音保留语气", "旧内容可以搜索", "没有案例、数据、产品流程或用户经历"],
+      "must_remove": [],
+      "forbidden_additions": ["虚构用户案例", "虚构产品数据", "反复解释同一观点"],
+      "behavior_checks": ["识别材料不足", "缩小范围或缩短篇幅", "不把推演和同义改写当成新材料"]
+    },
+    {
+      "id": "knowledge-position-without-first-person",
+      "title": "不加第一人称也要有说话位置",
+      "task_type": "rewrite",
+      "genre": "industry_commentary",
+      "scope": "L2",
+      "request": "改得像有判断的行业评论，但不要添加第一人称经历。",
+      "source": "公开测试记录只覆盖12家门店，其中9家提到交接时间过长。这个样本不足以代表全部门店，但足以提示下一轮要先检查交接流程。",
+      "required_routes": ["rewrite-playbook.md", "core-quality-gates.md"],
+      "must_preserve": ["12家门店", "9家", "不足以代表全部门店", "先检查交接流程"],
+      "must_remove": [],
+      "forbidden_additions": ["我调研了", "我亲眼看到", "业内都知道"],
+      "behavior_checks": ["通过材料选择和判断边界建立声音", "不靠新增第一人称制造活人感"]
     }
   ]
 }
