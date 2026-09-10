@@ -50,8 +50,8 @@ def validate_corpus(payload: dict[str, Any], skill_root: Path) -> list[str]:
         errors.append("schema_version must be 1")
     if not isinstance(cases, list):
         return errors + ["cases must be a list"]
-    if not 20 <= len(cases) <= 30:
-        errors.append(f"expected 20-30 cases, found {len(cases)}")
+    if len(cases) < 20:
+        errors.append(f"expected at least 20 cases, found {len(cases)}")
 
     ids: list[str] = []
     genres: set[str] = set()
@@ -172,9 +172,11 @@ def main() -> int:
         return 1
 
     print(
-        f"Behavior corpus valid: {len(payload['cases'])} cases, "
+        f"Corpus structure valid: {len(payload['cases'])} cases, "
         f"{len({case['genre'] for case in payload['cases']})} genres."
     )
+    if args.output:
+        print("Literal output checks passed. Semantic behavior_checks and style fit were not evaluated.")
     return 0
 
 

@@ -29,15 +29,21 @@ Before rewriting, extract these items from the reference:
 
 Write with this contract in mind. Do not output the contract unless the user asks for rationale.
 
+For a personal voice, ground each useful observation in a short excerpt or passage location and explain what that passage does: for example, revises an earlier belief, compares alternatives, or leaves a difficulty unresolved. Record relevant counterexamples instead of turning a few samples into universal habits. Use only the traits the material supports; do not impose a fixed count. Do not copy whole reference articles into the profile.
+
+Compare the rewrite with the reference at the paragraph level. Ask whether its example supplies information needed for the judgment and whether its ending performs a similar role when appropriate. Matching sentence length or inserting “我认为” is not enough. Current user feedback overrides an inferred style habit, even when the reference author sometimes uses that habit.
+
 ## What To Preserve
 
-Preserve the reference's working structure when it is useful:
+Preserve structures demonstrated by the reference when they fit the current genre. The following are options for strategy decks and decision-oriented reports, not defaults for personal articles:
 
 - title as page judgment, not category label
 - opening sentence as strategic conclusion
 - table as decision tool, not decoration
 - cross-page logic, such as target -> strategy -> execution -> node example -> search/content -> acceptance
 - professional terms when they name real planning objects
+
+Personal articles may open with an observation, an event, a question, or a judgment, and may end without a summary or instruction. Choose from the actual material and requested voice rather than importing a report's conclusion-first structure.
 
 ## What Not To Copy
 

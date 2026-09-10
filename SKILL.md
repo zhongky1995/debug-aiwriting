@@ -11,7 +11,9 @@ Optimize for reader trust, not detector evasion. Removing AI tone means restorin
 
 For important explanatory claims, make clear enough of this chain for the sentence's role: **who acts or claims -> based on what -> does what -> to which object -> under what condition -> what visible change or decision follows**. If the source cannot support a concrete claim, narrow it, label the uncertainty, or delete it. Never invent specificity.
 
-For long nonfiction, the requested length must be earned by distinct material. A new paragraph should add a supported fact, action, example, distinction, condition, consequence, decision, or useful question. Restating the same idea does not count as progress. When the material is thin, research, ask, narrow, or shorten instead of padding.
+For nonfiction, including short expert commentary, the requested depth and length must be earned by material and reasoning. A new paragraph should add a supported fact, action, distinction, condition, consequence, decision, or useful question. An illustrative example may clarify a possibility; it does not establish its prevalence, cause, or benefit. When the material is thin, research, ask, narrow, or shorten instead of padding.
+
+Information gain and continuity are separate checks. In explanatory prose, the reader should understand why the next sentence or paragraph follows without having to invent a missing premise. Preserve necessary reasoning and transitions while removing repeated conclusions.
 
 For fiction and narrative work, preserve point of view, character knowledge, motive, causality, information release, scene order, and earned interiority unless structural rewriting is authorized. Do not force narrative prose through a business-writing actor/action template.
 
@@ -44,12 +46,12 @@ Task modes:
 2. **Route references**: use the matrix below. Load one primary genre reference plus only the cross-cutting references the task actually needs.
 3. **Diagnose positively**: identify the missing actor, action, evidence, material, causal step, paragraph advance, knowledge position, viewpoint limit, scene consequence, decision, or ending function before scanning bad phrases.
 4. **Rewrite in three passes**:
-   - substance/story: repair meaning within scope; add no unsupported detail
+   - substance/story: repair meaning within scope; add no unsupported detail. For explanatory prose, check adjacent sentences and paragraphs with the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate) before language cleanup
    - language: fix register, collocation, syntax, rhythm, and terminology
    - surface residue: scan `references/trace-patterns.json` only after meaning is stable
-5. **Propagate corrections**: when the user rejects one phrase or pattern, treat it as a hard negative, scan every analogous expression and every live copy, and do not reintroduce it later.
+5. **Propagate corrections**: when the user rejects one phrase or pattern, use `references/correction-propagation.md` to check its function across the draft, not only its wording. Repeated rejection calls for checking the diagnosis and supporting material before another rewrite.
 6. **Verify coverage**: for multi-surface artifacts inspect title, headings, body, tables, captions, notes, footnotes, summaries, and embedded text. Report unreadable or intentionally excluded surfaces.
-7. **Stop only after verification**: facts, evidence, scope, register, terminology, endings, and required surfaces must pass. A blacklist pass or self-declared `PASS` is not enough.
+7. **Stop only after verification**: facts, evidence, scope, continuity, register, terminology, endings, and required surfaces must pass. A blacklist pass or self-declared `PASS` is not enough.
 
 ## Routing Matrix
 
@@ -118,6 +120,6 @@ Never improve item 7 by damaging items 1-6.
 
 - `scripts/audit_surfaces.py`: inventory and scan Markdown, text, XML/HTML, DOCX, and PPTX surfaces. Use `--profile prose` only for continuous prose shape warnings. Findings are review leads, not proof.
 - `scripts/audit_ugc_scripts.py`: inspect DOCX script banks for duplication, persona concentration, provenance, and ending risks.
-- `scripts/validate_behavior_cases.py`: validate the cross-genre regression corpus and check literal output invariants.
+- `scripts/validate_behavior_cases.py`: validate the cross-genre corpus and literal output invariants. Its success does not evaluate `behavior_checks`; assess those against actual outputs separately, with a person judging subjective style fit.
 
 Completion requires no unresolved high-severity issue, complete required-surface review, enough distinct material for the delivered length, and a final draft that still belongs to its intended genre and writer.

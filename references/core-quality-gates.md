@@ -61,7 +61,7 @@ Never invent dates, quantities, product functions, samples, quotations, reaction
 
 ## Material Sufficiency Gate
 
-Use this gate before generating or substantially expanding long nonfiction. Length must come from distinct material, not from restating a small number of ideas.
+Use this gate before generating or expanding nonfiction, including a short expert opinion. Depth and length must come from material and reasoning, not from restating a small number of ideas.
 
 Build a private material ledger from the available source. Useful units include:
 
@@ -81,6 +81,8 @@ When the material cannot support the requested length or level of certainty, cho
 5. keep an explicit placeholder or evidence gap when the format requires it
 
 Never expand an observed fact into an invented scene. Never present proposed work as completed work.
+
+An explicitly hypothetical example can explain how a proposal might work. It cannot prove that readers have that problem, that the proposed cause is correct, or that the proposal deserves priority. Check whether removing the source update leaves the recommendation unchanged: if so, identify the new evidence or changed condition it contributes, or narrow the claimed novelty. Do not require every useful idea to be unprecedented.
 
 ## Knowledge Position Gate
 
@@ -107,6 +109,28 @@ Check the verb harder than the noun:
 
 Ordinary verbs are often more precise for execution copy. Professional terms may stay in strategy and analysis when the surrounding page defines the mechanism.
 
+## Adjacent-Passage Continuity Gate
+
+Use this for explanatory prose before language cleanup, then check that cleanup has not removed a necessary bridge. Concrete sentences and informative paragraphs can still leave the reader to supply the logic between them.
+
+Read each adjacent pair of paragraphs, and the sentence transitions within them, from the target reader's knowledge rather than the writer's full analysis:
+
+1. **Established understanding**: what does the preceding text make clear, including reasonable shared knowledge?
+2. **Next move**: what question, judgment, example, condition, or action does the next passage introduce? If the subject, audience, or task changes, is its relevance clear?
+3. **Missing bridge**: what would the reader have to guess to connect them? Identify the actual gap: an unclear referent, undefined concept, missing purpose, causal mechanism, applicability condition, decision criterion, or procedural dependency.
+4. **Smallest repair**: make a supported premise explicit, clarify the referent, or, within the authorized scope, reorder or remove a detour. Reread the pair: why does the first passage lead to the second?
+
+For example, moving from a tool's ability to reuse finished articles directly to advice about staffing skips the work left for people. A supported bridge would identify which inputs must already exist and which missing inputs require human preparation. Do not assume that difficulty publishing proves a lack of ideas; time, materials, or other causes may be unknown.
+
+Apply restraint:
+
+- Add a bridge only where the intended reader cannot reliably recover it. Shared premises and already clear transitions need no extra explanation.
+- A necessary bridge adds a relationship the reader needs; a repeated conclusion adds the same judgment again. Do not remove the former to avoid the latter.
+- Words such as “所以” and “不过” can express a real relationship but cannot supply missing evidence. If a proposed connection is unsupported, narrow the claim, retain uncertainty, or remove it instead of inventing a cause.
+- Choose the order for the reader's task. No universal why-first sequence, bridge sentence quota, paragraph summary, or action ending is required. Parallel items need a clear shared purpose, not a fabricated causal chain.
+- At L1/L2, preserve the agreed structure and claims; clarifying a supported implicit premise does not authorize new analysis or structural redesign. Keep diagnostics internal unless the user asks for review.
+- Do not apply explanatory completeness to intentional narrative ambiguity, suspense, or scene cuts; use the narrative reference for those functions.
+
 ## Natural Chinese Gate
 
 Read the sentence in its intended setting:
@@ -132,6 +156,7 @@ Challenge:
 - generic openings that fit any topic
 - examples that are only category lists
 - conclusions that repeat the title
+- repeated returns to one predetermined thesis while the intervening material adds no support
 - recommendations without conditions or tradeoffs
 - charts or tables paraphrased without comparison or judgment
 - certainty that exceeds the data
@@ -149,7 +174,7 @@ For each paragraph:
 - The opening should name a real situation, judgment, question, or claim.
 - It should add a supported fact, action, example, distinction, condition, consequence, decision, or resolved question. A paraphrase of the previous paragraph is not progress.
 - At least one sentence should provide an action, example, number, condition, consequence, or boundary when the source supports it.
-- The ending should advance the point rather than summarize it ceremonially.
+- The ending may stop at the last useful fact, action, difficulty, or unresolved question. Do not require a takeaway or practical recommendation from every paragraph; retain a conclusion when it adds a supported inference or needed synthesis.
 
 For concrete details, ask what work they do. Keep a detail when it changes the reader's understanding of cause, risk, relationship, cost, choice, sequence, or result. In nonfiction, remove unsupported precision and decorative scene-setting. In fiction, apply the viewpoint and scene rules in `fiction-narrative-register.md` instead of demanding documentary sourcing.
 
@@ -163,6 +188,7 @@ Stop only when:
 - long nonfiction does not use repetition or invented detail to meet length
 - the rewrite stayed within L1-L4 authorization
 - important claims pass the responsibility test
+- explanatory passages connect through supported, reader-accessible premises; no necessary bridge was lost during cleanup
 - terminology and register are consistent
 - no high-severity surface pattern remains unresolved
 - cleanup has not flattened the requested voice

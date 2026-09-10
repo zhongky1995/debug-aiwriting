@@ -14,13 +14,14 @@ For fiction or narrative nonfiction, do not reduce the story to one "real point"
 
 For nonfiction:
 
-1. Extract the real point in one sentence.
+1. Identify the question or working claim. Keep it provisional while examining the material; do not force every paragraph back to it.
 2. List the reader, occasion, and desired action.
 3. Build a private material ledger: facts, actions, numbers, examples, contrasts, conditions, failures, costs, and results that the source actually supports.
 4. Match the planned length and section count to that ledger. Research, ask, narrow, or shorten when the material cannot carry the requested expansion.
 5. Keep source facts fixed. Mark missing facts instead of filling them in.
 6. Cut claims and paragraphs that do not change reader understanding or action.
 7. Add specificity only when it is grounded in the prompt, files, examples, or user-provided context.
+8. Before line editing, apply the [Adjacent-Passage Continuity Gate](core-quality-gates.md#adjacent-passage-continuity-gate). Check why each paragraph leads to the next, not only whether both contain useful information. Repair missing premises within scope; do not turn this internal review into an outline in the final prose.
 
 Before drafting a personal, opinion, forum, brand, or public-facing article, also set the knowledge position:
 
@@ -105,17 +106,17 @@ Choose the register before editing sentences.
 
 ## Pass 3: Line Edit
 
-- Replace scaffolding transitions with topic movement:
+- Remove empty scaffolding transitions only when the relationship remains clear. Retain useful connectors and explanations; do not replace them with abrupt topic movement. For empty formulas:
   - "首先" -> start the claim directly.
   - "值得注意的是" -> state what changed or why it matters.
-  - "总的来说" -> give the practical implication.
+  - "总的来说" -> delete the repeated wrap-up, or keep a supported synthesis if the reader needs it; do not manufacture a practical implication.
 - Replace abstract nouns with actors and actions.
 - Break perfectly balanced sentences when they feel manufactured.
 - Keep some asymmetry: one short sentence can carry emphasis better than another polished clause.
 - Remove performative certainty where evidence is limited.
 - In proposals, turn "we can provide X" into "X changes this client-side link in this way" when the source supports it.
 - Let the actor or action arrive before long conditions when the current sentence makes the reader wait too long for its main clause.
-- Check clause handoffs: the next sentence should clearly continue from the person, object, action, result, or question just introduced.
+- Check clause handoffs: the next sentence should clearly continue from the person, object, action, result, or question just introduced. After shortening, recheck paragraph boundaries for lost conditions, purposes, or reasoning.
 - Review long sentences with dense `的`, repeated paragraph openers, queues of short one-sentence paragraphs, and identical closing beats. Vary only where the material and genre call for it.
 - Read scripts, speeches, dialogue, and conversational prose aloud. A sentence that is clear on paper but difficult to say still needs revision.
 
@@ -140,8 +141,8 @@ Fail and rewrite any sentence where:
 
 - framework nouns replace actions
 - a concept could apply unchanged to another brand/project
-- the sentence cannot be converted into a one-line practical action
-- a table cell is a label rather than something a person/team does
+- an execution instruction does not tell its actor what to do; this actionability test does not apply to observations, explanations, qualifications, or open questions
+- an execution-table cell only names a desired result instead of the work; category labels in other table types may be appropriate
 
 Do not rely on banned-word scanning. A sentence can pass the blacklist and still fail this gate.
 
@@ -149,11 +150,11 @@ Do not rely on banned-word scanning. A sentence can pass the blacklist and still
 
 When the user provides writing samples:
 
-1. Identify 5-8 recurring traits from the samples.
-2. Separate content preferences from style preferences.
-3. Extract negative constraints: what the author rarely does.
-4. Draft a compact style profile before rewriting if the task is long.
-5. Apply the profile, then audit against both the profile and the AI trace checklist.
+1. Identify only traits supported by the available passages; do not fill a trait quota. Follow `reference-style-calibration.md` for passage-level evidence.
+2. Separate content preferences, personal experience, and style. A reference author's assertion is not automatically a fact or a rule for this writer.
+3. Ground negative constraints in the samples and the user's explicit corrections. Limited samples do not establish what the author never does.
+4. For a substantial rewrite, keep a compact profile with passage locations and relevant exceptions; avoid replacing the task with a style-analysis report.
+5. Check the actual draft against those passages and the user's feedback. Short sentences, first person, or early conclusions alone do not demonstrate a voice match.
 
 Template:
 
