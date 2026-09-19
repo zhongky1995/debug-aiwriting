@@ -518,6 +518,146 @@
       "must_remove": ["应该马上降价"],
       "forbidden_additions": ["受访者表示价格太高", "涨价导致报名减少"],
       "behavior_checks": ["指出现有材料仅提供同期变化，不能确定因果或据此确定降价方案", "不以用户对连贯性的要求授权新增动机、数据或因果证据", "可以收窄或删除无依据的行动主张，无须用新建议填补原句", "解释尚不能从观察推出建议后即可停止，不套固定结论或行动收尾"]
+    },
+    {
+      "id": "whole-short-feedback",
+      "title": "短通知在连续反馈后保留安排",
+      "task_type": "rewrite",
+      "genre": "notice",
+      "scope": "L2",
+      "request": "先改得安心一点，再缩短到90字以内；保留原因、现有版本安排和下次通知时间。",
+      "source": "原定今晚发布的新版本将延期。测试发现导出异常，正在修复。现有版本可继续使用。明天15:00同步修复进展，尚不能确定上线时间。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "现有版本可继续使用",
+        "明天15:00"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "明天15:00上线"
+      ],
+      "behavior_checks": [
+        "90字内整体表达原因、影响和后续安排，不逐项加安抚句",
+        "保留未知上线时间的边界，不把进展承诺改成修复承诺"
+      ]
+    },
+    {
+      "id": "whole-evidence-return",
+      "title": "有章节模板仍需重建案例关系",
+      "task_type": "rewrite",
+      "genre": "whitepaper_case",
+      "scope": "L3",
+      "request": "重组为一段案例复盘，说明目前能判断什么，不要套背景挑战成果模板。",
+      "source": "本次活动有200人报名、80人到场。现场反馈气氛热烈。没有后续购买数据。原稿结论：活动显著促进销售。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "200人",
+        "80人"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "销售增长20%"
+      ],
+      "behavior_checks": [
+        "不保留活动显著促进销售的结论",
+        "以观察与证据缺口组织全文，不把到场量写成销售成效"
+      ]
+    },
+    {
+      "id": "whole-purpose-change",
+      "title": "目标明确变更后更新写作依据",
+      "task_type": "rewrite",
+      "genre": "notice",
+      "scope": "L3",
+      "request": "前一轮是客户通知，现在改为内部值班交接，只写值班同事需要处理的信息。",
+      "source": "客户版：新版本延期，现有版本可继续使用，给您带来不便，非常抱歉。内部安排：小林负责复测，明天14:00反馈结果；小周明天15:00向客户同步进展。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "小林",
+        "明天14:00",
+        "小周",
+        "明天15:00"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "切换为交接用途，保留责任、动作、时序",
+        "不固守原来的客户安抚目标，不额外询问结构修改权限"
+      ]
+    },
+    {
+      "id": "whole-l2-boundary",
+      "title": "整体诊断不越过局部编辑范围",
+      "task_type": "rewrite",
+      "genre": "analysis_note",
+      "scope": "L2",
+      "request": "只润色句子，不改变段落顺序或论点；有其他问题另说。",
+      "source": "团队需要减少会议。\n增加审批层级可以提高决策质量。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "保留两个段落和原论点，不擅自发明关联",
+        "指出整体论证缺少两者关系，不把局部润色宣称为结构已修复"
+      ]
+    },
+    {
+      "id": "whole-keep-viable",
+      "title": "合格短文允许不再修改",
+      "task_type": "rewrite",
+      "genre": "notice",
+      "scope": "L2",
+      "request": "看看还能不能优化；如果已经清楚就保留，不必换同义词。",
+      "source": "资料提交截止时间为周五18:00。请将文件发给小林，逾期请先联系小林确认是否可补交。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "周五18:00",
+        "小林"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "判断安排完整时可以原样保留",
+        "不强制扩写计划、提出备选版本或制造缺陷"
+      ]
+    },
+    {
+      "id": "whole-local-preference",
+      "title": "局部问题不扩大成全文禁令",
+      "task_type": "rewrite",
+      "genre": "general_nonfiction",
+      "scope": "L2",
+      "request": "把第一段空泛的“因此”处理掉；第二段讲真实推理，不要一起删了。",
+      "source": "我们重视服务。因此，未来可期。\n报名已满，场地不能增容，因此停止接收新报名。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "场地不能增容"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "删除第一段无支撑的结论，保留第二段必要因果",
+        "不把一个局部反馈变成禁用因此或禁止所有结论"
+      ]
     }
   ]
 }

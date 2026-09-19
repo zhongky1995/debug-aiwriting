@@ -1,13 +1,15 @@
 ---
 name: debug-aiwriting
-description: Diagnose, rewrite, generate, and audit Chinese writing when the user asks to 去AI味, 消除AI味, 调整口径, 改口径, 去白皮书腔/套话/假大空, fix unnatural Chinese or verb-object pairs, improve a weak client-deck story, separate persona voices, match a personal/brand/reference style, protect internal/external wording, or screen generic creative ideas. Supports short copy, articles, fiction and narrative nonfiction, reports, whitepapers and cases, emails and speeches, UGC/KOC/KOS scripts, client proposals and decks, marketing plans, social content, and internal SOPs. Preserve facts, evidence level, authorized rewrite scope, genre, and full-document coverage.
+description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、调整口径、内容凝聚、主线与结构修复、反复修改跑偏, genre-specific professional quality, and personal/reference voice alignment. Use for short copy, articles, reports, proposals/decks, scripts, and narrative work. Preserve evidence, authorized scope, genre, and whole-artifact effectiveness; do not reduce writing quality to surface polish.
 ---
 
 # Debug AI Writing
 
 ## Core Principle
 
-Optimize for reader trust, not detector evasion. Removing AI tone means restoring responsibility and evidence, not replacing suspicious words.
+Optimize for the intended reader outcome and reader trust, not detector evasion. Treat the artifact as a whole: analysis may separate problems, but drafting must integrate their solutions and revision must improve the complete work. Surface cleanup follows substantive decisions.
+
+Scale effort to the coupling of decisions, not output length. A short notice or headline can require substantial selection and synthesis; a typo correction does not need a production plan. Coverage of every passage is necessary but does not establish overall effectiveness.
 
 For important explanatory claims, make clear enough of this chain for the sentence's role: **who acts or claims -> based on what -> does what -> to which object -> under what condition -> what visible change or decision follows**. If the source cannot support a concrete claim, narrow it, label the uncertainty, or delete it. Never invent specificity.
 
@@ -32,6 +34,8 @@ Classify the task before editing:
 
 Treat bare requests such as “优化口径、调整表达、去 AI 味” as `L2`. Do not enter `L3` or `L4` without authorization. If a language symptom comes from an upstream structure, evidence, character, or scene problem that is outside scope, repair what is allowed and state the limitation.
 
+Authorization follows the user's actual request and earlier decisions, not a required level label: “重组主线/重写结构” authorizes the corresponding L3 work; a request to develop new content authorizes the needed L4 work within its stated bounds. Do not ask again merely because the user did not say “L3”. Global review itself is allowed at every level; changes still respect scope.
+
 Task modes:
 
 - **Rewrite**: deliver the revised text, then brief notes only when useful.
@@ -42,16 +46,13 @@ Task modes:
 
 ## Workflow
 
-1. **Lock the contract**: reader, relationship, channel, stakes, desired action, genre, artifact function, facts, evidence level, and `L1-L4` scope.
-2. **Route references**: use the matrix below. Load one primary genre reference plus only the cross-cutting references the task actually needs.
-3. **Diagnose positively**: identify the missing actor, action, evidence, material, causal step, paragraph advance, knowledge position, viewpoint limit, scene consequence, decision, or ending function before scanning bad phrases.
-4. **Rewrite in three passes**:
-   - substance/story: repair meaning within scope; add no unsupported detail. For explanatory prose, check adjacent sentences and paragraphs with the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate) before language cleanup
-   - language: fix register, collocation, syntax, rhythm, and terminology
-   - surface residue: scan `references/trace-patterns.json` only after meaning is stable
-5. **Propagate corrections**: when the user rejects one phrase or pattern, use `references/correction-propagation.md` to check its function across the draft, not only its wording. Repeated rejection calls for checking the diagnosis and supporting material before another rewrite.
-6. **Verify coverage**: for multi-surface artifacts inspect title, headings, body, tables, captions, notes, footnotes, summaries, and embedded text. Report unreadable or intentionally excluded surfaces.
-7. **Stop only after verification**: facts, evidence, scope, continuity, register, terminology, endings, and required surfaces must pass. A blacklist pass or self-declared `PASS` is not enough.
+1. **Establish the current writing basis**: infer reader, genre, purpose, facts, evidence, and scope from available context. For coupled writing decisions, retain a compact basis: intended reader outcome; indispensable facts/relationships and uncertainty; tradeoff priorities; organizing approach. Keep it current across turns. Explicit changes to purpose update it; local feedback does not silently replace it. Keep this internal unless the user asks for planning or a material ambiguity needs resolving.
+2. **Choose professional criteria**: select references below by communicative function as well as channel. For generation, authorized structural work, tightly coupled short copy, or revision drift, read [Whole-Artifact Writing](references/whole-artifact-writing.md). Determine what decisions must be made and what would make them inadequate; headings and step names alone are not evidence of completed work.
+3. **Diagnose the governing problem**: locate the largest obstacle to the reader outcome at the task, material, structure, scene, or expression level. Resolve it within scope before polishing. Missing evidence can require narrowing the claim or revising the plan; a transition cannot repair an unrelated section.
+4. **Compose and revise under that diagnosis**: integrate one coherent solution for the target length. Work on substance/story, then language, then surface residue; return upstream if a later pass exposes an earlier failure. Preserve useful existing text. For explanatory prose apply the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate), alongside whole-artifact review.
+5. **Handle feedback without drift**: diagnose what the feedback changes and what must remain valid; use `references/correction-propagation.md` for analogous failures. Expand edits to their actual dependencies, within authorization. Compare the complete candidate with the previous viable draft: what improved, what was lost, whether the tradeoff serves the current basis. Retain or restore the better version; explicit factual corrections remain mandatory.
+6. **Verify the actual reading and coverage**: read the complete artifact using only the background its intended reader has. Identify the understanding, action, or narrative effect the text actually produces, then compare it with the writing basis. Do not use planning notes to fill gaps. Inspect required titles, body, tables, captions, notes, and embedded text; disclose inaccessible surfaces.
+7. **Stop when fit for use**: required constraints and reader outcome are satisfied, material supports the length, and no significant issue remains within scope. Do not iterate for synonymous preferences or declare success from a blacklist or checklist alone. If an upstream issue cannot be repaired within scope or available evidence, deliver permitted work and state the specific limitation.
 
 ## Routing Matrix
 
@@ -68,6 +69,7 @@ Task modes:
 | Reference draft/PDF/style requested | `references/reference-style-calibration.md` | The actual genre reference; borrow only requested dimensions |
 | Personal or brand voice requested | `references/rewrite-playbook.md` | `local/personal-voice-profile.md` when present; current samples override older profiles |
 | Creative directions, campaign ideas, slogans, topics | `references/creative-ideation-filter.md` | Relevant marketing or product evidence |
+| Generation, structural repair, dense short copy, or revision drift | Current genre reference | `references/whole-artifact-writing.md` for integrated decisions and whole-draft comparison |
 | External-facing artifact | Current genre reference | `references/external-facing-check.md` |
 | More than one page/section or repeated blocks | Current genre reference | `references/large-document-coverage.md` and `scripts/audit_surfaces.py` |
 | User rejects a phrase or prior pass missed analogues | Current genre reference | `references/correction-propagation.md` |
@@ -122,4 +124,4 @@ Never improve item 7 by damaging items 1-6.
 - `scripts/audit_ugc_scripts.py`: inspect DOCX script banks for duplication, persona concentration, provenance, and ending risks.
 - `scripts/validate_behavior_cases.py`: validate the cross-genre corpus and literal output invariants. Its success does not evaluate `behavior_checks`; assess those against actual outputs separately, with a person judging subjective style fit.
 
-Completion requires no unresolved high-severity issue, complete required-surface review, enough distinct material for the delivered length, and a final draft that still belongs to its intended genre and writer.
+Completion requires the actual reader outcome to match the current writing basis, no unresolved high-severity issue, complete required-surface review, enough distinct material for the delivered length, and a final draft that still belongs to its intended genre and writer.

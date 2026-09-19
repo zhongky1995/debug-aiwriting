@@ -2,6 +2,8 @@
 
 Use this playbook for rewriting, generating, or matching Chinese style.
 
+For generation, structural rewriting, dense short copy, or repeated revision drift, first use [Whole-Artifact Writing](whole-artifact-writing.md). These passes are editing lenses, not a one-way pipeline: a failed evidence or whole-work check returns to the relevant decision.
+
 ## Pass 0: Lock Scope And Register
 
 Use the L1-L4 rewrite scope in `SKILL.md`. For a bare "优化口径/调整表达/去 AI 味" request, preserve facts, section order, page roles, and strategy. Do not rebuild substance unless the existing sentence cannot be repaired without exposing a missing fact or broken argument.
