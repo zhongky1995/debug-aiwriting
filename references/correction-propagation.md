@@ -4,13 +4,13 @@ Use this whenever the user rejects a phrase, verb, sentence pattern, register ch
 
 ## Required Procedure
 
-1. Record the exact rejected wording.
-2. Identify the failure class: unnatural collocation, abstract action, missing subject, result-as-action, wrong register, internal wording, false certainty, repeated template, or another explicit user preference.
-3. Generate nearby variants that may express the same failure without repeating the exact words.
-4. Scan the entire source draft, revised draft, tables, captions, notes, visuals with text, and live document when applicable.
-5. Rewrite every match in the correct local register.
-6. Treat the correction as a hard negative for the rest of the task. Do not reintroduce it in later sections, summaries, captions, or status messages.
-7. Read back the final artifact and verify both the exact phrase and the broader pattern.
+1. Record the feedback and its intended scope. Distinguish a factual correction, explicit wording prohibition, local example, broad preference, and change of purpose.
+2. Diagnose the failure and its level: material, argument/scene, emphasis, register, or wording. “Too long” may mean competing purposes; “stronger” may mean an unanswered question. State internally what to change and which established facts and functions to preserve.
+3. Inspect analogous wording and functions across required surfaces. A match is a review candidate, not automatic evidence of the same defect.
+4. Repair confirmed failures within scope and follow their dependencies. Preserve legitimate uses in other functions; do not make all paragraphs or characters obey one local preference.
+5. Keep explicit prohibitions active within their stated scope. Track diagnosed failures without converting every disliked example into a universal word ban. Later explicit user changes supersede earlier preferences.
+6. Compare the complete candidate with the previous viable version under the current writing basis: improvement, loss, and whether the tradeoff is justified. Follow [Whole-Artifact Writing](whole-artifact-writing.md) when feedback alters emphasis or the organizing approach. Reject regressions while still applying mandatory factual corrections and explicit requirements.
+7. Read back the actual final artifact. Verify both the reported defect and the overall reader outcome; phrase disappearance alone is insufficient.
 
 ## Pattern Expansion
 
@@ -27,7 +27,7 @@ If a revision repeats the rejected function, revisit the claim, example, and evi
 
 If the user reports “逻辑跳、关联不起来、需要自己联想、表达不完整”, use the [Adjacent-Passage Continuity Gate](core-quality-gates.md#adjacent-passage-continuity-gate) across the current artifact's sentence and paragraph transitions. Name the missing premise and the reader's likely question. Do not merely add connectors or expand every paragraph. Preserve the earlier correction against repeated conclusions while restoring necessary reasoning.
 
-Use `references/trace-patterns.json` for known categories and `scripts/audit_surfaces.py --term` for the current hard negative. The correction is never “swap one suspicious word for a more polished synonym.” Name the real action, evidence, or scene-appropriate expression.
+Use `references/trace-patterns.json` for known categories and `scripts/audit_surfaces.py --term` for an explicitly rejected phrase within its applicable scope. The correction is never “swap one suspicious word for a more polished synonym.” Name the real action, evidence, or scene-appropriate expression.
 
 ## Stop Rule
 

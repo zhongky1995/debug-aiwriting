@@ -180,10 +180,15 @@ For concrete details, ask what work they do. Keep a detail when it changes the r
 
 For multi-surface documents, inspect titles, body copy, tables, captions, notes, footnotes, and final summaries. A clean body does not compensate for untouched tables or headings.
 
+## Whole-Artifact Result
+
+After passage checks, read the finished artifact without relying on planning notes. What question does it actually answer, what can the reader conclude or do, and which information receives the most emphasis? Compare that result with the task. Several sound paragraphs can still compete, repeat, or collectively answer the wrong question. For integrated drafting and revision decisions use [Whole-Artifact Writing](whole-artifact-writing.md).
+
 ## Stop Conditions
 
 Stop only when:
 
+- the whole artifact achieves the intended reader outcome, rather than merely passing each local check
 - facts and evidence levels still match the source
 - long nonfiction does not use repetition or invented detail to meet length
 - the rewrite stayed within L1-L4 authorization
