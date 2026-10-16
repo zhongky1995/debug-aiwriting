@@ -133,13 +133,14 @@ Apply restraint:
 
 ## Natural Chinese Gate
 
-Read the sentence in its intended setting:
+Read the exact sentence in its intended setting, separately from the explanation of what the writer meant. Written prose need not imitate speech. When wording feels strained, compressed, or inflated:
 
-- Would a competent planner present it this way to a client?
-- Would an analyst accept the evidence and wording?
-- Could the person assigned an SOP execute it without guessing?
-- Would the speaker actually say the line aloud?
-- Does the translation use a simple Chinese construction when one is available?
+- Recover the actual proposition in ordinary Chinese: what event, feeling, relationship, or judgment is being expressed? If a clearer paraphrase is needed to defend the sentence, revise from that meaning instead of making the reader perform the translation.
+- Check subject-predicate and verb-object fit, referents, and any metaphor. Ordinary words can still form an unnatural combination. Keep an image or abstraction when its meaning and register work; replacing the verb with a grander synonym does not repair the relation.
+- Check whether the wording adds an unsupported causal, exclusive, or final claim. A next step does not by itself prove that every other concern has disappeared or been resolved.
+- Distinguish the editor's account of a paragraph's function from language that belongs in the artifact. If a summary only restates an event already clear to the reader, remove it; retain reflection or analysis when it adds a supported understanding in appropriate language.
+
+Judge against the actual genre: client-facing explanation, analytical reasoning, executable instructions, character speech, and literary narration have different registers. Do not turn this check into a word blacklist or a demand that every sentence name a physical action. After repair, reread the paragraph for lost reasoning, voice, and emphasis.
 
 Prefer stable terminology. Do not rename the same actor or object merely to avoid repetition.
 

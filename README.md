@@ -29,6 +29,8 @@
 
 不同文体分别加载对应的参考规则，不互相挪用。
 
+社媒成稿使用 `references/social-content-register.md`，区分共鸣、实用、产品、观点与叙事的主要任务。它检查读者为什么停留、下一张图增加什么、结尾留下什么，以及广告中的真实购买理由；不把情绪内容都改成三步建议，也不把长度、价格次数或连贯性当成内容吸引力的证明。营销方案与人物口播仍使用各自的规则。
+
 ### 2. 控制修改边界
 
 把改稿分为四级：
@@ -86,6 +88,7 @@
 | 长文改写与生成 | 结构、节奏、口吻和具体程度 | `references/rewrite-playbook.md` |
 | 客户方案与策略稿 | 客户问题、判断、机制、执行证据 | `references/client-proposal-playbook.md` |
 | 营销策划 | 目标、策略、角色、节点、平台与验收 | `references/marketing-strategy-register.md` |
+| 社媒图文与信息流广告 | 选题切口、阅读推进、读者收获与真实商业承接 | `references/social-content-register.md` |
 | 白皮书与案例 | 行业价值、证据层级、可摘用表达 | `references/whitepaper-case-register.md` |
 | 管理汇报与研究结论 | 决策信息、数据口径、风险和建议 | `references/executive-report-register.md` |
 | 内部执行材料 | 责任、动作、时间、交付和异常处理 | `references/internal-ops-register.md` |
@@ -178,7 +181,7 @@ python3 scripts/audit_ugc_scripts.py <改稿.docx> --baseline <原稿.docx> --ou
 python3 scripts/validate_behavior_cases.py
 ```
 
-`evals/behavior_cases.json` 包含 37 条跨场景用例，记录修改范围、参考规则、字面约束和需评价的语义行为。用例覆盖强行回扣结论、假设例子冒充依据、用户反馈优先于参考习惯，以及保留有依据的判断和未解问题；个人口吻用例使用实际测试段落，不预先给出风格标签。相邻段落的新增用例检查缺失的推理、已经连贯时不过度补桥，以及不能为了顺滑而编造因果。
+`evals/behavior_cases.json` 包含跨场景用例，记录修改范围、参考规则、字面约束和需评价的语义行为。用例覆盖强行回扣结论、假设例子冒充依据、用户反馈优先于参考习惯，以及保留有依据的判断和未解问题；个人口吻用例使用实际测试段落，不预先给出风格标签。相邻段落用例检查缺失的推理、已经连贯时不过度补桥，以及不能为了顺滑而编造因果。社媒用例检查共鸣被过早改成教学、硬广只剩边界说明、连续反馈变成字数与价格配额、整批推进同质化，以及参考仿形和强造品牌独占卖点。
 
 脚本检查语料结构；使用 `--case` 和 `--output` 时，还检查指定字符串的保留、删除与禁用。它不会运行模型或判断 `behavior_checks` 是否满足。需另看实际改写，对照这些要求评价材料、推理和表达；主观风格是否合适仍由人判断。
 

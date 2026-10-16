@@ -2,6 +2,8 @@
 
 Use this reference for short-video voice-over, UGC/KOC/KOS scripts, vlogs, character monologues, TTS scripts, or large persona/script banks.
 
+Finished text/image social posts and carousels use social-content-register.md; the terms UGC, KOC, or 小红书 alone do not make a post a persona script.
+
 ## Core Judgment
 
 The problem is rarely “too much first person.” The high-risk pattern is **conclusion-heavy first person**: every speaker uses “我” to explain the meaning of the scene, state a complete value judgment, and close with a lesson or engagement question. The labels change, but the hidden copywriter remains audible.
