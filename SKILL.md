@@ -1,6 +1,6 @@
 ---
 name: debug-aiwriting
-description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、调整口径、内容凝聚、主线与结构修复、反复修改跑偏, genre-specific professional quality, and personal/reference voice alignment. Use for short copy, articles, reports, proposals/decks, scripts, and narrative work. Preserve evidence, authorized scope, genre, and whole-artifact effectiveness; do not reduce writing quality to surface polish.
+description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、调整口径、内容凝聚、主线与结构修复、反复修改跑偏, genre-specific quality, and voice alignment. Use for social posts/carousels/ads, short copy, articles, reports, proposals/decks, scripts, and narrative work. Preserve evidence and scope while improving the actual reader effect; do not reduce quality to surface polish or formal completeness.
 ---
 
 # Debug AI Writing
@@ -20,6 +20,8 @@ Information gain and continuity are separate checks. In explanatory prose, the r
 For fiction and narrative work, preserve point of view, character knowledge, motive, causality, information release, scene order, and earned interiority unless structural rewriting is authorized. Do not force narrative prose through a business-writing actor/action template.
 
 Fit the actual scene. Professional writing may remain professional; personal writing may retain first person. Do not add humor, slang, anecdotes, mistakes, deliberate disorder, or emotional ambivalence merely to appear human.
+
+For social content, judge a concrete reason to stop, continue, remember, respond, or consider the offer. Coherence, cautious wording, and factual accuracy are necessary but do not establish appeal. An emotional observation can advance recognition without adding a method or factual claim; do not automatically turn it into advice, a three-part explanation, or a balanced conclusion. Preserve the commercial task when improving the content.
 
 ## Scope Contract
 
@@ -46,12 +48,12 @@ Task modes:
 
 ## Workflow
 
-1. **Establish the current writing basis**: infer reader, genre, purpose, facts, evidence, and scope from available context. For coupled writing decisions, retain a compact basis: intended reader outcome; indispensable facts/relationships and uncertainty; tradeoff priorities; organizing approach. Keep it current across turns. Explicit changes to purpose update it; local feedback does not silently replace it. Keep this internal unless the user asks for planning or a material ambiguity needs resolving.
+1. **Establish the current writing basis**: identify the deliverable now requested, its reader, purpose, facts, and scope. Distinguish a temporary voice, scene, or headline experiment from the eventual deliverable; carry forward only the choices that still apply. For coupled decisions, retain the reader outcome, indispensable facts/relationships and uncertainty, tradeoff priorities, and organizing approach. Explicit purpose changes update this basis; local feedback does not silently replace it. Keep it internal unless planning is requested or a material ambiguity needs resolving.
 2. **Choose professional criteria**: select references below by communicative function as well as channel. For generation, authorized structural work, tightly coupled short copy, or revision drift, read [Whole-Artifact Writing](references/whole-artifact-writing.md). Determine what decisions must be made and what would make them inadequate; headings and step names alone are not evidence of completed work.
 3. **Diagnose the governing problem**: locate the largest obstacle to the reader outcome at the task, material, structure, scene, or expression level. Resolve it within scope before polishing. Missing evidence can require narrowing the claim or revising the plan; a transition cannot repair an unrelated section.
-4. **Compose and revise under that diagnosis**: integrate one coherent solution for the target length. Work on substance/story, then language, then surface residue; return upstream if a later pass exposes an earlier failure. Preserve useful existing text. For explanatory prose apply the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate), alongside whole-artifact review.
+4. **Compose and revise under that diagnosis**: select, arrange, and give weight to material according to the intended reader outcome and genre, within scope. Use [Whole-Artifact Writing](references/whole-artifact-writing.md#integrated-composition-at-the-requested-length) to decide what to develop, compress, omit, and bring to a close. Structure is the relationship among passages: what this passage establishes and why the reader needs the next. Filling an opening, body, and ending does not establish completeness for the requested purpose. Work on substance and organization, then language; return upstream when needed and preserve useful existing text. For explanatory prose also apply the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate).
 5. **Handle feedback without drift**: diagnose what the feedback changes and what must remain valid; use `references/correction-propagation.md` for analogous failures. Expand edits to their actual dependencies, within authorization. Compare the complete candidate with the previous viable draft: what improved, what was lost, whether the tradeoff serves the current basis. Retain or restore the better version; explicit factual corrections remain mandatory.
-6. **Verify the actual reading and coverage**: read the complete artifact using only the background its intended reader has. Identify the understanding, action, or narrative effect the text actually produces, then compare it with the writing basis. Do not use planning notes to fill gaps. Inspect required titles, body, tables, captions, notes, and embedded text; disclose inaccessible surfaces.
+6. **Verify the actual reading and coverage**: read the complete artifact against its purpose before consulting the last revision checklist, using only the background its intended reader has. Judge the actual emphasis, progression, and ending as well as continuity. Check the exact wording with the [Natural Chinese Gate](references/core-quality-gates.md#natural-chinese-gate): recognizing the intended meaning or paragraph function does not validate the sentence that expresses it. Do not use planning notes to fill gaps or infer whole-draft adequacy from a good line, a complied-with suggestion, or an improved prior defect. Inspect required titles, body, tables, captions, notes, and embedded text; disclose inaccessible surfaces.
 7. **Stop when fit for use**: required constraints and reader outcome are satisfied, material supports the length, and no significant issue remains within scope. Do not iterate for synonymous preferences or declare success from a blacklist or checklist alone. If an upstream issue cannot be repaired within scope or available evidence, deliver permitted work and state the specific limitation.
 
 ## Routing Matrix
@@ -59,13 +61,14 @@ Task modes:
 | Task condition | Primary reference | Add only when needed |
 | --- | --- | --- |
 | Nonfiction, product copy, email, translation, general rewrite | `references/core-quality-gates.md` | `references/rewrite-playbook.md` for long rewriting, generation, or voice extraction |
+| Social posts, 小红书图文/笔记/硬广, carousels, feed ads | `references/social-content-register.md` | `references/whole-artifact-writing.md` for generation or drift; reference calibration when actual examples are supplied |
 | Client proposal, sales material, strategy presentation | `references/client-proposal-playbook.md` | `references/client-deck-narrative-gate.md` only for multi-page `L3/L4` story repair |
 | Marketing, launch, KOC/KOS/UGC/community/search plan | `references/marketing-strategy-register.md` | Client-proposal reference when it must persuade a client |
 | Public whitepaper, case, industry report | `references/whitepaper-case-register.md` | Core quality and external-facing references |
 | Executive brief, management update, data conclusion | `references/executive-report-register.md` | Core quality reference |
 | Internal SOP, memo, handoff, meeting follow-up | `references/internal-ops-register.md` | Core quality reference |
 | Fiction, scene, dialogue, narrative nonfiction | `references/fiction-narrative-register.md` | Core quality only for factual claims in narrative nonfiction |
-| Character voice-over, vlog, short-video, UGC/KOC/KOS/TTS | `references/ugc-persona-script-register.md` | Large-document reference for script banks |
+| Character voice-over, vlog, audiovisual UGC/KOC/KOS scripts, TTS | `references/ugc-persona-script-register.md` | Large-document reference for script banks |
 | Reference draft/PDF/style requested | `references/reference-style-calibration.md` | The actual genre reference; borrow only requested dimensions |
 | Personal or brand voice requested | `references/rewrite-playbook.md` | `local/personal-voice-profile.md` when present; current samples override older profiles |
 | Creative directions, campaign ideas, slogans, topics | `references/creative-ideation-filter.md` | Relevant marketing or product evidence |
@@ -80,6 +83,7 @@ Routing rules:
 - Do not load every matching reference. Usually use one primary genre reference and at most two cross-cutting references; add the surface catalog only at the end.
 - `client-deck-narrative-gate.md` is not for ordinary wording edits. Use it only when `L3/L4` page logic is authorized.
 - `ugc-persona-script-register.md` does not govern reports, proposals, articles, or emails.
+- Social finished copy uses `social-content-register.md`; a marketing plan uses `marketing-strategy-register.md`. Use the persona/script reference only when an actual speaker or audiovisual script needs it. Channel names and the term UGC alone do not determine the route.
 - `fiction-narrative-register.md` overrides explanatory prose heuristics inside fiction.
 
 ## Conflict Priority

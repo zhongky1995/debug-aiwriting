@@ -2,6 +2,8 @@
 
 Use this when the target artifact is a professional marketing proposal, integrated marketing plan, launch plan, KOC/KOS/UGC plan, community/private-domain plan, search/content strategy, or deck-like逐P稿.
 
+For finished social posts, carousels, or feed ads, use social-content-register.md. Marketing vocabulary and planning-page roles do not govern the published copy merely because its purpose is commercial.
+
 The goal is not to make the writing casual. The goal is to make it sound like professional planning: clear target, sharp judgment, credible mechanism, concrete execution, and measurable result.
 
 ## Target Register

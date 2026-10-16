@@ -4,6 +4,8 @@ Use this reference for creative directions, campaign concepts, slogans/themes, c
 
 The goal is not to produce more ideas. The goal is to filter out generic ideas that could be used by any competitor.
 
+Scope the competitor test to the task. Product differentiation and campaign concepts need a truthful product/brand binding. Category education and emotional social topics may serve several brands: evaluate the specificity of the audience moment, useful editorial position, and account relevance through social-content-register.md. Do not discard a precise human concern merely because a competitor could discuss it, or invent an exclusive service claim to make it pass.
+
 ## Minimum Inputs
 
 Before ideation, look for:
@@ -20,7 +22,7 @@ If the product and scene are missing, ask for them. If the user wants to continu
 1. Generate **8-10 raw directions** first. Keep them short; do not expand into full plans yet.
 2. Run the competitor substitution test on every raw direction:
    - Ask: "Would this still work if I put a competitor's name on it?"
-   - If yes, delete or rewrite it.
+   - For a differentiation or brand-owned concept, if yes, delete or rewrite it. For a category/social editorial topic, use the scoped test above.
 3. Run the fact/scene binding test:
    - Each surviving idea must name the product fact or audience scene it depends on.
    - If it cannot name one, delete it.

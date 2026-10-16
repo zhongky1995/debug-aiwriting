@@ -4,7 +4,7 @@ Use this when the user asks to follow a reference draft, PDF, deck, page range, 
 
 ## Classify The Reference Intent
 
-Before building a style contract, decide what the user wants to borrow:
+Identify what the user wants to borrow:
 
 - **Logic**: argument chain, decision sequence, or method.
 - **Structure**: section order, page roles, tables, or information density.
@@ -15,19 +15,13 @@ Before building a style contract, decide what the user wants to borrow:
 
 Treat "参考思路" as logic or structure unless the user also asks to match the expression. Treat "参考口径/表达/语气" as register, rhythm, or wording. When the request is ambiguous, infer from the current complaint and artifact; do not silently copy all dimensions.
 
-## Build A Style Contract First
+## Apply The Relevant Reference Decisions
 
-Before rewriting, extract these items from the reference:
+Use the requested dimensions and current complaint to select what matters. Keep the internal comparison proportionate to the task.
 
-1. **Scene**: final reader, relationship, stakes, and whether it is a proposal, report, whitepaper, script, social copy, or internal memo.
-2. **Page role pattern**: how each page or section functions, such as target contract, strategy map, role matrix, node example, content matrix, budget, or acceptance rule.
-3. **Authority level**: plain explanation, professional planning, executive summary, brand copy, or operational SOP.
-4. **Sentence rhythm**: short strategic headings, one-line judgments, dense tables, explanatory paragraphs, or conversational argument.
-5. **Allowed vocabulary**: professional terms that are part of the scene and should not be flattened.
-6. **Banned drift**: what would make the rewrite feel wrong: too casual, too report-like, too internal, too salesy, too academic, too operational.
-7. **Reference dimensions in scope**: which of logic, structure, register, rhythm, wording, and visual organization should actually be applied.
+For structure or logic, trace what the reader knows or wonders before a passage, what it supplies, and why the next passage follows. For an ad, “痛点、卖点、行动入口” names roles; inspect which need the example establishes, how its actual provision answers that need, and what action the reader can now consider. Rebuild those relationships with the current material rather than filling the same number of paragraphs or copying their openings. A reference can expose that the current draft is performing the wrong kind of task; adding its title or ending to the old draft will not fix that mismatch.
 
-Write with this contract in mind. Do not output the contract unless the user asks for rationale.
+For register, rhythm, or wording, select the choices that affect this reader: speaking authority and distance, sentence movement, useful vocabulary, and degree of directness. Preserve intentional differences between page or passage roles. Do not output the comparison unless rationale is requested.
 
 For a personal voice, ground each useful observation in a short excerpt or passage location and explain what that passage does: for example, revises an earlier belief, compares alternatives, or leaves a difficulty unresolved. Record relevant counterexamples instead of turning a few samples into universal habits. Use only the traits the material supports; do not impose a fixed count. Do not copy whole reference articles into the profile.
 
@@ -64,7 +58,7 @@ When the reference contains both strong structure and weak language, borrow the 
 
 ## Mixed-Register Artifacts
 
-One document may contain more than one local register. An executive opening, strategy map, execution table, budget page, and appendix should feel related, but they should not use identical sentence density or vocabulary. Build the style contract per page family when the artifact mixes strategic, operational, analytical, and evidentiary sections.
+One document may contain more than one local register. An executive opening, strategy map, execution table, budget page, and appendix should feel related, but they should not use identical sentence density or vocabulary. Calibrate the relevant choices per page family when the artifact mixes strategic, operational, analytical, and evidentiary sections.
 
 ## Failure Modes
 

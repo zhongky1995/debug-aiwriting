@@ -27,6 +27,8 @@ If a revision repeats the rejected function, revisit the claim, example, and evi
 
 If the user reports “逻辑跳、关联不起来、需要自己联想、表达不完整”, use the [Adjacent-Passage Continuity Gate](core-quality-gates.md#adjacent-passage-continuity-gate) across the current artifact's sentence and paragraph transitions. Name the missing premise and the reader's likely question. Do not merely add connectors or expand every paragraph. Preserve the earlier correction against repeated conclusions while restoring necessary reasoning.
 
+For social posts and feed ads, also use [Social Content Register](social-content-register.md). Interpret “太短、太长、没感染力、价格太多、没社媒 sense” through the actual reader experience before changing length or sales frequency. Repairing continuity must preserve the angle, force, and original commercial job; a cautious tutorial with a uniform CTA can be a regression even when every transition is explicit.
+
 Use `references/trace-patterns.json` for known categories and `scripts/audit_surfaces.py --term` for an explicitly rejected phrase within its applicable scope. The correction is never “swap one suspicious word for a more polished synonym.” Name the real action, evidence, or scene-appropriate expression.
 
 ## Stop Rule

@@ -9,11 +9,25 @@
       "scope": "L1",
       "request": "只修不自然的动词，别重写整段。",
       "source": "我们要重新接回用户，并沉淀后续沟通。",
-      "required_routes": ["core-quality-gates.md"],
-      "must_preserve": ["用户", "后续沟通"],
-      "must_remove": ["重新接回", "沉淀后续沟通"],
-      "forbidden_additions": ["复购率", "用户增长"],
-      "behavior_checks": ["只改局部搭配", "不增加方法和结果"]
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "用户",
+        "后续沟通"
+      ],
+      "must_remove": [
+        "重新接回",
+        "沉淀后续沟通"
+      ],
+      "forbidden_additions": [
+        "复购率",
+        "用户增长"
+      ],
+      "behavior_checks": [
+        "只改局部搭配",
+        "不增加方法和结果"
+      ]
     },
     {
       "id": "general-l2-surface",
@@ -23,11 +37,29 @@
       "scope": "L2",
       "request": "去掉 AI 味，保留原意。",
       "source": "行业报告显示，这项调整标志着重要转变，从而确保团队能够持续释放价值。这项调整十分重要，它的重要性还体现在团队可以持续获得价值。",
-      "required_routes": ["core-quality-gates.md", "trace-patterns.json"],
-      "must_preserve": ["这项调整", "团队"],
-      "must_remove": ["行业报告显示", "标志着重要转变", "释放价值", "这项调整十分重要"],
-      "forbidden_additions": ["具体报告名称", "调查样本"],
-      "behavior_checks": ["删除无来源权威", "不虚构新的证据", "合并没有新增信息的同义重复"]
+      "required_routes": [
+        "core-quality-gates.md",
+        "trace-patterns.json"
+      ],
+      "must_preserve": [
+        "这项调整",
+        "团队"
+      ],
+      "must_remove": [
+        "行业报告显示",
+        "标志着重要转变",
+        "释放价值",
+        "这项调整十分重要"
+      ],
+      "forbidden_additions": [
+        "具体报告名称",
+        "调查样本"
+      ],
+      "behavior_checks": [
+        "删除无来源权威",
+        "不虚构新的证据",
+        "合并没有新增信息的同义重复"
+      ]
     },
     {
       "id": "product-copy-evidence",
@@ -37,11 +69,25 @@
       "scope": "L2",
       "request": "改得自然一点，但产品信息不能变。",
       "source": "会员有效期为30天。新版本为用户提供更无缝、更强大、更智能的体验。",
-      "required_routes": ["core-quality-gates.md", "trace-patterns.json"],
-      "must_preserve": ["会员有效期为30天"],
-      "must_remove": ["更无缝、更强大、更智能"],
-      "forbidden_additions": ["自动续费", "不限次数", "用户好评"],
-      "behavior_checks": ["缺少具体功能时收窄表达", "不编造产品能力"]
+      "required_routes": [
+        "core-quality-gates.md",
+        "trace-patterns.json"
+      ],
+      "must_preserve": [
+        "会员有效期为30天"
+      ],
+      "must_remove": [
+        "更无缝、更强大、更智能"
+      ],
+      "forbidden_additions": [
+        "自动续费",
+        "不限次数",
+        "用户好评"
+      ],
+      "behavior_checks": [
+        "缺少具体功能时收窄表达",
+        "不编造产品能力"
+      ]
     },
     {
       "id": "client-proposal-l2-boundary",
@@ -51,11 +97,26 @@
       "scope": "L2",
       "request": "优化对客口径，不要重排方案结构。",
       "source": "实施路径：本项目分为诊断、试点、复盘三部分。通过全域协同构建增长闭环。",
-      "required_routes": ["client-proposal-playbook.md", "core-quality-gates.md"],
-      "must_preserve": ["实施路径：", "诊断、试点、复盘三部分"],
-      "must_remove": ["构建增长闭环"],
-      "forbidden_additions": ["新增第四阶段", "保证销售增长"],
-      "behavior_checks": ["保留章节职责", "不得进入结构重组", "不要机械删除专业材料中有用的冒号"]
+      "required_routes": [
+        "client-proposal-playbook.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "实施路径：",
+        "诊断、试点、复盘三部分"
+      ],
+      "must_remove": [
+        "构建增长闭环"
+      ],
+      "forbidden_additions": [
+        "新增第四阶段",
+        "保证销售增长"
+      ],
+      "behavior_checks": [
+        "保留章节职责",
+        "不得进入结构重组",
+        "不要机械删除专业材料中有用的冒号"
+      ]
     },
     {
       "id": "client-deck-l2-no-rebuild",
@@ -65,11 +126,24 @@
       "scope": "L2",
       "request": "只优化逐 P 表达，不动页序。",
       "source": "P1现状，P2目标，P3策略，P4执行。P3通过内容矩阵赋能品牌增长。",
-      "required_routes": ["client-proposal-playbook.md", "core-quality-gates.md"],
-      "must_preserve": ["P1现状，P2目标，P3策略，P4执行"],
-      "must_remove": ["赋能品牌增长"],
-      "forbidden_additions": ["调整页序", "新增案例页"],
-      "behavior_checks": ["保持页序", "只修页面表达"]
+      "required_routes": [
+        "client-proposal-playbook.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "P1现状，P2目标，P3策略，P4执行"
+      ],
+      "must_remove": [
+        "赋能品牌增长"
+      ],
+      "forbidden_additions": [
+        "调整页序",
+        "新增案例页"
+      ],
+      "behavior_checks": [
+        "保持页序",
+        "只修页面表达"
+      ]
     },
     {
       "id": "client-deck-l3-story",
@@ -79,11 +153,26 @@
       "scope": "L3",
       "request": "这份 deck 观点堆叠、页面可互换，帮我重建故事线。",
       "source": "现有页面包括行业趋势、服务清单、案例、客户问题和预算，顺序混乱。",
-      "required_routes": ["client-deck-narrative-gate.md", "client-proposal-playbook.md"],
-      "must_preserve": ["行业趋势", "服务清单", "案例", "客户问题", "预算"],
+      "required_routes": [
+        "client-deck-narrative-gate.md",
+        "client-proposal-playbook.md"
+      ],
+      "must_preserve": [
+        "行业趋势",
+        "服务清单",
+        "案例",
+        "客户问题",
+        "预算"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["虚构客户数据", "虚构案例结果"],
-      "behavior_checks": ["先建立母命题和因果页序", "证据等级不得提升"]
+      "forbidden_additions": [
+        "虚构客户数据",
+        "虚构案例结果"
+      ],
+      "behavior_checks": [
+        "先建立母命题和因果页序",
+        "证据等级不得提升"
+      ]
     },
     {
       "id": "marketing-register-l2",
@@ -93,11 +182,25 @@
       "scope": "L2",
       "request": "去 AI 味，但要像专业营销策划。",
       "source": "项目分为样板建立、集中扩散和搜索经营三个阶段。每阶段都有角色、动作和指标。",
-      "required_routes": ["marketing-strategy-register.md", "core-quality-gates.md"],
-      "must_preserve": ["样板建立", "集中扩散", "搜索经营", "角色、动作和指标"],
+      "required_routes": [
+        "marketing-strategy-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "样板建立",
+        "集中扩散",
+        "搜索经营",
+        "角色、动作和指标"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["聊天口吻", "网络热梗"],
-      "behavior_checks": ["不能因去 AI 味删除有效策略词", "保持提案语气"]
+      "forbidden_additions": [
+        "聊天口吻",
+        "网络热梗"
+      ],
+      "behavior_checks": [
+        "不能因去 AI 味删除有效策略词",
+        "保持提案语气"
+      ]
     },
     {
       "id": "whitepaper-case-evidence",
@@ -107,11 +210,24 @@
       "scope": "L2",
       "request": "改成可外发的白皮书案例素材。",
       "source": "已确认结果为复购率18.88%。测试方案中还设计了企微标签，但没有上线。",
-      "required_routes": ["whitepaper-case-register.md", "external-facing-check.md", "core-quality-gates.md"],
-      "must_preserve": ["复购率18.88%", "没有上线"],
+      "required_routes": [
+        "whitepaper-case-register.md",
+        "external-facing-check.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "复购率18.88%",
+        "没有上线"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["企微标签已交付", "AI能力已落地"],
-      "behavior_checks": ["已发生事实与方案设想分开", "不把测试设计写成交付"]
+      "forbidden_additions": [
+        "企微标签已交付",
+        "AI能力已落地"
+      ],
+      "behavior_checks": [
+        "已发生事实与方案设想分开",
+        "不把测试设计写成交付"
+      ]
     },
     {
       "id": "executive-report-data",
@@ -121,11 +237,25 @@
       "scope": "L2",
       "request": "优化管理层汇报口径。",
       "source": "本月咨询量由100增至118，但成交量暂未统计。这证明新策略已显著提升转化。",
-      "required_routes": ["executive-report-register.md", "core-quality-gates.md"],
-      "must_preserve": ["100增至118", "成交量暂未统计"],
-      "must_remove": ["证明新策略已显著提升转化"],
-      "forbidden_additions": ["转化率", "成交增长"],
-      "behavior_checks": ["结论不得超过数据", "指出尚不能判断成交"]
+      "required_routes": [
+        "executive-report-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "100增至118",
+        "成交量暂未统计"
+      ],
+      "must_remove": [
+        "证明新策略已显著提升转化"
+      ],
+      "forbidden_additions": [
+        "转化率",
+        "成交增长"
+      ],
+      "behavior_checks": [
+        "结论不得超过数据",
+        "指出尚不能判断成交"
+      ]
     },
     {
       "id": "internal-sop-action",
@@ -135,11 +265,25 @@
       "scope": "L2",
       "request": "把这段 SOP 改清楚。",
       "source": "运营应及时承接异常用户并完成问题闭环。每天17点前更新记录。",
-      "required_routes": ["internal-ops-register.md", "core-quality-gates.md"],
-      "must_preserve": ["每天17点前更新记录"],
-      "must_remove": ["承接异常用户", "完成问题闭环"],
-      "forbidden_additions": ["新增负责人姓名", "新增处理时限"],
-      "behavior_checks": ["说清发现异常后做什么", "不编造缺失责任人"]
+      "required_routes": [
+        "internal-ops-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "每天17点前更新记录"
+      ],
+      "must_remove": [
+        "承接异常用户",
+        "完成问题闭环"
+      ],
+      "forbidden_additions": [
+        "新增负责人姓名",
+        "新增处理时限"
+      ],
+      "behavior_checks": [
+        "说清发现异常后做什么",
+        "不编造缺失责任人"
+      ]
     },
     {
       "id": "external-email-boundary",
@@ -149,11 +293,25 @@
       "scope": "L2",
       "request": "改成发给客户的邮件。",
       "source": "我们内部判断A组执行比较慢，Q3考核口径也没对齐。请客户周五前确认排期。",
-      "required_routes": ["external-facing-check.md", "core-quality-gates.md"],
-      "must_preserve": ["请客户周五前确认排期"],
-      "must_remove": ["内部判断", "Q3考核口径"],
-      "forbidden_additions": ["A组负责人", "内部KPI"],
-      "behavior_checks": ["删除或翻译内部信息", "保留客户需要采取的动作"]
+      "required_routes": [
+        "external-facing-check.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "请客户周五前确认排期"
+      ],
+      "must_remove": [
+        "内部判断",
+        "Q3考核口径"
+      ],
+      "forbidden_additions": [
+        "A组负责人",
+        "内部KPI"
+      ],
+      "behavior_checks": [
+        "删除或翻译内部信息",
+        "保留客户需要采取的动作"
+      ]
     },
     {
       "id": "social-post-voice",
@@ -163,11 +321,25 @@
       "scope": "L2",
       "request": "改得像真实从业者发的动态。",
       "source": "今天复盘了三个项目。最大的感受是：方法论沉淀对组织能力建设具有重要意义。",
-      "required_routes": ["rewrite-playbook.md", "trace-patterns.json"],
-      "must_preserve": ["今天复盘了三个项目"],
-      "must_remove": ["方法论沉淀", "组织能力建设具有重要意义"],
-      "forbidden_additions": ["虚构项目细节", "虚构同事对话"],
-      "behavior_checks": ["保留从业者判断", "不强行写段子"]
+      "required_routes": [
+        "social-content-register.md",
+        "rewrite-playbook.md"
+      ],
+      "must_preserve": [
+        "今天复盘了三个项目"
+      ],
+      "must_remove": [
+        "方法论沉淀",
+        "组织能力建设具有重要意义"
+      ],
+      "forbidden_additions": [
+        "虚构项目细节",
+        "虚构同事对话"
+      ],
+      "behavior_checks": [
+        "保留从业者判断",
+        "不强行写段子"
+      ]
     },
     {
       "id": "personal-voice-sample",
@@ -177,11 +349,29 @@
       "scope": "L2",
       "request": "参考以下两段的表达改写当前稿；这些是测试自造样本，没有真实作者身份。不要移植参考经历，也不用替我列风格清单。",
       "source": "参考A：那条我最想删的视频，后来带来的咨询最多。我又看了一遍，开头确实绕，但后面那个退款例子说到了客户担心的事。下次会不会这样，我还不确定。\n参考B：这一版先不上线。退款记录缺了两天，现在比较两个渠道，结果会偏。\n当前稿：管理效率需要得到重视。周报缺了两天记录，却已经据此决定调整排班，这充分彰显了管理创新的价值。",
-      "required_routes": ["rewrite-playbook.md", "reference-style-calibration.md", "core-quality-gates.md"],
-      "must_preserve": ["周报", "缺了两天记录", "调整排班"],
-      "must_remove": ["充分彰显了管理创新的价值"],
-      "forbidden_additions": ["我的视频带来了咨询", "退款记录缺了两天"],
-      "behavior_checks": ["内部风格归纳能对应到参考具体段落：一段展开意外与未确定处，另一段直接说明决定和依据", "不把两个片段概括成统一的结论先行结构", "不移植参考业务经历，不编造排班损失", "事实缺口与判断关联自然，无须添加行动口号"]
+      "required_routes": [
+        "rewrite-playbook.md",
+        "reference-style-calibration.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "周报",
+        "缺了两天记录",
+        "调整排班"
+      ],
+      "must_remove": [
+        "充分彰显了管理创新的价值"
+      ],
+      "forbidden_additions": [
+        "我的视频带来了咨询",
+        "退款记录缺了两天"
+      ],
+      "behavior_checks": [
+        "内部风格归纳能对应到参考具体段落：一段展开意外与未确定处，另一段直接说明决定和依据",
+        "不把两个片段概括成统一的结论先行结构",
+        "不移植参考业务经历，不编造排班损失",
+        "事实缺口与判断关联自然，无须添加行动口号"
+      ]
     },
     {
       "id": "reference-style-dimension",
@@ -191,11 +381,23 @@
       "scope": "L2",
       "request": "参考这份 PDF 的标题节奏和专业程度，不照搬它的数据和结构。",
       "source": "当前稿有自己的四页结构和预算16.5万元。",
-      "required_routes": ["reference-style-calibration.md", "client-proposal-playbook.md"],
-      "must_preserve": ["四页结构", "预算16.5万元"],
+      "required_routes": [
+        "reference-style-calibration.md",
+        "client-proposal-playbook.md"
+      ],
+      "must_preserve": [
+        "四页结构",
+        "预算16.5万元"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["参考稿数据", "参考稿品牌名"],
-      "behavior_checks": ["先提取参考维度", "不得把参考事实写入当前稿"]
+      "forbidden_additions": [
+        "参考稿数据",
+        "参考稿品牌名"
+      ],
+      "behavior_checks": [
+        "先提取参考维度",
+        "不得把参考事实写入当前稿"
+      ]
     },
     {
       "id": "creative-l4-filter",
@@ -205,11 +407,22 @@
       "scope": "L4",
       "request": "为可左右分区送风的客厅空调出创意方向。",
       "source": "产品事实：左右分区送风；目标场景：两个人对风感要求不同。",
-      "required_routes": ["creative-ideation-filter.md"],
-      "must_preserve": ["左右分区送风", "两个人对风感要求不同"],
+      "required_routes": [
+        "creative-ideation-filter.md"
+      ],
+      "must_preserve": [
+        "左右分区送风",
+        "两个人对风感要求不同"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["竞品也成立的空泛主题", "不存在的产品功能"],
-      "behavior_checks": ["创意必须让用户做或看到具体事情", "内部筛掉可替换产品名的方向"]
+      "forbidden_additions": [
+        "竞品也成立的空泛主题",
+        "不存在的产品功能"
+      ],
+      "behavior_checks": [
+        "创意必须让用户做或看到具体事情",
+        "内部筛掉可替换产品名的方向"
+      ]
     },
     {
       "id": "large-document-coverage",
@@ -219,11 +432,23 @@
       "scope": "L2",
       "request": "全文去 AI 味，标题、表格、图注和脚注都要检查。",
       "source": "文档包含8个标题、4张表、3条图注和2条脚注。正文中的事实已经确认。",
-      "required_routes": ["large-document-coverage.md", "whitepaper-case-register.md", "core-quality-gates.md"],
-      "must_preserve": ["正文中的事实已经确认"],
+      "required_routes": [
+        "large-document-coverage.md",
+        "whitepaper-case-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "正文中的事实已经确认"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["跳过表格", "跳过脚注"],
-      "behavior_checks": ["建立文本面清单", "报告不可读取或排除的表面"]
+      "forbidden_additions": [
+        "跳过表格",
+        "跳过脚注"
+      ],
+      "behavior_checks": [
+        "建立文本面清单",
+        "报告不可读取或排除的表面"
+      ]
     },
     {
       "id": "correction-propagation",
@@ -233,11 +458,27 @@
       "scope": "L2",
       "request": "‘重新接回’这个动词不正常，全文检查同类问题。",
       "source": "第一段写重新接回用户，第二段写接回服务链路，表格里写重新接回沟通。",
-      "required_routes": ["correction-propagation.md", "core-quality-gates.md"],
-      "must_preserve": ["第一段", "第二段", "表格"],
-      "must_remove": ["重新接回用户", "接回服务链路", "重新接回沟通"],
-      "forbidden_additions": ["只修第一处"],
-      "behavior_checks": ["抽象失败模式", "扫描所有文本面"]
+      "required_routes": [
+        "correction-propagation.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "第一段",
+        "第二段",
+        "表格"
+      ],
+      "must_remove": [
+        "重新接回用户",
+        "接回服务链路",
+        "重新接回沟通"
+      ],
+      "forbidden_additions": [
+        "只修第一处"
+      ],
+      "behavior_checks": [
+        "抽象失败模式",
+        "扫描所有文本面"
+      ]
     },
     {
       "id": "ugc-persona-difference",
@@ -247,11 +488,25 @@
       "scope": "L2",
       "request": "改这两条口播，不要让两个角色说成同一种语气。",
       "source": "父亲：路线由我安排，座位让他自己挑。母亲：时间由我安排，吃什么让她自己挑。",
-      "required_routes": ["ugc-persona-script-register.md"],
-      "must_preserve": ["父亲", "母亲"],
-      "must_remove": ["路线由我安排，座位让他自己挑", "时间由我安排，吃什么让她自己挑"],
-      "forbidden_additions": ["虚构家庭冲突", "统一金句结尾"],
-      "behavior_checks": ["隐藏人设标签后复听", "区分人物目的和当下场景"]
+      "required_routes": [
+        "ugc-persona-script-register.md"
+      ],
+      "must_preserve": [
+        "父亲",
+        "母亲"
+      ],
+      "must_remove": [
+        "路线由我安排，座位让他自己挑",
+        "时间由我安排，吃什么让她自己挑"
+      ],
+      "forbidden_additions": [
+        "虚构家庭冲突",
+        "统一金句结尾"
+      ],
+      "behavior_checks": [
+        "隐藏人设标签后复听",
+        "区分人物目的和当下场景"
+      ]
     },
     {
       "id": "ugc-ending-preservation",
@@ -261,11 +516,22 @@
       "scope": "L2",
       "request": "修结尾，不要直接删掉最后一格。",
       "source": "前面讲完看展过程。最后一格是三代人在书店翻画册，孩子还在追问。",
-      "required_routes": ["ugc-persona-script-register.md"],
-      "must_preserve": ["三代人在书店翻画册", "孩子还在追问"],
+      "required_routes": [
+        "ugc-persona-script-register.md"
+      ],
+      "must_preserve": [
+        "三代人在书店翻画册",
+        "孩子还在追问"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["总结家庭陪伴的意义", "空白结尾"],
-      "behavior_checks": ["保留结束功能", "结尾停在最后一个有意义变化"]
+      "forbidden_additions": [
+        "总结家庭陪伴的意义",
+        "空白结尾"
+      ],
+      "behavior_checks": [
+        "保留结束功能",
+        "结尾停在最后一个有意义变化"
+      ]
     },
     {
       "id": "fiction-l1-line-edit",
@@ -275,11 +541,25 @@
       "scope": "L1",
       "request": "只修病句和重复，不改剧情、视角和场景顺序。",
       "source": "她推开门。她看见桌上的信。她感到一种很复杂的复杂情绪。",
-      "required_routes": ["fiction-narrative-register.md"],
-      "must_preserve": ["她推开门", "桌上的信"],
-      "must_remove": ["很复杂的复杂情绪"],
-      "forbidden_additions": ["信的内容", "新人物", "场景倒叙"],
-      "behavior_checks": ["保持视角和事件顺序", "不把行编辑扩成改写场景"]
+      "required_routes": [
+        "fiction-narrative-register.md"
+      ],
+      "must_preserve": [
+        "她推开门",
+        "桌上的信"
+      ],
+      "must_remove": [
+        "很复杂的复杂情绪"
+      ],
+      "forbidden_additions": [
+        "信的内容",
+        "新人物",
+        "场景倒叙"
+      ],
+      "behavior_checks": [
+        "保持视角和事件顺序",
+        "不把行编辑扩成改写场景"
+      ]
     },
     {
       "id": "fiction-l2-pov",
@@ -289,11 +569,21 @@
       "scope": "L2",
       "request": "这段解释感太强，改自然，但不要让人物知道她不可能知道的事。",
       "source": "她不知道门外是谁。事实上，那是失踪十年的哥哥，他带着足以改变家族命运的证据。",
-      "required_routes": ["fiction-narrative-register.md"],
-      "must_preserve": ["她不知道门外是谁"],
+      "required_routes": [
+        "fiction-narrative-register.md"
+      ],
+      "must_preserve": [
+        "她不知道门外是谁"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["她认出哥哥", "她知道证据内容"],
-      "behavior_checks": ["限制在当前视角可感知信息", "不把作者信息塞给人物"]
+      "forbidden_additions": [
+        "她认出哥哥",
+        "她知道证据内容"
+      ],
+      "behavior_checks": [
+        "限制在当前视角可感知信息",
+        "不把作者信息塞给人物"
+      ]
     },
     {
       "id": "fiction-l3-structure",
@@ -303,11 +593,23 @@
       "scope": "L3",
       "request": "这一章高潮来得没有因果，允许调整场景顺序，但不要新增世界观设定。",
       "source": "角色先得到答案，随后才发现线索，最后毫无代价地作出决定。",
-      "required_routes": ["fiction-narrative-register.md"],
-      "must_preserve": ["答案", "线索", "决定"],
+      "required_routes": [
+        "fiction-narrative-register.md"
+      ],
+      "must_preserve": [
+        "答案",
+        "线索",
+        "决定"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["新世界观设定", "新反派"],
-      "behavior_checks": ["重建选择和后果的因果", "新增内容不得超出授权"]
+      "forbidden_additions": [
+        "新世界观设定",
+        "新反派"
+      ],
+      "behavior_checks": [
+        "重建选择和后果的因果",
+        "新增内容不得超出授权"
+      ]
     },
     {
       "id": "narrative-nonfiction-evidence",
@@ -317,11 +619,24 @@
       "scope": "L2",
       "request": "改得有现场感，但不能编造采访细节。",
       "source": "受访者说自己在2024年离职。采访记录没有写当时的天气、表情和地点。",
-      "required_routes": ["fiction-narrative-register.md", "core-quality-gates.md"],
-      "must_preserve": ["2024年离职", "没有写当时的天气、表情和地点"],
+      "required_routes": [
+        "fiction-narrative-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "2024年离职",
+        "没有写当时的天气、表情和地点"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["下雨", "咖啡馆", "苦笑"],
-      "behavior_checks": ["现场感只能来自已有材料", "不能用文学细节填空"]
+      "forbidden_additions": [
+        "下雨",
+        "咖啡馆",
+        "苦笑"
+      ],
+      "behavior_checks": [
+        "现场感只能来自已有材料",
+        "不能用文学细节填空"
+      ]
     },
     {
       "id": "translation-l2-register",
@@ -331,11 +646,28 @@
       "scope": "L2",
       "request": "改成自然中文，保留技术含义。",
       "source": "在经过三个月、覆盖两个机房的压力测试后，系统具有处理每分钟1000个请求的能力，并在这个时间点提供一个可用的接口。",
-      "required_routes": ["core-quality-gates.md"],
-      "must_preserve": ["三个月", "两个机房", "每分钟1000个请求", "可用的接口"],
-      "must_remove": ["系统具有处理", "在这个时间点"],
-      "forbidden_additions": ["99.9%可用性", "低延迟"],
-      "behavior_checks": ["使用自然系动和动词", "不改变技术指标", "必要时让主体和动作早于长前置条件出现"]
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "三个月",
+        "两个机房",
+        "每分钟1000个请求",
+        "可用的接口"
+      ],
+      "must_remove": [
+        "系统具有处理",
+        "在这个时间点"
+      ],
+      "forbidden_additions": [
+        "99.9%可用性",
+        "低延迟"
+      ],
+      "behavior_checks": [
+        "使用自然系动和动词",
+        "不改变技术指标",
+        "必要时让主体和动作早于长前置条件出现"
+      ]
     },
     {
       "id": "audit-only-no-rewrite",
@@ -345,11 +677,21 @@
       "scope": "L1",
       "request": "只告诉我哪里有 AI 味，先不要改。",
       "source": "此外，本项目将进一步赋能增长，彰显其在行业格局中的关键作用。",
-      "required_routes": ["core-quality-gates.md", "trace-patterns.json"],
-      "must_preserve": ["本项目"],
+      "required_routes": [
+        "core-quality-gates.md",
+        "trace-patterns.json"
+      ],
+      "must_preserve": [
+        "本项目"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["完整重写稿"],
-      "behavior_checks": ["输出问题和修改建议", "尊重只审计的任务边界"]
+      "forbidden_additions": [
+        "完整重写稿"
+      ],
+      "behavior_checks": [
+        "输出问题和修改建议",
+        "尊重只审计的任务边界"
+      ]
     },
     {
       "id": "generation-l4-fact-boundary",
@@ -359,11 +701,25 @@
       "scope": "L4",
       "request": "根据这些材料写一段案例摘要。",
       "source": "确认事实：项目上线三个月；没有提供销售、转化或用户增长数据。",
-      "required_routes": ["rewrite-playbook.md", "whitepaper-case-register.md", "core-quality-gates.md"],
-      "must_preserve": ["上线三个月", "没有提供销售、转化或用户增长数据"],
+      "required_routes": [
+        "rewrite-playbook.md",
+        "whitepaper-case-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "上线三个月",
+        "没有提供销售、转化或用户增长数据"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["销售增长", "转化提升", "用户增长百分比"],
-      "behavior_checks": ["只基于现有事实组织内容", "缺少结果时不能制造结果"]
+      "forbidden_additions": [
+        "销售增长",
+        "转化提升",
+        "用户增长百分比"
+      ],
+      "behavior_checks": [
+        "只基于现有事实组织内容",
+        "缺少结果时不能制造结果"
+      ]
     },
     {
       "id": "voice-vacuum-after-cleanup",
@@ -373,11 +729,26 @@
       "scope": "L2",
       "request": "去掉套话，但保留原文犹豫和判断感。",
       "source": "我对这个结果有点意外，也不敢马上下结论。样本只有12个，但其中9个人都提到了同一个问题。",
-      "required_routes": ["rewrite-playbook.md", "core-quality-gates.md", "trace-patterns.json"],
-      "must_preserve": ["有点意外", "不敢马上下结论", "样本只有12个", "9个人"],
+      "required_routes": [
+        "rewrite-playbook.md",
+        "core-quality-gates.md",
+        "trace-patterns.json"
+      ],
+      "must_preserve": [
+        "有点意外",
+        "不敢马上下结论",
+        "样本只有12个",
+        "9个人"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["确定性结论", "删除第一人称"],
-      "behavior_checks": ["保留证据支持的主观判断", "不要把所有句子剪成同一节奏"]
+      "forbidden_additions": [
+        "确定性结论",
+        "删除第一人称"
+      ],
+      "behavior_checks": [
+        "保留证据支持的主观判断",
+        "不要把所有句子剪成同一节奏"
+      ]
     },
     {
       "id": "unsupported-specificity",
@@ -387,11 +758,29 @@
       "scope": "L2",
       "request": "把这句话写具体；没有事实就收窄，不要补装饰性的现场细节。",
       "source": "本次更新提升了用户体验。没有提供具体功能、测试反馈或数据。",
-      "required_routes": ["core-quality-gates.md"],
-      "must_preserve": ["没有提供具体功能、测试反馈或数据"],
-      "must_remove": ["提升了用户体验"],
-      "forbidden_additions": ["批处理", "快捷键", "测试用户", "任务完成速度", "凌晨", "焦虑", "办公室"],
-      "behavior_checks": ["指出材料不足或收窄句子", "不得为了具体而编造", "具体细节必须改变理解或判断"]
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "没有提供具体功能、测试反馈或数据"
+      ],
+      "must_remove": [
+        "提升了用户体验"
+      ],
+      "forbidden_additions": [
+        "批处理",
+        "快捷键",
+        "测试用户",
+        "任务完成速度",
+        "凌晨",
+        "焦虑",
+        "办公室"
+      ],
+      "behavior_checks": [
+        "指出材料不足或收窄句子",
+        "不得为了具体而编造",
+        "具体细节必须改变理解或判断"
+      ]
     },
     {
       "id": "long-nonfiction-material-sufficiency",
@@ -401,11 +790,27 @@
       "scope": "L4",
       "request": "根据现有材料写一篇2000字行业文章，不允许搜索或追问。",
       "source": "现有材料只有三点：录入更方便、声音保留语气、旧内容可以搜索。没有案例、数据、产品流程或用户经历。",
-      "required_routes": ["rewrite-playbook.md", "core-quality-gates.md"],
-      "must_preserve": ["录入更方便", "声音保留语气", "旧内容可以搜索", "没有案例、数据、产品流程或用户经历"],
+      "required_routes": [
+        "rewrite-playbook.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "录入更方便",
+        "声音保留语气",
+        "旧内容可以搜索",
+        "没有案例、数据、产品流程或用户经历"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["虚构用户案例", "虚构产品数据", "反复解释同一观点"],
-      "behavior_checks": ["识别材料不足", "缩小范围或缩短篇幅", "不把推演和同义改写当成新材料"]
+      "forbidden_additions": [
+        "虚构用户案例",
+        "虚构产品数据",
+        "反复解释同一观点"
+      ],
+      "behavior_checks": [
+        "识别材料不足",
+        "缩小范围或缩短篇幅",
+        "不把推演和同义改写当成新材料"
+      ]
     },
     {
       "id": "knowledge-position-without-first-person",
@@ -415,11 +820,26 @@
       "scope": "L2",
       "request": "改得像有判断的行业评论，但不要添加第一人称经历。",
       "source": "公开测试记录只覆盖12家门店，其中9家提到交接时间过长。这个样本不足以代表全部门店，但足以提示下一轮要先检查交接流程。",
-      "required_routes": ["rewrite-playbook.md", "core-quality-gates.md"],
-      "must_preserve": ["12家门店", "9家", "不足以代表全部门店", "先检查交接流程"],
+      "required_routes": [
+        "rewrite-playbook.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "12家门店",
+        "9家",
+        "不足以代表全部门店",
+        "先检查交接流程"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["我调研了", "我亲眼看到", "业内都知道"],
-      "behavior_checks": ["通过材料选择和判断边界建立声音", "不靠新增第一人称制造活人感"]
+      "forbidden_additions": [
+        "我调研了",
+        "我亲眼看到",
+        "业内都知道"
+      ],
+      "behavior_checks": [
+        "通过材料选择和判断边界建立声音",
+        "不靠新增第一人称制造活人感"
+      ]
     },
     {
       "id": "paragraph-thesis-return",
@@ -429,11 +849,30 @@
       "scope": "L3",
       "request": "这段每说几句就下结论，改过一次只是换了词。允许删掉重复段落和改顺序，不要补新事实。",
       "source": "工具支持在剪辑软件中生成素材。于是，真正关键的还是专业判断。官方未提供生成后的返修时长。这进一步说明专业判断不可替代。我们还没有试用。归根结底，专业判断才是答案。",
-      "required_routes": ["correction-propagation.md", "core-quality-gates.md", "rewrite-playbook.md"],
-      "must_preserve": ["剪辑软件", "返修时长", "没有试用"],
-      "must_remove": ["真正关键的还是专业判断", "专业判断不可替代", "专业判断才是答案"],
-      "forbidden_additions": ["试用证明", "节省了50%"],
-      "behavior_checks": ["删除多处相同论述功能，不用全新措辞重述同一道理", "说明已知能力及未取得的信息即可，不强制收成专业判断或行动建议", "允许以没有试用或缺少返修信息结束，不伪造反馈"]
+      "required_routes": [
+        "correction-propagation.md",
+        "core-quality-gates.md",
+        "rewrite-playbook.md"
+      ],
+      "must_preserve": [
+        "剪辑软件",
+        "返修时长",
+        "没有试用"
+      ],
+      "must_remove": [
+        "真正关键的还是专业判断",
+        "专业判断不可替代",
+        "专业判断才是答案"
+      ],
+      "forbidden_additions": [
+        "试用证明",
+        "节省了50%"
+      ],
+      "behavior_checks": [
+        "删除多处相同论述功能，不用全新措辞重述同一道理",
+        "说明已知能力及未取得的信息即可，不强制收成专业判断或行动建议",
+        "允许以没有试用或缺少返修信息结束，不伪造反馈"
+      ]
     },
     {
       "id": "illustration-does-not-prove-priority",
@@ -443,11 +882,28 @@
       "scope": "L3",
       "request": "这段例子具体但没有说服力，允许删改观点。不搜索，也不编案例，材料只能支撑短句就写短。",
       "source": "已知：插件支持在剪辑软件内生成素材，没有团队使用记录。假设一位家居博主需要演示家具摆放，可以尝试生成画面。因此，做IP的团队现在最该做的是重写脚本。",
-      "required_routes": ["core-quality-gates.md", "rewrite-playbook.md"],
-      "must_preserve": ["插件", "剪辑软件", "没有团队使用记录"],
-      "must_remove": ["做IP的团队现在最该做的是重写脚本"],
-      "forbidden_additions": ["已经提高完播率", "实测节省"],
-      "behavior_checks": ["假设场景可澄清用途，但不得用它证明团队的主要问题或优先级", "不为普通例子增加家具尺寸等装饰信息来冒充新依据", "可删除该例或明确只作用途设想，收窄资讯支持的判断", "不因为缺少实测而宣称所有专业推理都不允许"]
+      "required_routes": [
+        "core-quality-gates.md",
+        "rewrite-playbook.md"
+      ],
+      "must_preserve": [
+        "插件",
+        "剪辑软件",
+        "没有团队使用记录"
+      ],
+      "must_remove": [
+        "做IP的团队现在最该做的是重写脚本"
+      ],
+      "forbidden_additions": [
+        "已经提高完播率",
+        "实测节省"
+      ],
+      "behavior_checks": [
+        "假设场景可澄清用途，但不得用它证明团队的主要问题或优先级",
+        "不为普通例子增加家具尺寸等装饰信息来冒充新依据",
+        "可删除该例或明确只作用途设想，收窄资讯支持的判断",
+        "不因为缺少实测而宣称所有专业推理都不允许"
+      ]
     },
     {
       "id": "reference-user-rejects-pattern",
@@ -457,11 +913,28 @@
       "scope": "L2",
       "request": "参考这段测试自造文章的具体程度，但不要模仿它反复总结的习惯。尤其不喜欢“这就是”“所以说”式收尾。",
       "source": "参考：首批订单里有三次漏发，我们把配件分格后，下一批没有再漏。这就是流程的价值。所以说，细节决定成败。\n当前稿：本次检查了12份记录，其中4份缺附件。这就是管理需要优化的地方。所以说，管理要抓细节。",
-      "required_routes": ["reference-style-calibration.md", "correction-propagation.md", "core-quality-gates.md"],
-      "must_preserve": ["12份记录", "4份缺附件"],
-      "must_remove": ["这就是管理需要优化的地方", "所以说，管理要抓细节"],
-      "forbidden_additions": ["我们把配件分格", "已经解决附件缺失"],
-      "behavior_checks": ["遵循用户指定维度，不因为参考含强总结就复制", "无论换成何种词语，都不把检查数字升级为管理哲理", "不移植参考事件，允许直接停在记录缺失的事实"]
+      "required_routes": [
+        "reference-style-calibration.md",
+        "correction-propagation.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "12份记录",
+        "4份缺附件"
+      ],
+      "must_remove": [
+        "这就是管理需要优化的地方",
+        "所以说，管理要抓细节"
+      ],
+      "forbidden_additions": [
+        "我们把配件分格",
+        "已经解决附件缺失"
+      ],
+      "behavior_checks": [
+        "遵循用户指定维度，不因为参考含强总结就复制",
+        "无论换成何种词语，都不把检查数字升级为管理哲理",
+        "不移植参考事件，允许直接停在记录缺失的事实"
+      ]
     },
     {
       "id": "retain-supported-judgment-and-open-end",
@@ -471,11 +944,28 @@
       "scope": "L2",
       "request": "去掉生硬表达，不用增加操作建议。原文有依据的判断和没有查清的地方都要留下。",
       "source": "12次试运行中，9次因缺少素材暂停。因此下一轮优先补齐素材清单，有明确依据。其余3次为何暂停，记录里没有解释。",
-      "required_routes": ["core-quality-gates.md", "rewrite-playbook.md"],
-      "must_preserve": ["12次", "9次", "优先补齐素材清单", "其余3次", "没有解释"],
+      "required_routes": [
+        "core-quality-gates.md",
+        "rewrite-playbook.md"
+      ],
+      "must_preserve": [
+        "12次",
+        "9次",
+        "优先补齐素材清单",
+        "其余3次",
+        "没有解释"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["其余3次是网络故障", "素材问题已经解决"],
-      "behavior_checks": ["保留由记录支持的优先级判断，不因句中有因此就删掉", "末句可以停在尚未解释的原因，不强加新建议或总结", "观察及信息缺口无须转成一行实际行动", "不把所有观点改成含糊疑问"]
+      "forbidden_additions": [
+        "其余3次是网络故障",
+        "素材问题已经解决"
+      ],
+      "behavior_checks": [
+        "保留由记录支持的优先级判断，不因句中有因此就删掉",
+        "末句可以停在尚未解释的原因，不强加新建议或总结",
+        "观察及信息缺口无须转成一行实际行动",
+        "不把所有观点改成含糊疑问"
+      ]
     },
     {
       "id": "adjacent-paragraph-missing-premises",
@@ -485,11 +975,27 @@
       "scope": "L3",
       "request": "这段每段单看都明白，放在一起却要我自己联想。请把段落关联讲完整，可以重排，不要增加外部事实，也不要每段总结。",
       "source": "测试自造材料：某工具可以把已完成的访谈录音整理为文章草稿，不能代替尚未发生的访谈。涉及未解释的专业术语时，编辑需要向受访者求证，团队尚未统计求证耗时。\n待改稿：工具可以把访谈录音整理为文章草稿。\n团队仍然需要安排采访。\n编辑要检查专业术语。\n安排每周出稿量时，要记录向受访者求证的时间。",
-      "required_routes": ["core-quality-gates.md", "rewrite-playbook.md", "correction-propagation.md"],
-      "must_preserve": ["访谈录音", "专业术语"],
+      "required_routes": [
+        "core-quality-gates.md",
+        "rewrite-playbook.md",
+        "correction-propagation.md"
+      ],
+      "must_preserve": [
+        "访谈录音",
+        "专业术语"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["已节省一半人力", "保证准确"],
-      "behavior_checks": ["说明自动整理需要已完成的访谈作为输入，使采访安排与工具能力关联起来", "交代生成草稿后仍可能有未解释的术语，再连接编辑求证与排期所需的时间", "使用材料已有条件建立关系，不只插入所以或另外", "保持求证耗时尚未统计的证据边界，不编造采访效果或具体工时", "不强制每段复述工具不能替代人的结论"]
+      "forbidden_additions": [
+        "已节省一半人力",
+        "保证准确"
+      ],
+      "behavior_checks": [
+        "说明自动整理需要已完成的访谈作为输入，使采访安排与工具能力关联起来",
+        "交代生成草稿后仍可能有未解释的术语，再连接编辑求证与排期所需的时间",
+        "使用材料已有条件建立关系，不只插入所以或另外",
+        "保持求证耗时尚未统计的证据边界，不编造采访效果或具体工时",
+        "不强制每段复述工具不能替代人的结论"
+      ]
     },
     {
       "id": "adjacent-paragraph-already-coherent",
@@ -499,11 +1005,25 @@
       "scope": "L2",
       "request": "给参与这个项目的同事看，检查表达是否连贯。顺的地方就保留，不要扩写背景或加总结。",
       "source": "录音还没上传，编辑暂时无法核对引文。\n请采访同事今天下班前把录音放进共享文件夹，编辑收到后再核对。",
-      "required_routes": ["core-quality-gates.md", "rewrite-playbook.md"],
-      "must_preserve": ["今天下班前", "共享文件夹"],
+      "required_routes": [
+        "core-quality-gates.md",
+        "rewrite-playbook.md"
+      ],
+      "must_preserve": [
+        "今天下班前",
+        "共享文件夹"
+      ],
       "must_remove": [],
-      "forbidden_additions": ["避免重大舆情风险", "明天发布"],
-      "behavior_checks": ["保留缺少录音、请求上传、收到后核对的已有承接，不为完整而另加解释段", "不解释录音或共享文件夹的常识用途，不制造额外读者疑问", "允许原文不改或仅做局部语言调整", "保留原定时限与动作，不追加总结或改变流程"]
+      "forbidden_additions": [
+        "避免重大舆情风险",
+        "明天发布"
+      ],
+      "behavior_checks": [
+        "保留缺少录音、请求上传、收到后核对的已有承接，不为完整而另加解释段",
+        "不解释录音或共享文件夹的常识用途，不制造额外读者疑问",
+        "允许原文不改或仅做局部语言调整",
+        "保留原定时限与动作，不追加总结或改变流程"
+      ]
     },
     {
       "id": "coherence-without-invented-cause",
@@ -513,11 +1033,27 @@
       "scope": "L3",
       "request": "这段读着跳，帮我把逻辑讲完整。只能用现有材料，别编解释。",
       "source": "本月报名人数减少。同期课程涨价了。材料没有提供访谈或其他原因分析。\n应该马上降价。",
-      "required_routes": ["core-quality-gates.md", "rewrite-playbook.md"],
-      "must_preserve": ["报名人数减少", "涨价"],
-      "must_remove": ["应该马上降价"],
-      "forbidden_additions": ["受访者表示价格太高", "涨价导致报名减少"],
-      "behavior_checks": ["指出现有材料仅提供同期变化，不能确定因果或据此确定降价方案", "不以用户对连贯性的要求授权新增动机、数据或因果证据", "可以收窄或删除无依据的行动主张，无须用新建议填补原句", "解释尚不能从观察推出建议后即可停止，不套固定结论或行动收尾"]
+      "required_routes": [
+        "core-quality-gates.md",
+        "rewrite-playbook.md"
+      ],
+      "must_preserve": [
+        "报名人数减少",
+        "涨价"
+      ],
+      "must_remove": [
+        "应该马上降价"
+      ],
+      "forbidden_additions": [
+        "受访者表示价格太高",
+        "涨价导致报名减少"
+      ],
+      "behavior_checks": [
+        "指出现有材料仅提供同期变化，不能确定因果或据此确定降价方案",
+        "不以用户对连贯性的要求授权新增动机、数据或因果证据",
+        "可以收窄或删除无依据的行动主张，无须用新建议填补原句",
+        "解释尚不能从观察推出建议后即可停止，不套固定结论或行动收尾"
+      ]
     },
     {
       "id": "whole-short-feedback",
@@ -657,6 +1193,269 @@
       "behavior_checks": [
         "删除第一段无支撑的结论，保留第二段必要因果",
         "不把一个局部反馈变成禁用因此或禁止所有结论"
+      ]
+    },
+    {
+      "id": "social-emotional-angle",
+      "title": "痛点共鸣保留冲突而不自动教学",
+      "task_type": "generation",
+      "genre": "social_post",
+      "scope": "L4",
+      "request": "根据这个处境写一条品牌社媒共鸣内容，品牌入口可后置；不要把每条都写成三步建议。",
+      "source": "受众处境：自己的周末已经有安排，朋友来请帮忙。拒绝的消息写了三行道歉，最后又改成了答应。服务事实：语音倾听与初步梳理。没有真实用户个案或心理诊断依据。",
+      "required_routes": [
+        "social-content-register.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "讨好型人格导致",
+        "原生家庭造成",
+        "真实客户反馈"
+      ],
+      "behavior_checks": [
+        "把拒绝变成道歉、再改口答应的行动与关系顾虑展开，而不只命名边界感",
+        "形成具体的阅读收获，可是准确的情绪观察，无须强加三步建议",
+        "保持品牌发布身份；示意措辞不能冒充真实个案或亲历",
+        "商业入口回应当前顾虑，不用疗效或他人动机换取情绪冲击"
+      ]
+    },
+    {
+      "id": "social-product-positive-value",
+      "title": "硬广既要守事实也要讲购买理由",
+      "task_type": "generation",
+      "genre": "social_ad",
+      "scope": "L4",
+      "request": "写一篇服务介绍图文硬广，解决不知道从哪里开口的顾虑；适合了解服务的位置可以显示价格。",
+      "source": "服务事实：新客首单19.9元；30分钟语音倾听与初步梳理，面向成年人。可从愿意讲的具体片段展开，梳理经过与感受。未提供资历、全天在线、保密政策或效果保证。",
+      "required_routes": [
+        "social-content-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "30分钟",
+        "语音倾听"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "24小时在线",
+        "保证保密",
+        "一定改善关系",
+        "国家认证心理咨询师"
+      ],
+      "behavior_checks": [
+        "正文用已提供的服务内容回应开头的具体顾虑，让读者理解这项服务的用途；不能只列梳理事项，再用泛泛的有帮助或私信结尾代替两者的联系",
+        "边界不抢占主要阅读内容；必要限定放在相关主张处",
+        "价格按当前购买问题和信息层级安排，不先设两次上限或全面禁用",
+        "图序有所推进，正文承担明确补充任务，不是同一篇文章重复发布"
+      ]
+    },
+    {
+      "id": "social-feedback-no-length-quota",
+      "title": "连续反馈不退化为扩写缩写和价格配额",
+      "task_type": "structural_rewrite",
+      "genre": "social_ad",
+      "scope": "L3",
+      "request": "上一版太短没感染力，扩写后又长又臭、价格太多。重新判断和重写，产品硬广任务继续有效。",
+      "source": "当前稿：怕开口，因为事情说不清；可能可以先整理三个问题；再梳理事实和感受；再讨论下一步；新客19.9元。四张图重复正文，封面、正文、结尾均放价格。服务：30分钟语音倾听与初步梳理。",
+      "required_routes": [
+        "social-content-register.md",
+        "correction-propagation.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "30分钟语音倾听"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "小红书必须300字",
+        "平台规定价格只能出现两次"
+      ],
+      "behavior_checks": [
+        "识别主要阅读问题再改稿，不能把没感染力直接解释成不够长",
+        "在修复信息重复时保留必要承接和硬广的产品价值",
+        "价格反馈影响摆放与强调，不成为跨稿件的固定配额",
+        "比较完整候选的情绪力度、阅读收益、事实与商业功能损益"
+      ]
+    },
+    {
+      "id": "social-batch-distinct-movement",
+      "title": "批量图文检查内容推进而不是换标题",
+      "task_type": "structural_rewrite",
+      "genre": "social_carousel",
+      "scope": "L3",
+      "request": "这三篇中间都是三项建议、最后都一样私信，读着像一篇。保留三篇各四张图，改成各自有价值的内容。",
+      "source": "A：拒绝写成道歉信；B：哭后被安慰但育儿分工仍未谈；C：初次了解30分钟语音倾听。当前三篇都按场景、三项拆解、一句安慰、私信模板。B没有证据推断对方动机。服务仅提供语音倾听与初步梳理。",
+      "required_routes": [
+        "social-content-register.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "对方就是在操控你",
+        "保证分工改变"
+      ],
+      "behavior_checks": [
+        "保留三篇和每篇四张图，不擅自减量",
+        "A的关系顾虑、B的安慰与实际分工、C的购买顾虑得到不同展开和收获",
+        "图数一致不等于各页角色和三项提示必须一致",
+        "广告邀请和必要品牌露出仍存在，不把批量差异处理成全部去商业化"
+      ]
+    },
+    {
+      "id": "social-category-not-brand-exclusive",
+      "title": "情绪议题不强行造品牌独占卖点",
+      "task_type": "generation",
+      "genre": "social_ideation",
+      "scope": "L4",
+      "request": "为倾听服务筛选三个社媒选题方向，不要求品牌独占口号。",
+      "source": "受众：总说都可以后又后悔、不敢拒绝、感情犹豫一开口就被劝分。服务：语音倾听与初步梳理。没有独家机制或优于竞品的证据。",
+      "required_routes": [
+        "social-content-register.md",
+        "creative-ideation-filter.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "唯一能提供",
+        "行业首创"
+      ],
+      "behavior_checks": [
+        "用准确的受众时刻、不同的编辑判断和内容展开选择题目",
+        "不因为多个品牌可以讨论同一困扰就淘汰所有情绪选题",
+        "不虚构独家服务能力来通过竞品替换测试",
+        "输出是发布内容方向，不能退化成营销策划的矩阵与漏斗"
+      ]
+    },
+    {
+      "id": "social-reference-mechanism-not-shape",
+      "title": "借鉴参考的阅读作用而不复制长度与成绩",
+      "task_type": "structural_rewrite",
+      "genre": "social_carousel",
+      "scope": "L3",
+      "request": "参考这个竞品改图文，希望有社媒感；不要东施效颦。",
+      "source": "已保存参考：首图写未发出的消息，中图揭示被删掉的顾虑，末图介绍倾听服务。正文很长并反复出现价格。未提供互动、投放或咨询数据。当前服务：30分钟语音倾听与初步梳理。",
+      "required_routes": [
+        "social-content-register.md",
+        "reference-style-calibration.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "已经验证是爆款",
+        "转化率很高"
+      ],
+      "behavior_checks": [
+        "解释可见的选题切口与信息揭示如何服务当前读者，再写不同的内容",
+        "不把长正文、重复价格或四页三段结构当成必须复制的成功机制",
+        "明确没有效果数据，不把提供竞品参考当成跑通证据",
+        "不能只做空泛诊断；在授权范围内交付兑现标题的成稿"
+      ]
+    },
+    {
+      "id": "social-persona-connected-account",
+      "title": "个人表达保留事件反应和想法之间的关系",
+      "task_type": "generation",
+      "genre": "social_post",
+      "scope": "L4",
+      "request": "用一个明确标为虚构的普通成年人第一人称，讲清楚一次争执为何变成解释自己。写连贯段落，不要一句一句下结论。",
+      "source": "情境：周末照顾安排发生变化；人物不高兴地表达；对方把话题转到语气；人物怕继续僵着，开始解释并让步；争执停下，原来的安排尚未谈妥。可创作情境细节，不能包装真实咨询个案或添加从业经历。",
+      "required_routes": [
+        "social-content-register.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "真实客户案例",
+        "我做咨询多年"
+      ],
+      "behavior_checks": [
+        "同一个说话者以自己的知识和处境叙述，不擅自解释他人心理动机",
+        "让读者从文本读懂触发、回应、人物为什么改口，以及原问题如何未被解决",
+        "使用连贯段落和自然动宾关系，不把省略中间过程的句子包装成金句",
+        "连贯的经过仍需按阅读重心取舍和分配篇幅，不用完整复述或末句提炼代替整篇编排",
+        "不为每句话附加意义判断或在结尾突然改用品牌全知口吻",
+        "虚构状态在说明中明确，不能把创作授权解释为伪造真实经历许可"
+      ]
+    },
+    {
+      "id": "social-public-composition",
+      "title": "个人经验面向读者成篇而非按经历逐项复述",
+      "task_type": "structural_rewrite",
+      "genre": "social_post",
+      "scope": "L3",
+      "request": "把以下素材重写成一篇可发布的小红书个人经验短文。保留自然的第一人称，也要有面向陌生读者的重心和结构。可调整顺序、取舍和详略，不要补不存在的成绩、对话或经历。提供标题和完整正文。",
+      "source": "我第一次组织旧书交换活动，准备了两周。每天改海报颜色和排版，总觉得还不够好。报名页已经写了日期、地址和免费参加。发给朋友看，她却问不用带书能不能来、哪些书可以交换、是否要全程留下。我才发现海报看起来像活动，读者却还没法决定要不要参加。我把这些信息问清后补进报名页：可以空手来，只收非教材类旧书，活动两小时但可随时离开。没有报名增长或活动效果数据。",
+      "required_routes": [
+        "social-content-register.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "报名翻倍",
+        "转化率提升"
+      ],
+      "behavior_checks": [
+        "保留自然个人声音，以可从材料支持的观察组织文章；叙事与反思均可使用",
+        "按表达重心取舍、安排和分配篇幅，读者无需看改动说明才能辨认推进",
+        "反思由实际材料支持，不用普遍教训或另加一段广告代替结束",
+        "不虚构活动成绩、补充对白或把一次经历扩大成普遍因果规律"
+      ]
+    },
+    {
+      "id": "whole-return-from-experiment",
+      "title": "临时叙事实验结束后回到完整交付",
+      "task_type": "generation",
+      "genre": "social_ad",
+      "scope": "L4",
+      "request": "前面的第一人称故事只是试写。现在回到原任务，给我完整的修车店产品介绍硬广。保留刚才自然的语言，重新组织，不要只换标题。",
+      "source": "原任务：为自行车维修店写品牌产品介绍，回应送修前不知道故障和费用的顾虑。已知服务：检查故障、列明维修项目和报价，经顾客确认后开修；到店时间先私信约定。中间试写：虚构的骑车人回忆周五车坏了、推车回家，第一人称声音已认可。这个故事不是店铺或顾客真实经历。没有价格优势、维修时限或成功率信息。",
+      "required_routes": [
+        "social-content-register.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "当天修好",
+        "最低价",
+        "百分百修复"
+      ],
+      "behavior_checks": [
+        "以本次完整产品硬广为目标，正文让读者理解实际服务和确认维修的方式，不只延长骑车人的故事再接品牌尾巴",
+        "结束临时的第一人称故事约束，保留已认可的自然语言；不把虚构试写当真实口碑",
+        "从现有服务事实说明对费用顾虑的用途，不增补价格优势、完成时限或维修效果",
+        "只交所需成稿，不为恢复已明确的原任务再次索取授权"
+      ]
+    },
+    {
+      "id": "social-reference-reader-relationship",
+      "title": "参考结构落实为读者问题与服务用途的联系",
+      "task_type": "structural_rewrite",
+      "genre": "social_ad",
+      "scope": "L3",
+      "request": "参考下面案例的结构，重写我们的咖啡试饮装广告。要完整、有吸引力，别只是把段落凑齐。",
+      "source": "参考案例：想试香水，又担心买整瓶用不完？试香套装将六种香型分别装成小样，让你逐个闻过，再决定正装选哪款。详情页可查看香型与小样规格。\n当前产品事实：挂耳咖啡试饮装，浅烘、中烘、深烘各两包，每包单独标注烘焙程度；用户可在商品页查看规格。没有固定冲泡方法、咖啡师指导、推荐系统、价格优势或效果数据。\n当前稿：选咖啡好纠结。我们有浅烘、中烘、深烘，每种两包，包装上有标注。品质生活，从一杯好咖啡开始。欢迎查看商品页。",
+      "required_routes": [
+        "social-content-register.md",
+        "reference-style-calibration.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "咖啡师一对一指导",
+        "六种香型",
+        "全网最低价"
+      ],
+      "behavior_checks": [
+        "从如何判断自己喜欢哪种烘焙程度组织读者问题，让试饮与标注在正文中发挥可理解的作用；不得把三种烘焙标签自动许诺为三种具体风味",
+        "借用参考中尝试与选择的关系，以当前咖啡事实重组整篇；不只把痛点、产品清单、购买入口分成三段就宣称结构成立",
+        "保留可查看商品规格的实际入口，不借用香水规格、虚构导购服务或价格优惠",
+        "表达用途时不要求每项规格后都附加价值句，不编造用户好评或试饮后必然找到最爱"
       ]
     }
   ]
