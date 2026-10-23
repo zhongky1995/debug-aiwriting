@@ -8,6 +8,8 @@ The reader is deciding what to believe, what matters now, what to do next, and w
 
 ## Information Order
 
+Use the parts needed for this decision; they are not five compulsory sections. Allocate most space to the finding, its grounds, and its implications. An assumptions section is useful when those assumptions change the choice, not as a routine closing disclaimer.
+
 1. **Decision or finding**: state the main judgment early.
 2. **Evidence**: show the few facts or comparisons that support it.
 3. **Implication**: explain what changes for the business, plan, or resource decision.
@@ -17,7 +19,7 @@ The reader is deciding what to believe, what matters now, what to do next, and w
 ## Register Rules
 
 - Use concise professional Chinese with a high ratio of judgment to explanation.
-- Separate fact, interpretation, forecast, and recommendation.
+- Make fact, interpretation, forecast, and recommendation distinguishable through wording and context. Explicit labels are optional unless the format requires them.
 - Use headings that state the finding or decision, not generic categories such as "背景分析" or "价值意义."
 - Keep numbers comparable: period, denominator, scope, and baseline must not drift.
 - Do not replace uncertainty with confident wording.
@@ -42,5 +44,5 @@ The reader is deciding what to believe, what matters now, what to do next, and w
 
 - Can the reader identify the main decision in the first screen or page?
 - Is each recommendation supported by evidence at the available level?
-- Are assumptions and unknowns visible?
+- Are the assumptions and unknowns that could change this decision clear, without obscuring the strongest supported judgment?
 - Does the text sound like a decision document rather than a slogan, transcript, or project diary?

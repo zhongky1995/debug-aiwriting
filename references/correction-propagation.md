@@ -31,6 +31,8 @@ For social posts and feed ads, also use [Social Content Register](social-content
 
 Use `references/trace-patterns.json` for known categories and `scripts/audit_surfaces.py --term` for an explicitly rejected phrase within its applicable scope. The correction is never “swap one suspicious word for a more polished synonym.” Name the real action, evidence, or scene-appropriate expression.
 
+If the user reports “像免责声明、声明一大堆、没有有用内容”, identify the unanswered reader question and unused material before deleting phrases. Restore a supported answer, judgment, mechanism, or purchasing reason; use [Proportionate Qualification](core-quality-gates.md#proportionate-qualification) to retain only consequential limits. Do not replace the problem with a global ban on uncertainty or a new “不是X而是Y” slogan.
+
 ## Stop Rule
 
 Do not claim the issue is fixed until analogous expressions have been checked across the whole artifact. If a visual, locked block, or external attachment cannot be searched, disclose it.

@@ -1350,7 +1350,7 @@
       "behavior_checks": [
         "解释可见的选题切口与信息揭示如何服务当前读者，再写不同的内容",
         "不把长正文、重复价格或四页三段结构当成必须复制的成功机制",
-        "明确没有效果数据，不把提供竞品参考当成跑通证据",
+        "不把提供竞品参考当成跑通证据；只有当前评价确实依赖效果数据时，才说明其缺失，不默认将该说明写进广告成稿",
         "不能只做空泛诊断；在授权范围内交付兑现标题的成稿"
       ]
     },
@@ -1456,6 +1456,247 @@
         "借用参考中尝试与选择的关系，以当前咖啡事实重组整篇；不只把痛点、产品清单、购买入口分成三段就宣称结构成立",
         "保留可查看商品规格的实际入口，不借用香水规格、虚构导购服务或价格优惠",
         "表达用途时不要求每项规格后都附加价值句，不编造用户好评或试饮后必然找到最爱"
+      ]
+    },
+    {
+      "id": "qualification-repair-shop-positive",
+      "title": "服务介绍从已知流程讲用途，不列缺失证据",
+      "task_type": "structural_rewrite",
+      "genre": "social_ad",
+      "scope": "L3",
+      "request": "把这段写成可发布的修车店介绍，重新组织，讲清对顾客的用处，直接给正文。",
+      "source": "店铺服务：先检查故障，列明维修项目和报价，经顾客确认后开修；到店时间先私信约定。现稿：我们不保证最低价，不承诺当天修好，未提供满意度数据；具体情况以检查为准。",
+      "required_routes": [
+        "social-content-register.md",
+        "external-facing-check.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "保证最低价",
+        "保证当天修好",
+        "【自检说明】"
+      ],
+      "behavior_checks": [
+        "以报价与确认的关系回应费用顾虑；正文说明顾客怎样决定修不修",
+        "不因缺少效果数据放弃有依据的用途说明，也不把已知流程写成低价或满意承诺",
+        "不默认附自检、事实缺口清单或未被要求的编辑报告"
+      ]
+    },
+    {
+      "id": "qualification-novice-conflict-mechanism",
+      "title": "给小白补检测依据，避免用适用边界代替解释",
+      "task_type": "structural_rewrite",
+      "genre": "general_nonfiction",
+      "scope": "L3",
+      "request": "面向零基础读者补齐这里的解释，可重组，只用所给机制，别再话说一半。",
+      "source": "原稿：系统可以检测编辑冲突，但不代表能判断哪个标题更好，不同系统实现不同。机制材料：两个人打开版本7；先保存者的标题被保存，版本变为8；保存时把传入版本与当前版本比较，匹配才一起更新标题和版本；第二人提交的仍是版本7，保存被拒绝，草稿保留供重新选择。这是一个教学方案。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "whole-artifact-writing.md"
+      ],
+      "must_preserve": [
+        "版本7",
+        "草稿"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "系统自动选出最佳标题",
+        "【自检说明】"
+      ],
+      "behavior_checks": [
+        "说明保存携带的版本、当前版本和拒绝覆盖之间的因果；让读者知道凭什么检测",
+        "将一种方案的范围自然限定一次，不罗列与这次理解无关的例外",
+        "保留人工选择与草稿，不把检测冲突许诺为自动判断哪个标题更好"
+      ]
+    },
+    {
+      "id": "qualification-advice-supported-priority",
+      "title": "没有工时数据也能提出有依据的改进优先级",
+      "task_type": "structural_rewrite",
+      "genre": "executive_report",
+      "scope": "L3",
+      "request": "写成给负责人的简短改进建议，要有明确判断和理由，不要只说还需评估。",
+      "source": "12份用户反馈中，8份提到同一联系方式要填两次，另4份提到按钮颜色。下一版只能优先改一项；未统计填写耗时和转化率。",
+      "required_routes": [
+        "executive-report-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "12份",
+        "8份"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "已提升转化率",
+        "节省50%时间",
+        "【自检说明】"
+      ],
+      "behavior_checks": [
+        "依据已有反馈与资源约束给出优先级，不停在需进一步评估",
+        "区分反复出现的填写问题和未测量的时间或转化收益",
+        "无需把所有未提供的效果指标列成免责声明，不能暗示已证明转化效果"
+      ]
+    },
+    {
+      "id": "qualification-delay-retain-commitment",
+      "title": "去防御措辞保留延期影响和准确时间承诺",
+      "task_type": "rewrite",
+      "genre": "external_email",
+      "scope": "L2",
+      "request": "改成简洁、可发客户的版本，去掉免责声明口吻，但安排别变。",
+      "source": "原定今晚发布的新版本因导出异常延期，正在修复。现有版本可继续使用。明天15:00同步进展，上线时间尚未确定。这不代表明天就能修好，不能把进展同步当作上线保证，具体以上线通知为准。",
+      "required_routes": [
+        "external-facing-check.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "导出异常",
+        "现有版本可继续使用",
+        "明天15:00",
+        "上线时间尚未确定"
+      ],
+      "must_remove": [
+        "不能把进展同步当作上线保证"
+      ],
+      "forbidden_additions": [
+        "明天15:00上线",
+        "【自检说明】"
+      ],
+      "behavior_checks": [
+        "保留延期原因、可继续使用、进展时间和上线时间未定",
+        "同一不确定性说明一次即可；不以更安心为由许诺明天上线",
+        "只给所需客户正文，不附内部自检"
+      ]
+    },
+    {
+      "id": "qualification-keep-required-safety",
+      "title": "减少免责声明不删操作前的必要安全条件",
+      "task_type": "rewrite",
+      "genre": "internal_sop",
+      "scope": "L2",
+      "request": "把这段整理成清楚的换刀片操作说明，删无意义提醒。",
+      "source": "更换刀片前必须断开电源，待刀片完全停止后再操作。按照标记拆下旧刀片并固定新刀片。安全很重要，不能因此放松警惕，具体情况具体分析。",
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "断开电源",
+        "待刀片完全停止",
+        "固定新刀片"
+      ],
+      "must_remove": [
+        "具体情况具体分析"
+      ],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "断电及完全停止属于动作前的必要条件，不能后移到文末或删除",
+        "操作内容清楚，删除安全口号但不增加未经提供的机器步骤"
+      ]
+    },
+    {
+      "id": "qualification-case-scaling-uncertainty",
+      "title": "决策确实依赖缺失数据时保留局限并给出下一步",
+      "task_type": "structural_rewrite",
+      "genre": "executive_report",
+      "scope": "L3",
+      "request": "据此写一段是否扩大活动投入的判断，不要套话。",
+      "source": "本场活动30人报名、24人到场；尚未收集购买和复购数据。负责人要决定是否以销售回报为依据加倍投入，当前没有销售成本和收入记录。",
+      "required_routes": [
+        "executive-report-register.md",
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "30人",
+        "24人"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "销售回报显著",
+        "证明活动无效"
+      ],
+      "behavior_checks": [
+        "可判断到场，不能用到场证明销售回报；这个缺口直接影响加倍投入，必须交代",
+        "给出可执行的记录或核算建议，不用泛泛的仅供参考代替结论",
+        "不反向断言活动无效，也不暗示已计算ROI"
+      ]
+    },
+    {
+      "id": "qualification-good-definition-keep",
+      "title": "简短完整的解释无需补例外和免责声明",
+      "task_type": "rewrite",
+      "genre": "general_nonfiction",
+      "scope": "L2",
+      "request": "看看这段对零基础读者是否还需要改；足够清楚就保留。",
+      "source": "缓存是临时留存的一份数据副本。下次需要相同内容时，可以先读这份副本，减少重新获取的工作。",
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [
+        "【自检说明】",
+        "并非所有系统"
+      ],
+      "behavior_checks": [
+        "定义已经交代对象、使用方式和作用，允许原样保留",
+        "不强制补正常流程案例、并发、过期、故障与适用边界",
+        "没有具体误解风险时，不追加“并非所有系统”或自检说明"
+      ]
+    },
+    {
+      "id": "qualification-thin-brief-no-invention",
+      "title": "材料薄时交付可用短稿，不靠承诺或缺口清单扩写",
+      "task_type": "rewrite",
+      "genre": "product_copy",
+      "scope": "L2",
+      "request": "改成自然、可直接用的一句话产品介绍，不要补功能。",
+      "source": "产品：30天会员，可下载站内模板。现稿：会员有效期为30天，支持下载站内模板。我们无法保证模板适合所有场景，未提供更新频率或客户评价，实际效果因人而异。",
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "30天",
+        "下载站内模板"
+      ],
+      "must_remove": [
+        "实际效果因人而异"
+      ],
+      "forbidden_additions": [
+        "不限次数",
+        "每天更新",
+        "【自检说明】"
+      ],
+      "behavior_checks": [
+        "已知事实足够一句介绍，直接交付；不为了像专家而扩写数据不足说明",
+        "不擅自增加不限次、自动更新或保证适用等卖点"
+      ]
+    },
+    {
+      "id": "qualification-local-meaning-preserved",
+      "title": "L2删重复警告不能改成所有客户都应使用",
+      "task_type": "rewrite",
+      "genre": "general_nonfiction",
+      "scope": "L2",
+      "request": "只改语言，保留原判断和适用条件，不补方案。",
+      "source": "对每周反复汇总同一批表格的团队，可以先把固定字段合并，减少重复整理。并非每个团队都有这种工作，不代表所有业务都需要自动化，也不能保证投入产出。",
+      "required_routes": [
+        "core-quality-gates.md"
+      ],
+      "must_preserve": [
+        "每周反复汇总同一批表格",
+        "固定字段"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [
+        "所有团队都应该",
+        "节省80%"
+      ],
+      "behavior_checks": [
+        "保留每周反复汇总同一批表格的条件及先合并固定字段的建议",
+        "删去针对所有团队的重复警告，但不将建议扩大到所有业务",
+        "不添加新的自动化实施方案或虚构效率数字"
       ]
     }
   ]

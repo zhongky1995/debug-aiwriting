@@ -17,7 +17,7 @@ Facts and purpose constrain the plan, but the initial plan is revisable. New evi
 
 ## Professional Work Before Prose
 
-Identify the communicative job, not just the publication channel. An article may explain, argue, document a case, teach, or narrate; these jobs need different decisions. For mixed jobs choose the dominant reader outcome and make supporting functions serve it.
+Identify the communicative job, not just the publication channel. An article may explain, argue, document a case, teach, or narrate; these jobs need different decisions. For mixed jobs choose the dominant reader outcome and make supporting functions serve it. State privately what this piece contributes beyond its cautions: an answer, distinction, mechanism, observation, choice, or scene movement. If none is available, revisit the material and task before drafting.
 
 The following are checks on decisions, not compulsory sections or public deliverables:
 
@@ -42,6 +42,8 @@ An upstream result must constrain drafting: each essential passage has a job and
 Separate analytical questions when helpful; keep one editorial responsibility for the complete draft. Fact checks and reader questions may return evidence and findings, not mandatory paragraphs to concatenate. This does not require multiple agents or tool calls.
 
 Compose for a reader who does not share the writer's background. Within the authorized scope, select the material that carries the communicative purpose, arrange its relationships, and allocate space by importance. Retain necessary orientation and causal links while compressing incidental chronology, repeated exchanges, and explanations the text has already earned. A short piece still needs a center of attention, proportion, progression, and an ending; these are relationships within the prose, not required headings, a thesis-first opening, or a fixed sequence. A diary, transcript, or scene may properly preserve a different rhythm when that is the requested artifact.
+
+For explanation, let the ordinary process establish what happens and why before multiplying exceptions. A boundary belongs in the main thread when it changes that explanation or the reader's choice. For advisory work, state a supported recommendation and the reasoning that makes it preferable; a list of possibilities or “需要进一步评估” is insufficient when the available material already supports a choice. Use [Proportionate Qualification](core-quality-gates.md#proportionate-qualification) to keep real limits while developing the substance.
 
 Keep speaker position distinct from authorial organization. First person alone does not establish a stable telling position: the experiencing person, the later narrator, and a speaker addressing someone inside the scene can all use “I”. When narration and reflection interact, check who is being addressed, when the judgment is formed, and whether words were spoken, privately thought, or offered in retrospect. Let the reader follow a change through framing, sequence, or an adequate contextual cue; a transition word cannot repair incompatible positions. Do not impose explicit signposting where the intended narrative already makes the movement clear, or turn a deliberately ambiguous literary voice into a report.
 
@@ -74,6 +76,6 @@ When purpose changes, evaluate against the updated basis: do not demand that the
 
 Read only the finished text with background available to its intended audience; set the author's explanatory notes aside. Describe briefly what the text actually leads a reader to understand, do, expect, or feel. Then compare that reading with the basis. Check misreadings such as “tomorrow's progress report” being read as “tomorrow's fix”, an unexplained comparison, or a scene's emotional turn depending on information never revealed.
 
-This self-review is a proxy, not an independent reader study. Do not claim blind testing or independent validation when the reviewer has already seen the plan. Separate review is optional when available and authorized, not required for every short text.
+Keep this editorial review internal by default. Describe validation accurately if reporting it; do not claim independent reader testing from a self-review. Separate review is optional when available and authorized.
 
 Finish when hard constraints and the main reader task are met, significant defects are resolved, and remaining changes are preference swaps. Keep a successful version. If professional adequacy still fails, name the actual problem instead of declaring a generic PASS.

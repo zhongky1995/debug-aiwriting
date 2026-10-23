@@ -47,15 +47,8 @@ Remove or rewrite:
 - repeated paragraph rhythm: each paragraph should not be "topic sentence -> expansion -> summary."
 - "既要又要还要" language that avoids priority and cost.
 
-## Output Self-Check
+## Finished Copy And Editorial Notes
 
-When the user is reviewing a draft and has not asked for clean final copy only, append:
+Return usable copy first. Run the boundary check internally; do not append a routine `【自检说明】` or require the user to opt out of it. Add a short separate note when requested or when a specific unresolved disclosure, fact, or commitment affects use of the draft.
 
-```text
-【自检说明】
-- AI 味处理：
-- 内外口径处理：
-- 仍需你确认：
-```
-
-Keep the self-check short. It exists so the user can verify the safety pass, not to restate the whole draft.
+External writing still needs a substantive answer, explanation, or reason to act. Apply [Proportionate Qualification](core-quality-gates.md#proportionate-qualification): include the limits this reader needs, and express the positive supported content with equal precision. Do not copy internal cautions about unprovided evidence into the finished artifact by default.
