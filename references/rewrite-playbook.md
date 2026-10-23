@@ -20,7 +20,7 @@ For nonfiction:
 2. List the reader, occasion, and desired action.
 3. Build a private material ledger: facts, actions, numbers, examples, contrasts, conditions, failures, costs, and results that the source actually supports.
 4. Match the planned length and section count to that ledger. Research, ask, narrow, or shorten when the material cannot carry the requested expansion.
-5. Keep source facts fixed. Mark missing facts instead of filling them in.
+5. Keep source facts fixed. An essential missing fact may need a question or a draft placeholder; otherwise narrow or omit the affected claim. Do not turn every unprovided fact into a public warning.
 6. Cut claims and paragraphs that do not change reader understanding or action.
 7. Add specificity only when it is grounded in the prompt, files, examples, or user-provided context.
 8. Before line editing, apply the [Adjacent-Passage Continuity Gate](core-quality-gates.md#adjacent-passage-continuity-gate). Check why each paragraph leads to the next, not only whether both contain useful information. Repair missing premises within scope; do not turn this internal review into an outline in the final prose.
@@ -56,7 +56,7 @@ Choose the register before editing sentences.
 
 - Keep professional tone, but replace slogans with decisions, risks, evidence, and next actions.
 - Use headings that name the finding, not the category.
-- State uncertainty and assumptions plainly.
+- State uncertainty and assumptions that affect the finding or decision plainly, near the affected claim. Develop the strongest supported judgment rather than listing unknowns.
 - For executive, decision, research, or data-led material, also read `executive-report-register.md`.
 
 ### Proposal / Sales Material
@@ -115,7 +115,7 @@ Choose the register before editing sentences.
 - Replace abstract nouns with actors and actions.
 - Break perfectly balanced sentences when they feel manufactured.
 - Keep some asymmetry: one short sentence can carry emphasis better than another polished clause.
-- Remove performative certainty where evidence is limited.
+- Match certainty to support. Remove both exaggerated certainty and redundant hedging; keep the specific condition that changes the claim. Use [Proportionate Qualification](core-quality-gates.md#proportionate-qualification).
 - In proposals, turn "we can provide X" into "X changes this client-side link in this way" when the source supports it.
 - Let the actor or action arrive before long conditions when the current sentence makes the reader wait too long for its main clause.
 - Check clause handoffs: the next sentence should clearly continue from the person, object, action, result, or question just introduced. After shortening, recheck paragraph boundaries for lost conditions, purposes, or reasoning.

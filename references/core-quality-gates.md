@@ -4,33 +4,15 @@ Use this reference for nonfiction, proposals, reports, product copy, emails, soc
 
 ## Governing Test
 
-Removing AI tone means restoring responsibility and evidence, not swapping suspicious words.
+Start with the reading result: what useful answer, understanding, judgment, or experience does this text deliver? Fix missing substance before polishing. The questions below guide editing; they are not sentence templates or required disclosures.
 
-For every important explanatory, causal, execution, value, or result claim, ask:
+For an important claim, identify who acts or judges, what happens to which object, on what grounds or conditions, and what follows. A sentence needs only the information required for its role; earlier evidence can support a later judgment. Develop, narrow, or remove a central claim with no usable meaning or support, within scope.
 
-- Who is making the claim or taking the action?
-- What do they actually do?
-- To which object, user, channel, document, or system?
-- Under what condition or at what time?
-- What visible change, cost, result, or decision follows?
-- What fact, source, inference, or boundary supports it?
-
-A sentence does not need to answer all six questions, but it must contain enough information for its role. If nobody can execute, observe, or defend it, rewrite or remove it.
-
-For fiction and narrative work, use `fiction-narrative-register.md` instead of forcing every sentence through an actor/action checklist. Narrative nonfiction must still preserve evidence boundaries.
+Preserve facts, intent, evidence level, and authorized scope while improving genre fit, reasoning, and language. Surface cleanup follows those decisions. For fiction, use `fiction-narrative-register.md`; do not apply an actor/action checklist to narration.
 
 ## Priority
 
-Apply the gates in this order:
-
-1. **Facts and intent**: preserve names, numbers, claims, chronology, and the user's purpose.
-2. **Authorized scope**: do not turn line editing into structural or substantive rewriting.
-3. **Evidence level**: distinguish fact, inference, hypothesis, recommendation, and unknown.
-4. **Scene and register**: write for the actual reader, relationship, channel, and stakes.
-5. **Natural language**: fix collocation, syntax, rhythm, and unnecessary abstraction.
-6. **Surface cleanup**: only after meaning is stable, scan `trace-patterns.json`.
-
-Do not trade a higher-priority requirement for a cleaner sentence.
+Facts and intent, authorized scope, and evidence level constrain the rewrite. Within them, serve the reader's task and genre, then improve language and surface patterns. Passing constraints alone does not establish usefulness.
 
 ## Meaning And Register
 
@@ -55,131 +37,89 @@ Classify important claims before rewriting:
 - **Recommendation**: a proposed action, not an observed result.
 - **Unknown**: the source does not provide enough information.
 
-Never promote a weaker level into a stronger one. If the source does not support a concrete replacement, narrow the sentence, state the missing evidence, or remove the claim.
+Keep this classification internal unless the reader needs it. Distinguish levels through ordinary wording and attribution; explicit labels are useful in research or review, but not required on every claim. Never promote a weaker level into a stronger one. When support is insufficient, narrow or remove the affected claim, obtain evidence when needed, or explain a material gap to the user outside clean copy.
 
 Never invent dates, quantities, product functions, samples, quotations, reactions, anecdotes, personal experience, customer feedback, or business results to make abstract writing sound human.
 
+Missing measurements do not prohibit analysis. Explain a supplied process, compare actual options, derive a supported consequence, or recommend an action with its reason. Separate what a mechanism enables from whether it has produced a measured improvement. Supplied facts that a repair shop lists items and prices before the customer confirms repair support “看过维修项目和报价，再决定修不修”; they do not support a claim of cheaper repairs or greater customer satisfaction. The useful explanation needs neither invented results nor a paragraph listing those unavailable results.
+
+## Proportionate Qualification
+
+A qualification earns space when it changes the reader's understanding, expectation, decision, obligation, or safe action. Preserve applicable required disclosures. For other qualifications, identify the specific misunderstanding they prevent:
+
+- **Claim condition:** integrate it into the claim. “连接同一家庭网络、允许互访的电脑和打印机，可以在家中传送打印任务。” The condition explains the relationship.
+- **Decision-relevant uncertainty:** give the strongest supported finding and identify the unresolved part. Missing sales data may limit a decision about scaling; it need not obscure observed attendance or completed work.
+- **Editorial caution:** keep it in the editing process. Source incompleteness, lack of an independent reader study, and reminders not to generalize need no automatic paragraph in finished copy. Disclose them when the requested claim or use actually depends on them.
+
+Develop the main answer or normal path at the depth its reader needs. Put a material limitation near its claim, usually once. A task-specific safety instruction may belong before the action. Avoid a queue of “不能说明、不代表、不保证、仅供参考” that leaves the positive explanation unwritten.
+
+Replacing a queue with “具体情况具体分析” still leaves the work undone. Specify the condition and what follows from it. Conversely, do not delete a true limit to make copy sound stronger, change a progress update into a delivery promise, or turn a provisional conclusion into an established result. These are meaning decisions, not a banned-word pass.
+
 ## Material Sufficiency Gate
 
-Use this gate before generating or expanding nonfiction, including a short expert opinion. Depth and length must come from material and reasoning, not from restating a small number of ideas.
+Depth can come from supported material and developed reasoning: facts, observations, process stages, comparisons, conditions, costs, consequences, and defensible interpretations or recommendations. A hypothetical example can clarify a mechanism but cannot establish its prevalence or measured effect. Synonyms, generic implications, ornamental metaphors, and repeated qualifications add no development.
 
-Build a private material ledger from the available source. Useful units include:
+Keep a private material ledger when length or multiple sections make selection difficult. There is no facts-per-word quota. Ask whether each major section has the material and reasoning to perform its job. Research when appropriate, ask for essential private facts, narrow a claim, or shorten when it cannot. Use a placeholder only when an essential missing fact must remain visible for completion.
 
-- a supported fact, number, quotation, action, failure, cost, comparison, condition, or result
-- a verified process with more than one meaningful stage
-- a defensible inference that connects existing facts without pretending to be new evidence
-- a clearly labelled recommendation or hypothesis in a proposal, plan, or advisory document
-
-Do not use synonyms, generic implications, imagined examples, ornamental metaphors, or repeated qualifications as new material. There is no universal facts-per-word quota: a short email and a long case study have different needs. The test is whether each major section has enough independent support to perform its job.
-
-When the material cannot support the requested length or level of certainty, choose the least disruptive valid move:
-
-1. research when the task and available tools permit it
-2. ask for the missing private experience, decision, or evidence when it is essential
-3. narrow the claim or artifact scope
-4. deliver a shorter version
-5. keep an explicit placeholder or evidence gap when the format requires it
-
-Never expand an observed fact into an invented scene. Never present proposed work as completed work.
-
-An explicitly hypothetical example can explain how a proposal might work. It cannot prove that readers have that problem, that the proposed cause is correct, or that the proposal deserves priority. Check whether removing the source update leaves the recommendation unchanged: if so, identify the new evidence or changed condition it contributes, or narrow the claimed novelty. Do not require every useful idea to be unprecedented.
+Do not expand an observation into an invented scene or present proposed work as completed. If a recommendation would be identical without the new source update, identify what the update actually contributes or narrow its claimed novelty. Useful ideas need not be unprecedented.
 
 ## Knowledge Position Gate
 
-Voice does not require frequent first person. Readers should still be able to infer:
-
-- who is speaking or taking responsibility for the judgment
-- how that person or organization knows
-- what prompted the statement now
-- which part is observed, inferred, proposed, or still uncertain
-- where the judgment stops
-
-Use only the dimensions the source supports. Do not manufacture a discovery story, personal trial, backstage access, emotional turn, or confession to give the copy a speaker.
+The selection of evidence, attribution, and judgment should let the reader understand who knows or claims what, on what grounds, and where it matters. Frequent first person and an explicit uncertainty paragraph are unnecessary. Do not manufacture a discovery story, personal trial, backstage access, or confession to give the copy a speaker.
 
 ## Action And Causality Gate
 
-Reject sentences that disguise a desired result as an executable action. Replace the target label with the work someone can perform and the observable result, when the source provides it.
-
-Check the verb harder than the noun:
-
-- Does the verb naturally take this object in Chinese?
-- Is the verb naming an operation or merely making the sentence sound strategic?
-- Would the assigned person know what to do next?
-- Is the claimed consequence actually caused by the action?
-
-Ordinary verbs are often more precise for execution copy. Professional terms may stay in strategy and analysis when the surrounding page defines the mechanism.
+For an execution instruction, name work its actor can perform; a desired result is not an action. Check whether the verb naturally takes its object, whether it names an operation or only adds strategic tone, and whether the stated consequence follows. Professional terms can stay when the surrounding material explains their role or mechanism. Observations and judgments need not become instructions.
 
 ## Adjacent-Passage Continuity Gate
 
-Use this for explanatory prose before language cleanup, then check that cleanup has not removed a necessary bridge. Concrete sentences and informative paragraphs can still leave the reader to supply the logic between them.
+Concrete sentences can still leave the reasoning to the reader. Read adjacent sentences and paragraphs with only the target reader's knowledge:
 
-Read each adjacent pair of paragraphs, and the sentence transitions within them, from the target reader's knowledge rather than the writer's full analysis:
+1. What has the text established?
+2. What does the next passage introduce, and why is it relevant now?
+3. What must the reader guess: a referent, definition, purpose, mechanism, condition, decision criterion, or dependency?
+4. Make the missing supported relationship explicit, or reorder/remove the detour within scope. Reread the actual pair.
 
-1. **Established understanding**: what does the preceding text make clear, including reasonable shared knowledge?
-2. **Next move**: what question, judgment, example, condition, or action does the next passage introduce? If the subject, audience, or task changes, is its relevance clear?
-3. **Missing bridge**: what would the reader have to guess to connect them? Identify the actual gap: an unclear referent, undefined concept, missing purpose, causal mechanism, applicability condition, decision criterion, or procedural dependency.
-4. **Smallest repair**: make a supported premise explicit, clarify the referent, or, within the authorized scope, reorder or remove a detour. Reread the pair: why does the first passage lead to the second?
+For example, moving from a tool's ability to reuse finished articles directly to staffing advice skips the work still required of people. A supported bridge identifies which inputs must exist and which need preparation. Difficulty publishing alone does not prove a lack of ideas.
 
-For example, moving from a tool's ability to reuse finished articles directly to advice about staffing skips the work left for people. A supported bridge would identify which inputs must already exist and which missing inputs require human preparation. Do not assume that difficulty publishing proves a lack of ideas; time, materials, or other causes may be unknown.
+Retain a necessary bridge when cutting repeated conclusions. Add no bridge where shared knowledge or existing prose already makes the relationship clear. “所以” cannot supply evidence for an unknown cause. Parallel items need a shared purpose, not a fabricated causal chain. At L1/L2, clarifying a supported implicit premise does not authorize new analysis or restructuring. Intentional narrative ambiguity and scene cuts follow the narrative reference.
 
-Apply restraint:
+### Explanation Depth
 
-- Add a bridge only where the intended reader cannot reliably recover it. Shared premises and already clear transitions need no extra explanation.
-- A necessary bridge adds a relationship the reader needs; a repeated conclusion adds the same judgment again. Do not remove the former to avoid the latter.
-- Words such as “所以” and “不过” can express a real relationship but cannot supply missing evidence. If a proposed connection is unsupported, narrow the claim, retain uncertainty, or remove it instead of inventing a cause.
-- Choose the order for the reader's task. No universal why-first sequence, bridge sentence quota, paragraph summary, or action ending is required. Parallel items need a clear shared purpose, not a fabricated causal chain.
-- At L1/L2, preserve the agreed structure and claims; clarifying a supported implicit premise does not authorize new analysis or structural redesign. Keep diagnostics internal unless the user asks for review.
-- Do not apply explanatory completeness to intentional narrative ambiguity, suspense, or scene cuts; use the narrative reference for those functions.
+For a reader learning a mechanism, follow one representative process far enough that the result is intelligible: the starting situation, the decisive action or comparison, the resulting change, and why it follows. Give a term its name once its role can be understood. Select details by the reader's starting knowledge and the question promised by this passage.
+
+For example, “系统可以检测编辑冲突” leaves a novice asking how. Given a source describing version checks, explain that both editors opened version 7, the first save changes it to 8, and the next save carries 7 so it is rejected before overwriting. The comparison supplies the missing mechanism. A warning that systems differ cannot supply it. Teach this as one implementation, not as the design of every system.
+
+Stop when the reader can follow the promised result and understand a relevant changed condition. Do not recursively explain every component or add every failure mode. Not every paragraph needs an example, exception, or application; a concise definition can already do its job.
 
 ## Natural Chinese Gate
 
-Read the exact sentence in its intended setting, separately from the explanation of what the writer meant. Written prose need not imitate speech. When wording feels strained, compressed, or inflated:
+Read the exact wording separately from your account of what it meant. If defending a sentence requires a clearer paraphrase, rewrite from that meaning. Written prose need not imitate speech.
 
-- Recover the actual proposition in ordinary Chinese: what event, feeling, relationship, or judgment is being expressed? If a clearer paraphrase is needed to defend the sentence, revise from that meaning instead of making the reader perform the translation.
-- Check subject-predicate and verb-object fit, referents, and any metaphor. Ordinary words can still form an unnatural combination. Keep an image or abstraction when its meaning and register work; replacing the verb with a grander synonym does not repair the relation.
-- Check whether the wording adds an unsupported causal, exclusive, or final claim. A next step does not by itself prove that every other concern has disappeared or been resolved.
-- Distinguish the editor's account of a paragraph's function from language that belongs in the artifact. If a summary only restates an event already clear to the reader, remove it; retain reflection or analysis when it adds a supported understanding in appropriate language.
+- Check subject-predicate and verb-object fit, referents, and metaphors. Ordinary words can form unnatural combinations; grander synonyms do not repair them.
+- Put the main actor, object, or action before long conditions when that helps reading. Check how each clause hands its object or question to the next.
+- Preserve stable terminology. Do not rename the same actor or object to avoid repetition.
+- Check for unsupported causal, exclusive, or final claims. A next step does not prove that other concerns are resolved.
+- Keep reflection that develops understanding; remove commentary that only explains a paragraph's function to the editor.
+- Review dense modifiers, strings of `的`, queues of clipped sentences, and identical opening/closing beats. They are signals to read, not automatic errors. Vary rhythm where the material calls for it.
 
-Judge against the actual genre: client-facing explanation, analytical reasoning, executable instructions, character speech, and literary narration have different registers. Do not turn this check into a word blacklist or a demand that every sentence name a physical action. After repair, reread the paragraph for lost reasoning, voice, and emphasis.
-
-Prefer stable terminology. Do not rename the same actor or object merely to avoid repetition.
-
-Let the main actor, object, or action arrive before a long stack of conditions when that makes the sentence easier to follow. Check whether consecutive clauses naturally hand the same person, object, action, or result forward. Repeated long modifiers, dense strings of `的`, and perfectly clipped short sentences are review signals, not automatic errors.
-
-Vary rhythm only when the material supports it. Do not force every paragraph into the same length, opening, contrast pattern, or closing slogan.
+Judge language in its genre. A report, executable instruction, character's speech, and literary scene need different expression. After repairs, reread for lost reasoning, emphasis, and voice.
 
 ## Reader-Trust Gate
 
-Do not explain the same point three times as fact, interpretation, and takeaway. Keep the layer that adds information or changes the reader's decision.
-
-Challenge:
-
-- generic openings that fit any topic
-- examples that are only category lists
-- conclusions that repeat the title
-- repeated returns to one predetermined thesis while the intervening material adds no support
-- recommendations without conditions or tradeoffs
-- charts or tables paraphrased without comparison or judgment
-- certainty that exceeds the data
+Challenge interchangeable openings, category lists posing as examples, unsupported certainty, recommendations without reasons, and charts paraphrased without comparison or judgment. Do not explain one point three times as fact, interpretation, and takeaway. Retain the layer that adds understanding or changes a decision; preserve a synthesis when it actually combines the evidence.
 
 ## Voice After Cleanup
 
-Removing templates can leave correct but sterile text. Restore voice through selection, stance, emphasis, uncertainty, and rhythm that belong to the scene.
-
-Do not add first person, humor, slang, digressions, deliberate disorder, emotional ambivalence, or fake imperfection merely to appear human. Personal voice must come from supplied samples, an approved profile, or the writer's actual position.
+Restore voice through selection, stance, emphasis, and rhythm suited to the writer and scene. Do not add first person, humor, slang, digressions, fake anecdotes, deliberate disorder, or ambivalence merely to appear human. Use supplied samples and approved profiles where relevant.
 
 ## Paragraph And Document Gate
 
-For each paragraph:
+A paragraph should develop its part of the text through material, reasoning, observation, or recognition. Do not insert a number, example, action, or boundary to satisfy a checklist. An ending can stop at the last useful observation; it need not become a takeaway or practical recommendation.
 
-- The opening should name a real situation, judgment, question, or claim.
-- It should add a supported fact, action, example, distinction, condition, consequence, decision, or resolved question. A paraphrase of the previous paragraph is not progress.
-- At least one sentence should provide an action, example, number, condition, consequence, or boundary when the source supports it.
-- The ending may stop at the last useful fact, action, difficulty, or unresolved question. Do not require a takeaway or practical recommendation from every paragraph; retain a conclusion when it adds a supported inference or needed synthesis.
+A concrete detail earns space by changing understanding of cause, risk, relationship, cost, choice, sequence, or result. Unsupported precision and decorative scene-setting do not strengthen nonfiction. Fiction follows its viewpoint and scene rules.
 
-For concrete details, ask what work they do. Keep a detail when it changes the reader's understanding of cause, risk, relationship, cost, choice, sequence, or result. In nonfiction, remove unsupported precision and decorative scene-setting. In fiction, apply the viewpoint and scene rules in `fiction-narrative-register.md` instead of demanding documentary sourcing.
-
-For multi-surface documents, inspect titles, body copy, tables, captions, notes, footnotes, and final summaries. A clean body does not compensate for untouched tables or headings.
+Review all required titles, body text, tables, captions, notes, and summaries. A clean body cannot compensate for untouched headings or cells.
 
 ## Whole-Artifact Result
 
@@ -187,15 +127,4 @@ After passage checks, read the finished artifact without relying on planning not
 
 ## Stop Conditions
 
-Stop only when:
-
-- the whole artifact achieves the intended reader outcome, rather than merely passing each local check
-- facts and evidence levels still match the source
-- long nonfiction does not use repetition or invented detail to meet length
-- the rewrite stayed within L1-L4 authorization
-- important claims pass the responsibility test
-- explanatory passages connect through supported, reader-accessible premises; no necessary bridge was lost during cleanup
-- terminology and register are consistent
-- no high-severity surface pattern remains unresolved
-- cleanup has not flattened the requested voice
-- every required document surface was reviewed or explicitly excluded
+Finish when the whole text performs its requested job, its material and reasoning support its claims and length, and no significant factual, logical, language, scope, or required-surface issue remains. Check that cleanup retained necessary reasoning, decision-relevant qualifications, and the intended voice. Further synonym swaps do not require another pass.

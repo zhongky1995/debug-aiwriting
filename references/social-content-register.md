@@ -4,18 +4,6 @@ Use for finished social posts, 小红书图文/笔记/硬广, carousels, and fee
 
 These are editorial criteria, not verified platform rules or a promise of reach or conversion. Use supplied evidence for audience and product claims. Check current platform requirements through an authorized source only when they matter to the task.
 
-## Basis And Evidence Limits
-
-This reference was initially constructed from a local writing-failure audit and editorial reasoning. The audit exposed repeated advice-shaped progression and revisions driven by length and price placement; it did not establish why particular readers disengaged. Treat the proposed repairs as editorial hypotheses, not experimentally validated platform advice.
-
-Public sources checked on 2026-10-15 provide limited contextual support, added after the initial draft:
-
-- [Xiaohongshu Community Convention 2.0](https://pgy.xiaohongshu.com/help/detail?id=1eda0a065dd894063c2e029a49e8f6a1&userType=4): the official text supports truthful material, title/content alignment, and substantiated product/service descriptions. These are content boundaries, not evidence of reach or conversion.
-- [Burnkrant and Unnava, 1995, Effects of Self-Referencing on Persuasion](https://academic.oup.com/jcr/article-abstract/22/1/17/1808102?login=false): the publisher's abstract reports two experiments in which self-reference increased elaboration and could improve persuasion with strong arguments; other elaboration-enhancing conditions moderated or reversed the benefit. This supports considering reader relevance alongside argument quality, not assuming that more emotional identification always helps.
-- [Berger and Milkman, 2012, What Makes Online Content Viral?](https://journals.sagepub.com/doi/full/10.1509/jmr.10.0353): the publisher's abstract describes a three-month New York Times article study and experiments. Practical usefulness, interest, and surprise were positively associated with sharing; emotional effects depended on activation, with sadness performing differently from high-arousal emotions. Sharing of news articles does not establish feed attention or purchases for Chinese listening-service ads.
-
-The public-source check used accessible publisher abstracts and indexed official text; it was not a full-paper review or a platform experiment. These sources do not validate a fixed carousel sequence, an ideal word count, a price frequency, a requirement for a memorable line, or the claim that every emotional post should omit advice. Those choices still require judgment against the brief and actual reader evidence.
-
 ## Choose The Content Job
 
 Infer the dominant job from the brief and complaint; keep supporting jobs subordinate. Keep this working choice internal unless the user asks for analysis.
@@ -40,7 +28,7 @@ Choose a speaking position suited to the account and purpose. A personal voice c
 
 Use connected, natural Chinese and preserve necessary triggers, responses, and reasons. Dialogue, action, feeling, observation, and reflection can share the work. Give each the space its role needs; do not fix imbalance by counting pronouns or deleting all interiority. A supported reflection can make the experience worth sharing without becoming advice or a universal diagnosis. A scene can convey that significance without an explicit moral. When a draft reads like a private log, inspect selection, emphasis, progression, and closure before changing person or adding headings. Create illustrative events only within creative authorization; repair nonfiction from its evidence.
 
-Use the weakest adequate claim. A close observation or a proposed way to phrase the difficulty can be incisive without diagnosing personality, assigning another person's motive, or claiming prevalence. Do not replace editorial conviction with a chain of “可能、如果、也许、可以先”; retain a qualification when it changes the truth or the decision.
+Use the strongest claim the available support warrants at the relevant scope. A close observation or a proposed way to phrase the difficulty can be incisive without diagnosing personality, assigning another person's motive, or claiming prevalence. Do not replace editorial conviction with a chain of “可能、如果、也许、可以先”; retain a qualification when it changes the truth or the decision.
 
 Before expanding, identify the interesting movement. It might expose a contradiction, sharpen an observation, answer an uncertainty, compare choices, or show a consequence. “场景 → 共鸣 → 建议 → 私信” describes slots, not a movement.
 
@@ -112,3 +100,17 @@ Read the actual finished surfaces without the planning notes. Explain privately 
 Answers that could be pasted onto most posts are insufficient. Name the actual passage that earns the effect, and the weakest point where a reader might leave. Revise that point within scope; do not treat this imagined reader review as measured user behavior.
 
 Accuracy, continuity, clean layout, and coverage are baseline checks. They do not prove appeal, genuine emotional resonance, or commercial results. An editor can judge a candidate's strengths and weaknesses; audience performance remains untested until actual evidence exists.
+
+## Reference Provenance
+
+This section documents the reference’s basis for maintenance or methodological review; it is not copy to append to finished posts.
+
+This reference was initially constructed from a local writing-failure audit and editorial reasoning. The audit exposed repeated advice-shaped progression and revisions driven by length and price placement; it did not establish why particular readers disengaged. Treat the proposed repairs as editorial hypotheses, not experimentally validated platform advice.
+
+Public sources checked on 2026-10-15 provide limited contextual support, added after the initial draft:
+
+- [Xiaohongshu Community Convention 2.0](https://pgy.xiaohongshu.com/help/detail?id=1eda0a065dd894063c2e029a49e8f6a1&userType=4): the official text supports truthful material, title/content alignment, and substantiated product/service descriptions. These are content boundaries, not evidence of reach or conversion.
+- [Burnkrant and Unnava, 1995, Effects of Self-Referencing on Persuasion](https://academic.oup.com/jcr/article-abstract/22/1/17/1808102?login=false): the publisher's abstract reports two experiments in which self-reference increased elaboration and could improve persuasion with strong arguments; other elaboration-enhancing conditions moderated or reversed the benefit. This supports considering reader relevance alongside argument quality, not assuming that more emotional identification always helps.
+- [Berger and Milkman, 2012, What Makes Online Content Viral?](https://journals.sagepub.com/doi/full/10.1509/jmr.10.0353): the publisher's abstract describes a three-month New York Times article study and experiments. Practical usefulness, interest, and surprise were positively associated with sharing; emotional effects depended on activation, with sadness performing differently from high-arousal emotions. Sharing of news articles does not establish feed attention or purchases for Chinese listening-service ads.
+
+The public-source check used accessible publisher abstracts and indexed official text; it was not a full-paper review or a platform experiment. These sources do not validate a fixed carousel sequence, an ideal word count, a price frequency, a requirement for a memorable line, or the claim that every emotional post should omit advice. Those choices still require judgment against the brief and actual reader evidence.

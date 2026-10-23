@@ -1,27 +1,28 @@
 ---
 name: debug-aiwriting
-description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、调整口径、内容凝聚、主线与结构修复、反复修改跑偏, genre-specific quality, and voice alignment. Use for social posts/carousels/ads, short copy, articles, reports, proposals/decks, scripts, and narrative work. Preserve evidence and scope while improving the actual reader effect; do not reduce quality to surface polish or formal completeness.
+description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、免责声明式表达、内容空洞、逻辑不完整、可读性差、修改跑偏 and voice alignment. Use for copy, articles, reports, proposals/decks, scripts, and narrative work. Develop useful substance, coherent reasoning, and genre-appropriate expression while preserving facts and authorized scope.
 ---
 
 # Debug AI Writing
 
 ## Core Principle
 
-Optimize for the intended reader outcome and reader trust, not detector evasion. Treat the artifact as a whole: analysis may separate problems, but drafting must integrate their solutions and revision must improve the complete work. Surface cleanup follows substantive decisions.
+Produce writing worth reading: a useful answer, a developed observation, an intelligible explanation, a convincing offer, or a moving scene, according to the task. Let material selection, reasoning, emphasis, and language serve that result. Accuracy and scope constrain the work; passing their checks does not by itself make a finished piece.
 
-Scale effort to the coupling of decisions, not output length. A short notice or headline can require substantial selection and synthesis; a typo correction does not need a production plan. Coverage of every passage is necessary but does not establish overall effectiveness.
+Find the main writing failure before editing words. A disclaimer-heavy draft may lack an answer or judgment; an obscure draft may omit the mechanism its reader needs. Repair that missing substance within scope, then remove filler. Deleting cautious phrases or shortening every paragraph can leave the original problem intact.
 
-For important explanatory claims, make clear enough of this chain for the sentence's role: **who acts or claims -> based on what -> does what -> to which object -> under what condition -> what visible change or decision follows**. If the source cannot support a concrete claim, narrow it, label the uncertainty, or delete it. Never invent specificity.
+Scale effort to the decisions involved. A tightly coupled notice may need careful synthesis; a typo needs a correction. Keep plans, evidence classifications, and review checklists internal unless requested. Treat the artifact as a whole, including titles, tables, captions, and endings.
 
-For nonfiction, including short expert commentary, the requested depth and length must be earned by material and reasoning. A new paragraph should add a supported fact, action, distinction, condition, consequence, decision, or useful question. An illustrative example may clarify a possibility; it does not establish its prevalence, cause, or benefit. When the material is thin, research, ask, narrow, or shorten instead of padding.
+## Useful Substance And Proportionate Qualification
 
-Information gain and continuity are separate checks. In explanatory prose, the reader should understand why the next sentence or paragraph follows without having to invent a missing premise. Preserve necessary reasoning and transitions while removing repeated conclusions.
+- **Answer and develop the reader's question.** For explanation, supply the decisive intermediate process; for advice, give a supported judgment and its reason; for copy, make the known offer meaningful to the reader. Lists of topics, assurances, limitations, or desirable outcomes cannot do that work.
+- **Reason from the material.** Comparison, interpretation, causal explanation, and recommendation can add substance without adding new observations. Use the strongest claim the evidence supports. Missing outcome data restricts outcome claims; it does not erase a known mechanism, a useful comparison, or a defensible recommendation. Do not invent facts to fill gaps.
+- **Keep the logic in the prose.** Let the reader follow how the example works and why the next passage follows. Preserve necessary premises when shortening. A connector or a summary cannot replace a missing step.
+- **Choose qualifications by consequence.** Keep a condition or uncertainty when omitting it would materially change a claim, expectation, decision, obligation, or safe action. State it specifically, normally once near the relevant claim. Revisit it only when a later passage creates a distinct risk of misunderstanding. Required warnings and disclosures remain.
+- **Distinguish editorial knowledge from publishable content.** “未提供效果数据” may mean avoiding a success-rate claim; it need not become a sentence in a product introduction. “这是推断” is not a required prefix to every inference. Wording, attribution, and a defined scope can make the evidence level clear naturally. Explain a material unresolved gap outside clean copy when the user needs it to use the draft.
+- **Give space to what matters.** Develop the main point before peripheral exceptions. Keep a boundary where it explains the result or changes a choice; move specialist detail to an optional section when useful. Stop at the depth needed for this reader and task. Neither “shorter” nor “more comprehensive” is a universal remedy.
 
-For fiction and narrative work, preserve point of view, character knowledge, motive, causality, information release, scene order, and earned interiority unless structural rewriting is authorized. Do not force narrative prose through a business-writing actor/action template.
-
-Fit the actual scene. Professional writing may remain professional; personal writing may retain first person. Do not add humor, slang, anecdotes, mistakes, deliberate disorder, or emotional ambivalence merely to appear human.
-
-For social content, judge a concrete reason to stop, continue, remember, respond, or consider the offer. Coherence, cautious wording, and factual accuracy are necessary but do not establish appeal. An emotional observation can advance recognition without adding a method or factual claim; do not automatically turn it into advice, a three-part explanation, or a balanced conclusion. Preserve the commercial task when improving the content.
+These priorities follow the genre. Fiction can work through viewpoint, pressure, and ambiguity; social content can work through recognition or tension. Do not force either into an explanatory checklist. Professional writing may remain professional. Do not manufacture slang, anecdotes, errors, or emotional ambivalence to appear human.
 
 ## Scope Contract
 
@@ -36,7 +37,7 @@ Classify the task before editing:
 
 Treat bare requests such as “优化口径、调整表达、去 AI 味” as `L2`. Do not enter `L3` or `L4` without authorization. If a language symptom comes from an upstream structure, evidence, character, or scene problem that is outside scope, repair what is allowed and state the limitation.
 
-Authorization follows the user's actual request and earlier decisions, not a required level label: “重组主线/重写结构” authorizes the corresponding L3 work; a request to develop new content authorizes the needed L4 work within its stated bounds. Do not ask again merely because the user did not say “L3”. Global review itself is allowed at every level; changes still respect scope.
+Authorization follows the user's actual request and earlier decisions, not a required level label: “逻辑不完整，帮我补齐/重新组织” authorizes the corresponding reasoning or structural repair; a request to develop new content authorizes the needed L4 work within its stated bounds. Do not ask again merely because the user did not say “L3”. At L2, clarify supported implicit relationships and remove redundant caveats while preserving the agreed argument and order. Global review is allowed at every level.
 
 Task modes:
 
@@ -48,13 +49,11 @@ Task modes:
 
 ## Workflow
 
-1. **Establish the current writing basis**: identify the deliverable now requested, its reader, purpose, facts, and scope. Distinguish a temporary voice, scene, or headline experiment from the eventual deliverable; carry forward only the choices that still apply. For coupled decisions, retain the reader outcome, indispensable facts/relationships and uncertainty, tradeoff priorities, and organizing approach. Explicit purpose changes update this basis; local feedback does not silently replace it. Keep it internal unless planning is requested or a material ambiguity needs resolving.
-2. **Choose professional criteria**: select references below by communicative function as well as channel. For generation, authorized structural work, tightly coupled short copy, or revision drift, read [Whole-Artifact Writing](references/whole-artifact-writing.md). Determine what decisions must be made and what would make them inadequate; headings and step names alone are not evidence of completed work.
-3. **Diagnose the governing problem**: locate the largest obstacle to the reader outcome at the task, material, structure, scene, or expression level. Resolve it within scope before polishing. Missing evidence can require narrowing the claim or revising the plan; a transition cannot repair an unrelated section.
-4. **Compose and revise under that diagnosis**: select, arrange, and give weight to material according to the intended reader outcome and genre, within scope. Use [Whole-Artifact Writing](references/whole-artifact-writing.md#integrated-composition-at-the-requested-length) to decide what to develop, compress, omit, and bring to a close. Structure is the relationship among passages: what this passage establishes and why the reader needs the next. Filling an opening, body, and ending does not establish completeness for the requested purpose. Work on substance and organization, then language; return upstream when needed and preserve useful existing text. For explanatory prose also apply the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate).
-5. **Handle feedback without drift**: diagnose what the feedback changes and what must remain valid; use `references/correction-propagation.md` for analogous failures. Expand edits to their actual dependencies, within authorization. Compare the complete candidate with the previous viable draft: what improved, what was lost, whether the tradeoff serves the current basis. Retain or restore the better version; explicit factual corrections remain mandatory.
-6. **Verify the actual reading and coverage**: read the complete artifact against its purpose before consulting the last revision checklist, using only the background its intended reader has. Judge the actual emphasis, progression, and ending as well as continuity. Check the exact wording with the [Natural Chinese Gate](references/core-quality-gates.md#natural-chinese-gate): recognizing the intended meaning or paragraph function does not validate the sentence that expresses it. Do not use planning notes to fill gaps or infer whole-draft adequacy from a good line, a complied-with suggestion, or an improved prior defect. Inspect required titles, body, tables, captions, notes, and embedded text; disclose inaccessible surfaces.
-7. **Stop when fit for use**: required constraints and reader outcome are satisfied, material supports the length, and no significant issue remains within scope. Do not iterate for synonymous preferences or declare success from a blacklist or checklist alone. If an upstream issue cannot be repaired within scope or available evidence, deliver permitted work and state the specific limitation.
+1. **Orient**: identify the current deliverable, reader, intended effect, available facts, and authorized scope. Infer what is clear from context. Keep a compact internal writing basis when decisions interact; temporary experiments and local feedback do not silently replace the whole task.
+2. **Diagnose**: locate the largest obstacle in substance, reasoning, composition, scene, or language. Choose the relevant reference below. For generation, structural work, dense short copy, or drift, use [Whole-Artifact Writing](references/whole-artifact-writing.md). Select material and a governing approach before polishing.
+3. **Compose**: develop the answer, observation, offer, or scene at the appropriate depth. Arrange passages by their relationship and importance. For explanatory work, use the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate); for defensive writing, use [Proportionate Qualification](references/core-quality-gates.md#proportionate-qualification). Preserve useful existing text.
+4. **Revise as a whole**: use `references/correction-propagation.md` for related failures. Compare with the last viable draft for gains and losses in substance, logic, force, voice, and factual accuracy. Apply factual corrections; restore useful material lost to the latest preference.
+5. **Read and finish**: read the complete candidate with only the intended reader's background. Check actual wording with the [Natural Chinese Gate](references/core-quality-gates.md#natural-chinese-gate), all required surfaces, and the result the text delivers. Fix significant remaining issues; stop when fit for use. Surface scans supply leads, not a verdict. Report only material unresolved gaps or inaccessible required surfaces.
 
 ## Routing Matrix
 
@@ -116,10 +115,10 @@ Never improve item 7 by damaging items 1-6.
 
 ## Output Contract
 
-- For “改一下、优化口径、润色、给我一版、发客户”, provide the strongest clean version first. Keep internal checklists hidden unless a risky assumption needs disclosure.
+- For “改一下、优化口径、润色、给我一版、发客户”, provide the strongest clean version first. Keep editorial checklists, evidence labels, scope codes, and routine self-assessment out of the finished copy.
 - For review requests, lead with concrete findings and revision logic.
 - For long artifacts, provide the revised artifact and a brief note on unreadable or excluded surfaces.
-- Add `【自检说明】` only when review transparency is useful or requested.
+- Add notes only when requested or when a specific unresolved issue changes how the user can use the draft. Do not append routine `【自检说明】`, capability disclaimers, or a list of facts the material did not provide. Explicitly requested or necessary disclosures belong where their reader needs them.
 - For ideation requests, provide selected directions and concise screening rationale; do not expose raw brainstorming by default.
 
 ## Deterministic Tools

@@ -16,9 +16,11 @@ Keep these levels separate:
 4. **General method**: what another organization may reference under similar conditions.
 5. **Editorial suggestion**: possible title, summary, chart, or excerpt.
 
-Do not turn a proposed tactic, later idea, or adjacent project into a delivered case fact. A useful method can be inferred from the case, but label it as an interpretation or transferable condition rather than pretending it happened.
+Do not turn a proposed tactic, later idea, or adjacent project into a delivered case fact. A useful method can be inferred from the case; wording and applicability conditions should distinguish it from what actually happened. Explicit evidence labels are not required in every paragraph.
 
 ## Recommended Structure
+
+Select sections for the actual case and publication format. These are possible content functions, not a requirement to append limitations, editorial suggestions, and reusable summaries to every article. A case with no measured outcome can explain delivered work and its mechanism without claiming measured success.
 
 - Case summary: the business situation and one central result.
 - Problem: the specific behavior, process, or market constraint.

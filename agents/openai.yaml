@@ -1,7 +1,7 @@
 interface:
   display_name: "Debug AI Writing"
-  short_description: "围绕读者目标、内容工序与整体取舍调试中文写作，防止修改跑偏"
-  default_prompt: "Use $debug-aiwriting to establish the reader outcome, evidence, genre, and authorized scope; resolve the governing writing problem, compose a coherent whole, and accept revisions only after checking the complete artifact against the current purpose."
+  short_description: "修复内容空洞、逻辑跳步与免责声明式表达，写出有用、连贯、自然的中文"
+  default_prompt: "Use $debug-aiwriting to develop useful substance and coherent reasoning for the intended reader and genre. Repair the main writing failure, preserve facts and authorized scope, retain consequential qualifications, and deliver the strongest clean draft."
 
 policy:
   allow_implicit_invocation: true
