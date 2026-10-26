@@ -16,14 +16,14 @@ Facts and intent, authorized scope, and evidence level constrain the rewrite. Wi
 
 ## Meaning And Register
 
-Judge meaning and register separately:
+Judge whether the meaning is intelligible and whether the register fits:
 
 | Meaning | Register | Decision |
 | --- | --- | --- |
-| Concrete | Fits | Keep it. |
-| Concrete | Wrong for the scene | Rephrase without changing the claim. |
-| Abstract | Fits | Add the supported action, mechanism, evidence, or boundary. |
-| Abstract | Wrong for the scene | Delete or rebuild it. |
+| Clear in context | Fits | Keep it, including natural abstract expression. |
+| Clear in context | Wrong for the scene | Rephrase without changing the claim. |
+| A needed relationship is missing | Fits | Develop that supported relationship where the reader needs it. |
+| No usable meaning, or unclear and out of place | Wrong for the scene | Rebuild or remove within scope. |
 
 Professional language is allowed when it names a real planning object, role, metric, stage, mechanism, or decision. Plain language is not the same as casual language.
 
@@ -76,13 +76,15 @@ For an execution instruction, name work its actor can perform; a desired result 
 Concrete sentences can still leave the reasoning to the reader. Read adjacent sentences and paragraphs with only the target reader's knowledge:
 
 1. What has the text established?
-2. What does the next passage introduce, and why is it relevant now?
+2. What does the next passage introduce, and why is it relevant now? If the actor or viewpoint changes, can the reader tell whether it continues, supplements, questions, or revises the preceding approach?
 3. What must the reader guess: a referent, definition, purpose, mechanism, condition, decision criterion, or dependency?
 4. Make the missing supported relationship explicit, or reorder/remove the detour within scope. Reread the actual pair.
 
 For example, moving from a tool's ability to reuse finished articles directly to staffing advice skips the work still required of people. A supported bridge identifies which inputs must exist and which need preparation. Difficulty publishing alone does not prove a lack of ideas.
 
-Retain a necessary bridge when cutting repeated conclusions. Add no bridge where shared knowledge or existing prose already makes the relationship clear. “所以” cannot supply evidence for an unknown cause. Parallel items need a shared purpose, not a fabricated causal chain. At L1/L2, clarifying a supported implicit premise does not authorize new analysis or restructuring. Intentional narrative ambiguity and scene cuts follow the narrative reference.
+Check both the explanation and its presentation: the needed reasoning may be present but introduced too late, assigned to the wrong viewpoint, or left without a recognizable transition. In a teaching comparison, merely listing one person's actions beside another's does not explain the difference. Show how the approaches address the same question and what that changes about the work, using supported material. When introducing a different view, orient the reader at the switch; do not pre-empt that view in the preceding paragraph and then introduce its speaker as an unrelated new topic.
+
+Retain a necessary bridge when cutting repeated conclusions. A phrase such as “但顾问还有另一层考虑” can introduce a real change of perspective; it is not disposable editorial commentary merely because it guides the reader. Keep the transition proportionate, and make its relationship accurate: a division of labor is not necessarily a disagreement. Add no bridge where existing prose already makes the relationship clear. “所以” cannot supply evidence for an unknown cause, but a complete explanation may still need an explicit connective. At L1/L2, clarifying a supported implicit premise does not authorize new analysis or restructuring. Intentional narrative ambiguity and scene cuts follow the narrative reference.
 
 ### Explanation Depth
 
@@ -96,14 +98,17 @@ Stop when the reader can follow the promised result and understand a relevant ch
 
 Read the exact wording separately from your account of what it meant. If defending a sentence requires a clearer paraphrase, rewrite from that meaning. Written prose need not imitate speech.
 
-- Check subject-predicate and verb-object fit, referents, and metaphors. Ordinary words can form unnatural combinations; grander synonyms do not repair them.
+- Check subject-predicate and verb-object fit, referents, and metaphors in the finished wording, including sentences retained from the source. For coordinated items sharing a predicate, check each pairing separately: an action and the information about that action may require different verbs.
+- When a pairing is awkward, recover the intended relationship before composing a new sentence: who does what, what is recorded or used, or how the reader is being introduced to an example. A sentence can be grammatically complete yet make the wrong thing perform the action. Do not preserve that frame by replacing its nouns or verbs with grander synonyms.
 - Put the main actor, object, or action before long conditions when that helps reading. Check how each clause hands its object or question to the next.
 - Preserve stable terminology. Do not rename the same actor or object to avoid repetition.
 - Check for unsupported causal, exclusive, or final claims. A next step does not prove that other concerns are resolved.
 - Keep reflection that develops understanding; remove commentary that only explains a paragraph's function to the editor.
 - Review dense modifiers, strings of `的`, queues of clipped sentences, and identical opening/closing beats. They are signals to read, not automatic errors. Vary rhythm where the material calls for it.
 
-Judge language in its genre. A report, executable instruction, character's speech, and literary scene need different expression. After repairs, reread for lost reasoning, emphasis, and voice.
+Keep natural abstract subjects and established technical relationships: “这份记录说明原因” and “系统将反馈关联到订单” need no human subject. Do not turn relationship checks into a requirement for every sentence to name a person, a ban on metaphors, or a queue of short action sentences.
+
+Judge language in its genre. A report, executable instruction, character's speech, and literary scene need different expression. Read the whole revised passage once more without the source or editing notes; check for lost reasoning, emphasis, and voice. Explaining why a few edits help is not evidence that the remaining wording works.
 
 ## Reader-Trust Gate
 

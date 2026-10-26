@@ -7,22 +7,22 @@ description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味
 
 ## Core Principle
 
-Produce writing worth reading: a useful answer, a developed observation, an intelligible explanation, a convincing offer, or a moving scene, according to the task. Let material selection, reasoning, emphasis, and language serve that result. Accuracy and scope constrain the work; passing their checks does not by itself make a finished piece.
+Write for the reader's task: a useful answer, an intelligible explanation, a supported recommendation, a convincing offer, or a moving scene. Develop the substance that makes the piece worth reading before polishing its surface. Accurate but empty prose still needs work.
 
-Find the main writing failure before editing words. A disclaimer-heavy draft may lack an answer or judgment; an obscure draft may omit the mechanism its reader needs. Repair that missing substance within scope, then remove filler. Deleting cautious phrases or shortening every paragraph can leave the original problem intact.
+Use the strongest claim the material supports. Reasoning can add understanding without inventing observations. Keep qualifications when they change a claim, decision, expectation, obligation, or safe action; normally state them once near the relevant point. Missing data and internal review categories do not automatically belong in finished copy. See [Core Quality Gates](references/core-quality-gates.md) for evidence, explanation, and language decisions.
 
-Scale effort to the decisions involved. A tightly coupled notice may need careful synthesis; a typo needs a correction. Keep plans, evidence classifications, and review checklists internal unless requested. Treat the artifact as a whole, including titles, tables, captions, and endings.
+Preserve the intended genre and voice. Professional prose may remain professional; fiction may work through viewpoint and ambiguity. Clear meaning does not require colloquial language, a human subject in every sentence, or a ban on abstraction. Keep useful existing writing.
 
-## Useful Substance And Proportionate Qualification
+## Workflow
 
-- **Answer and develop the reader's question.** For explanation, supply the decisive intermediate process; for advice, give a supported judgment and its reason; for copy, make the known offer meaningful to the reader. Lists of topics, assurances, limitations, or desirable outcomes cannot do that work.
-- **Reason from the material.** Comparison, interpretation, causal explanation, and recommendation can add substance without adding new observations. Use the strongest claim the evidence supports. Missing outcome data restricts outcome claims; it does not erase a known mechanism, a useful comparison, or a defensible recommendation. Do not invent facts to fill gaps.
-- **Keep the logic in the prose.** Let the reader follow how the example works and why the next passage follows. Preserve necessary premises when shortening. A connector or a summary cannot replace a missing step.
-- **Choose qualifications by consequence.** Keep a condition or uncertainty when omitting it would materially change a claim, expectation, decision, obligation, or safe action. State it specifically, normally once near the relevant claim. Revisit it only when a later passage creates a distinct risk of misunderstanding. Required warnings and disclosures remain.
-- **Distinguish editorial knowledge from publishable content.** “未提供效果数据” may mean avoiding a success-rate claim; it need not become a sentence in a product introduction. “这是推断” is not a required prefix to every inference. Wording, attribution, and a defined scope can make the evidence level clear naturally. Explain a material unresolved gap outside clean copy when the user needs it to use the draft.
-- **Give space to what matters.** Develop the main point before peripheral exceptions. Keep a boundary where it explains the result or changes a choice; move specialist detail to an optional section when useful. Stop at the depth needed for this reader and task. Neither “shorter” nor “more comprehensive” is a universal remedy.
+Use one primary genre reference from the routing matrix and add references for actual problems. Apply the following to the requested scope: a local correction needs only its surrounding context; a whole-document rewrite needs the complete candidate. These are editing operations, not required headings or a public checklist.
 
-These priorities follow the genre. Fiction can work through viewpoint, pressure, and ambiguity; social content can work through recognition or tension. Do not force either into an explanatory checklist. Professional writing may remain professional. Do not manufacture slang, anecdotes, errors, or emotional ambivalence to appear human.
+1. **Establish the writing task.** Identify the reader, what the text must help them understand, decide, do, or experience, and which facts and relationships must survive. Diagnose the main obstacle before choosing a repair. For generation, structural work, dense short copy, or revision drift, use [Whole-Artifact Writing](references/whole-artifact-writing.md). Infer what the context establishes; a temporary experiment does not silently replace the deliverable.
+2. **Compose the reader's path.** Select and arrange supported material so the reader can follow the idea or scene as it unfolds. In explanatory writing, develop the important intermediate relationship where the reader needs it. A comparison must explain what differs and why it matters; a change of viewpoint must be recognizable when it occurs. Use the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate). Keep necessary orientation while cutting repeated explanation. Allocate space to the main point, with conditions and specialist detail in proportion to their role.
+3. **Check fidelity against the material.** Compare the candidate with the source and current task: preserve actions, relationships, quantities, chronology, claim strength, and commitments. An action that happened must remain an action, not merely an opportunity or a reason to act. Check that smoother or shorter wording has not changed the point. When applying feedback, use [Correction Propagation](references/correction-propagation.md) and retain previous improvements that still serve the task.
+4. **Edit the text as it will be read.** Set the source, plan, and repair list aside. Read the actual candidate from beginning to end with only the intended reader's background, including retained sentences and other required surfaces. Check natural expression with the [Natural Chinese Gate](references/core-quality-gates.md#natural-chinese-gate), and whether each passage is understandable when encountered. If understanding depends on an explanation still only in the plan or arriving later, repair the passage or transition within scope. After an edit changes meaning, recheck it against the source. Finish when the reader's task is met and significant defects are resolved; keep preferences among adequate alternatives from causing endless rewrites.
+
+Keep working notes and review findings internal unless requested. A fluent explanation of the edits, a disappeared phrase, or a successful scan is not evidence that the final text works. Use the actual text to judge completion.
 
 ## Scope Contract
 
@@ -46,14 +46,6 @@ Task modes:
 - **Voice/reference alignment**: extract only the requested dimensions before rewriting.
 - **Audit only**: identify problems and revision moves; do not silently replace the draft.
 - **Creative ideation**: filter generic directions internally; show the raw pool only when requested.
-
-## Workflow
-
-1. **Orient**: identify the current deliverable, reader, intended effect, available facts, and authorized scope. Infer what is clear from context. Keep a compact internal writing basis when decisions interact; temporary experiments and local feedback do not silently replace the whole task.
-2. **Diagnose**: locate the largest obstacle in substance, reasoning, composition, scene, or language. Choose the relevant reference below. For generation, structural work, dense short copy, or drift, use [Whole-Artifact Writing](references/whole-artifact-writing.md). Select material and a governing approach before polishing.
-3. **Compose**: develop the answer, observation, offer, or scene at the appropriate depth. Arrange passages by their relationship and importance. For explanatory work, use the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate); for defensive writing, use [Proportionate Qualification](references/core-quality-gates.md#proportionate-qualification). Preserve useful existing text.
-4. **Revise as a whole**: use `references/correction-propagation.md` for related failures. Compare with the last viable draft for gains and losses in substance, logic, force, voice, and factual accuracy. Apply factual corrections; restore useful material lost to the latest preference.
-5. **Read and finish**: read the complete candidate with only the intended reader's background. Check actual wording with the [Natural Chinese Gate](references/core-quality-gates.md#natural-chinese-gate), all required surfaces, and the result the text delivers. Fix significant remaining issues; stop when fit for use. Surface scans supply leads, not a verdict. Report only material unresolved gaps or inaccessible required surfaces.
 
 ## Routing Matrix
 
@@ -101,17 +93,12 @@ Never improve item 7 by damaging items 1-6.
 
 ## Non-Negotiable Rules
 
-- Preserve names, numbers, claims, chronology, and evidence classification unless substantive change is requested.
-- Do not turn inference, hypothesis, recommendation, placeholder, or proposed method into an observed result.
-- Do not replace one piece of jargon with another. Use a natural verb-object pair for the scene.
-- Keep useful professional terms when the surrounding material defines the role, mechanism, metric, stage, or proof.
-- Do not make every genre conversational. Register fit and meaning concreteness are separate checks.
+- Preserve names, numbers, claims, chronology, POV, and evidence level within the authorized scope. Do not turn inference, hypothesis, recommendation, placeholder, or proposed work into an observed result.
+- Let material and reasoning support the requested length. Do not invent facts, quotations, experiences, or decorative precision to make writing concrete, persuasive, or personal. Reference material supplies style only unless factual reuse is authorized.
+- Keep professional terms when they name a real role, method, object, or decision. Repair unclear relationships rather than exchanging jargon for different jargon or making every genre conversational.
 - Do not expose internal codes, metrics, names, unpublished data, assignments, or complaints in external material without approval.
-- Do not let reference material contribute facts unless the user authorizes factual reuse.
-- Do not let a requested length authorize unsupported expansion or repeated explanation. For proposals and plans, label new analysis and recommendations as proposed work rather than observed fact.
-- Concrete detail must change understanding, action, risk, relationship, or judgment. Do not add decorative precision, scenery, anecdotes, or first-person history merely to make the writing feel lived-in.
-- For creative work, every surviving direction must state what the user does, sees, receives, feels, or decides, and which product fact or audience scene makes it specific.
-- For scripts and narrative, distinguish the last chronological action from the real ending. Preserve ending function and vary ending shape.
+- For creative directions, connect what the user does, sees, receives, feels, or decides to the specific product fact or audience scene that makes it meaningful.
+- For scripts and narrative, preserve the ending's function; the last chronological action need not be the ending. Vary ending shape where the material calls for it.
 
 ## Output Contract
 
