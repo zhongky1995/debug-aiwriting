@@ -10,7 +10,7 @@ Use this whenever the user rejects a phrase, verb, sentence pattern, register ch
 4. Repair confirmed failures within scope and follow their dependencies. Preserve legitimate uses in other functions; do not make all paragraphs or characters obey one local preference.
 5. Keep explicit prohibitions active within their stated scope. Track diagnosed failures without converting every disliked example into a universal word ban. Later explicit user changes supersede earlier preferences.
 6. Compare the complete candidate with the previous viable version under the current writing basis: improvement, loss, and whether the tradeoff is justified. Follow [Whole-Artifact Writing](whole-artifact-writing.md) when feedback alters emphasis or the organizing approach. Reject regressions while still applying mandatory factual corrections and explicit requirements.
-7. Read back the actual final artifact. Verify both the reported defect and the overall reader outcome; phrase disappearance alone is insufficient.
+7. Read back the actual final artifact, including retained sentences, without using the repair list as the reading agenda. Verify both the reported defect and the overall reader outcome; phrase disappearance alone is insufficient. For awkward language, use the Natural Chinese Gate on the complete revised passages, not just matches to the rejected phrase.
 
 ## Pattern Expansion
 
@@ -25,7 +25,9 @@ Include paragraph-level functions. If the user rejects constant returns to a con
 
 If a revision repeats the rejected function, revisit the claim, example, and evidence before trying another phrasing pass. The appropriate fix may be deleting a paragraph, shortening the piece, or finding better material within the authorized scope. Do not promise the issue is solved merely because the listed phrases disappeared.
 
-If the user reports “逻辑跳、关联不起来、需要自己联想、表达不完整”, use the [Adjacent-Passage Continuity Gate](core-quality-gates.md#adjacent-passage-continuity-gate) across the current artifact's sentence and paragraph transitions. Name the missing premise and the reader's likely question. Do not merely add connectors or expand every paragraph. Preserve the earlier correction against repeated conclusions while restoring necessary reasoning.
+When awkward language survives a complete revision, make the next review a separate editorial task using the original material and the full candidate, without the previous edit rationale or a list of suspect words. Check both natural expression and preserved propositions: an action that happened must not become merely an opportunity or a reason to act. When independent delegation is available and authorized, those same inputs can support a fresh review. Assess its changes against the source before accepting them.
+
+If the user reports “逻辑跳、关联不起来、需要自己联想、表达不完整”, use the [Adjacent-Passage Continuity Gate](core-quality-gates.md#adjacent-passage-continuity-gate) across the current artifact's sentence and paragraph transitions. Distinguish missing reasoning from a missing cue for a change of viewpoint; both may need repair. Check where the explanation first becomes available to the reader and whose perspective it expresses. Do not merely add connectors or expand every paragraph, but do not remove a useful transition or teaching explanation as repetitive commentary. A user-supplied “但……” may identify a local viewpoint change, not a request to make every paragraph contrastive.
 
 For social posts and feed ads, also use [Social Content Register](social-content-register.md). Interpret “太短、太长、没感染力、价格太多、没社媒 sense” through the actual reader experience before changing length or sales frequency. Repairing continuity must preserve the angle, force, and original commercial job; a cautious tutorial with a uniform CTA can be a regression even when every transition is explicit.
 
