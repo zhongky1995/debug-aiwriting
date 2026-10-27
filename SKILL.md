@@ -15,7 +15,7 @@ Preserve the intended genre and voice. Professional prose may remain professiona
 
 ## Workflow
 
-Use one primary genre reference from the routing matrix and add references for actual problems. Apply the following to the requested scope: a local correction needs only its surrounding context; a whole-document rewrite needs the complete candidate. These are editing operations, not required headings or a public checklist.
+Select the foundation, primary genre, and conditional references using the reading order below. Read them before the work they govern. Apply the workflow to the requested scope: a local correction needs only its surrounding context; a whole-document rewrite needs the complete candidate. These are editing operations, not required headings or a public checklist.
 
 1. **Establish the writing task.** Identify the reader, what the text must help them understand, decide, do, or experience, and which facts and relationships must survive. Diagnose the main obstacle before choosing a repair. For generation, structural work, dense short copy, or revision drift, use [Whole-Artifact Writing](references/whole-artifact-writing.md). Infer what the context establishes; a temporary experiment does not silently replace the deliverable.
 2. **Compose the reader's path.** Select and arrange supported material so the reader can follow the idea or scene as it unfolds. In explanatory writing, develop the important intermediate relationship where the reader needs it. A comparison must explain what differs and why it matters; a change of viewpoint must be recognizable when it occurs. Use the [Adjacent-Passage Continuity Gate](references/core-quality-gates.md#adjacent-passage-continuity-gate). Keep necessary orientation while cutting repeated explanation. Allocate space to the main point, with conditions and specialist detail in proportion to their role.
@@ -49,6 +49,17 @@ Task modes:
 
 ## Routing Matrix
 
+### Foundation And Reading Order
+
+The shared task, scope, fidelity, and output rules in this entrypoint apply to every task. For factual or explanatory prose, also read `core-quality-gates.md` before drafting or substantive revision. For fiction, scenes, and dialogue, read the narrative or script reference as the foundation for expression; use the core evidence rules for factual claims in narrative nonfiction or a factual commercial script. Explanatory-prose tests do not govern a scene's ambiguity, interiority, or dialogue.
+
+1. **Before composing:** read the foundation and the primary genre reference below. Add `whole-artifact-writing.md` for generation, authorized structural work, dense short copy, or revision drift; add reference/voice calibration when requested. Use `rewrite-playbook.md` for a substantial general rewrite or style extraction, not automatically for every genre.
+2. **Before editing a large artifact:** use `large-document-coverage.md` to inventory its required surfaces. For an authorized L3/L4 client-deck story repair, also use `client-deck-narrative-gate.md`. These govern coverage and structure without changing the chosen genre.
+3. **When feedback arrives:** use `correction-propagation.md` for a rejected expression, pattern, or missed analogue. Reconsider which related passages and references are affected while retaining the current purpose and accepted improvements. This supplements the genre reference rather than replacing it.
+4. **Before delivery:** use `external-facing-check.md` for external material. Consult `trace-patterns.json` only for residual surface issues after meaning and composition work. Reuse references already read in the current context; reread affected guidance when the task or file changes.
+
+Overlapping conditions accumulate by purpose and stage, not by a reference-count limit. Read the relevant guidance when needed; do not load every reference. For example, a generated multi-page client proposal uses core + proposal + whole-work guidance before composition, coverage before editing, correction propagation after feedback, and the external check before delivery. A public social carousel uses core + social, adding whole-work, coverage, and feedback guidance when their conditions apply. A local novel rewrite uses fiction + any applicable correction guidance; it does not inherit the proposal or explanatory-article workflow.
+
 | Task condition | Primary reference | Add only when needed |
 | --- | --- | --- |
 | Nonfiction, product copy, email, translation, general rewrite | `references/core-quality-gates.md` | `references/rewrite-playbook.md` for long rewriting, generation, or voice extraction |
@@ -71,7 +82,7 @@ Task modes:
 
 Routing rules:
 
-- Do not load every matching reference. Usually use one primary genre reference and at most two cross-cutting references; add the surface catalog only at the end.
+- Choose the primary reference by the text's communicative job. Read conditional references in the order above; do not omit a triggered coverage, feedback, or external check merely to fit a numerical cap.
 - `client-deck-narrative-gate.md` is not for ordinary wording edits. Use it only when `L3/L4` page logic is authorized.
 - `ugc-persona-script-register.md` does not govern reports, proposals, articles, or emails.
 - Social finished copy uses `social-content-register.md`; a marketing plan uses `marketing-strategy-register.md`. Use the persona/script reference only when an actual speaker or audiovisual script needs it. Channel names and the term UGC alone do not determine the route.
