@@ -6,7 +6,7 @@ For generation, structural rewriting, dense short copy, or repeated revision dri
 
 ## Pass 0: Lock Scope And Register
 
-Use the L1-L4 rewrite scope in `SKILL.md`. For a bare "优化口径/调整表达/去 AI 味" request, preserve facts, section order, page roles, and strategy. Do not rebuild substance unless the existing sentence cannot be repaired without exposing a missing fact or broken argument.
+Use the scope and authorization rules in `SKILL.md`. A bare "优化口径/调整表达/去 AI 味" request preserves facts, section order, page roles, and strategy. Clarify a supported implicit relationship within that scope; a missing fact or broken argument is a diagnosis, not permission to invent content or rebuild the piece. Requests to develop reasoning, reorganize, or generate content authorize the corresponding work without an L1-L4 label.
 
 Choose the register before editing sentences. When a reference is present, first decide whether the user wants its logic, structure, register, rhythm, wording, or visual organization.
 
@@ -103,7 +103,7 @@ Choose the register before editing sentences.
 ### Translation / Localization
 
 - Preserve meaning and information order when accuracy matters.
-- Convert English-like nominal structures into natural Chinese verbs.
+- Recast English-like nominal structures when they make the Chinese awkward or obscure the relationship; retain established technical nouns and natural Chinese abstractions.
 - Do not add local idioms that change tone or authority.
 
 ## Pass 3: Line Edit
@@ -112,7 +112,7 @@ Choose the register before editing sentences.
   - "首先" -> start the claim directly.
   - "值得注意的是" -> state what changed or why it matters.
   - "总的来说" -> delete the repeated wrap-up, or keep a supported synthesis if the reader needs it; do not manufacture a practical implication.
-- Replace abstract nouns with actors and actions.
+- Rebuild an abstract phrase when it obscures what is meant, leaves a needed relationship unclear, or creates an unnatural pairing. Express the supported object, relationship, or action more clearly. Keep natural abstract subjects, professional terms, and technical relationships whose meaning already works in context; they do not require a named person or a short action sentence.
 - Break perfectly balanced sentences when they feel manufactured.
 - Keep some asymmetry: one short sentence can carry emphasis better than another polished clause.
 - Match certainty to support. Remove both exaggerated certainty and redundant hedging; keep the specific condition that changes the claim. Use [Proportionate Qualification](core-quality-gates.md#proportionate-qualification).
@@ -133,16 +133,16 @@ Concrete writing is not automatically human writing. Keep a detail only when it 
 
 For nonfiction, unsupported times, weather, gestures, rooms, dialogue, customer reactions, and personal experience are fake specificity. For fiction, details may be invented when authorized, but they must belong to the viewpoint, pressure, action, or atmosphere of the scene rather than decorate every passage in the same way.
 
-## Pass 4: Concrete Language Gate
+## Pass 4: Meaning And Language Check
 
-Before output, apply `core-quality-gates.md`. When the meaning is already sound but the draft still feels generated, run the final surface pass against `trace-patterns.json`.
+Before output, use the foundation and genre checks selected in `SKILL.md`: `core-quality-gates.md` for factual or explanatory prose, and the narrative or script checks for scenes and dialogue. In narrative nonfiction or factual commercial scripts, use core evidence checks for factual claims without imposing explanatory-prose structure on the scene. When meaning and genre fit are already sound but residual surface patterns remain, consult `trace-patterns.json`.
 
 Run the gate in the chosen register. Do not treat professional density as an error by itself.
 
-Fail and rewrite any sentence where:
+Revisit wording when:
 
-- framework nouns replace actions
-- a concept could apply unchanged to another brand/project
+- framework nouns conceal a needed action or relationship
+- a claim meant to distinguish this brand or project is interchangeable because it lacks the available supporting detail; a valid general definition or method need not be brand-exclusive
 - an execution instruction does not tell its actor what to do; this actionability test does not apply to observations, explanations, qualifications, or open questions
 - an execution-table cell only names a desired result instead of the work; category labels in other table types may be appropriate
 

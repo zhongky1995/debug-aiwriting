@@ -12,7 +12,7 @@ Choose presentation density by page role. A strategy title, executive judgment, 
 
 ## Proposal Substance Pass
 
-Before rewriting, extract these six items. If an item is missing, mark it as an assumption instead of inventing it.
+Before a substantial proposal rewrite, use these six questions to understand the material. Keep this analysis internal. A missing item remains unknown; introduce an assumption or proposed choice only when authorized, with its status clear where it affects the decision. Do not fill the finished proposal with missing-item labels.
 
 1. **Client decision question**: What does the client need to decide after reading this page or section?
 2. **Diagnosis**: Where is the current problem located: product, user, channel, content, conversion, retention, execution, data, or organization?
@@ -123,7 +123,7 @@ The examples below demonstrate semantic clarity, not one mandatory tone. Compres
 
 1. Rewrite the page title or section opening as a claim, not a category.
 2. Put the client-side problem before the provider capability.
-3. Convert abstract benefits into a mechanism with actors and handoffs.
+3. Explain the supported mechanism when a benefit is vague or its client-side effect is unclear. Keep an established professional expression when the surrounding material already makes that relationship intelligible.
 4. Add execution proof only from available materials.
 5. Add one boundary if the section could otherwise sound like an overpromise.
 6. Remove ornamental confidence words unless supported by data or confirmed facts.
