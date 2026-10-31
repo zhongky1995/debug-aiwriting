@@ -1,95 +1,45 @@
 # Marketing Strategy Register
 
-Use this when the target artifact is a professional marketing proposal, integrated marketing plan, launch plan, KOC/KOS/UGC plan, community/private-domain plan, search/content strategy, or deck-like逐P稿.
+Use for marketing proposals, launch plans, community/private-domain plans, and search/content strategies. Published social posts, carousels, and feed ads use `social-content-register.md` instead.
 
-For finished social posts, carousels, or feed ads, use social-content-register.md. Marketing vocabulary and planning-page roles do not govern the published copy merely because its purpose is commercial.
+Professional planning makes a judgment understandable: which audience or opportunity matters, how the proposed actions work together, what resources they require, and how results affect the next decision. Match the reader's knowledge and the passage's job; vocabulary alone does not establish professionalism.
 
-The goal is not to make the writing casual. The goal is to make it sound like professional planning: clear target, sharp judgment, credible mechanism, concrete execution, and measurable result.
+## Planning Language And Page Roles
 
-## Target Register
+Keep terms such as 内容矩阵、搜索占位、预算配置 when they name an actual planning object and the text explains its role. A strategy overview can be compact; an execution passage should say who does what. “团队实际做什么” can be an appropriate question in an operating plan. Do not replace clear language with agency jargon or force every page into conversational prose.
 
-Good marketing planning language can use strategic terms when they point to real planning objects:
+For a deck, choose page roles to support the argument rather than treating this table as a mandatory sequence:
 
-- 目标拆解
-- 策略总图 / 策略母图
-- 传播机会
-- 角色协同
-- 节奏推进
-- 节点样板
-- 内容矩阵
-- 搜索占位
-- 全域联动
-- 公私域联动
-- 预算配置
-- 效果验收
-
-These are acceptable only when the page names the specific metric, role, stage, content object, or execution rule behind them.
-
-## Page Logic Patterns
-
-For deck-like plans, map each page to one role:
-
-| Page role | What it answers | Usual expression |
+| Page role | Reader question | Useful material |
 | --- | --- | --- |
-| Target contract | What result are we committing to? | quantified goals, formulas, assumptions, acceptance口径 |
-| Strategy map | Why will these actions produce the result? | one mechanism, usually shown as stages or a flywheel |
-| Rhythm plan | When does each action happen? | T-minus/T-plus, monthly stage, launch burst, long-tail operation |
-| Role matrix | Who does what? | brand / agency / KOC / KOS / store / platform / data |
-| Content matrix | What will be produced? | topic type, scene, evidence, format, keyword, output count |
-| Node example | How does one campaign actually run? | warm-up, burst, long-tail, roles, deliverables |
-| Search/content layout | Which user questions must we occupy? | product terms, category terms, scenario terms, purchase terms |
-| Budget and acceptance | How do we spend and judge? | budget categories, milestone, stop/add rules |
+| Goals | What are we aiming for? | Targets, measurement definitions, consequential assumptions |
+| Strategy | Why these actions? | Mechanism, alternatives, priorities |
+| Timing | When and in what order? | Dependencies, stages, campaign dates |
+| Responsibilities | Who does which work? | Roles, handoffs, capacity |
+| Content | What will be produced and why? | Audience questions, examples, formats, output |
+| Search and conversion | How does interest lead to the next step? | Search intent, answers, contact points, follow-up |
+| Resources and evaluation | What will it cost and when do we adjust? | Budget, milestones, continue/change/stop criteria |
 
-## Professional But Not Hollow
+## Finished Copy And Editorial Analysis
 
-Use strategic phrasing when it has a planning function:
+“P22用一套量化漏斗定义目标”“P23是策略母图” describe a draft to its editor. They may be useful in a review, but do not serve as finished proposal copy.
 
-Good:
+Illustrative finished copy, when supported by the plan:
 
-```text
-P22 用一套“量化漏斗”定义项目目标：UGC 产量、曝光互动、用户沉淀、入群与预算被放在同一张表里核算。
-```
+> 各渠道统一记录曝光、咨询和入会人数。每周结合咨询成本和后续购买情况，决定下一周哪些内容继续投放、哪些需要调整。
 
-Good:
+This tells the reader how the measurement informs work. Its rationale is more useful than announcing the page's role.
 
-```text
-P23 是策略母图：先整理传播资源，再用节点放大，把 UGC 和私域用户一起带回来。
-```
+Compare an unsupported slogan:
 
-Bad:
+> 通过全域联动打造内容增长闭环，全面提升用户心智。
 
-```text
-通过全域联动打造内容增长闭环，全面提升用户心智。
-```
+With an explained division of work:
 
-Better:
+> 官方号发布产品说明，体验者讲使用过程，门店回答型号、安装和权益问题。团队每周整理反复出现的问题，补充对应的内容和常见问题答复。
 
-```text
-官方号负责发起议题，KOC 负责把体验讲清楚，KOS 在评论和门店里回答型号、安装和权益问题；这些内容再回到搜索词和 FAQ 里，形成第二轮选题。
-```
+Use the roles actually present in the source; these examples do not authorize adding channels, staffing, or promised outcomes.
 
-## Avoid Over-Casual Drift
+## Review The Strategy As A Whole
 
-When the user wants a professional marketing plan, avoid expressions that are too chatty or operational:
-
-- "用户看完会搜什么"
-- "评论区就是下一轮选题会"
-- "先把事情讲明白"
-- "团队实际做什么"
-
-Prefer professional equivalents with concrete meaning:
-
-- "按用户搜索意图拆分产品词、品类词、场景词和购买词"
-- "以高频评论反哺下一轮选题"
-- "将产品体验转化为可复用的内容标准"
-- "按角色拆分官方、KOC、KOS、门店和平台动作"
-
-## Final Check For Marketing Plans
-
-Before output, verify:
-
-- Each page has one strategic role.
-- Titles sound like proposal page titles, not internal notes.
-- Professional terms are supported by metrics, roles, stages, or deliverables.
-- The plan still has marketing logic: target -> strategy -> execution -> content -> search/conversion -> acceptance.
-- The draft is not flattened into plain project management language.
+Check that the reader can follow the choice of audience, the proposed mechanism, and the work needed to test it. Execution detail should support that reasoning; an activity list alone is insufficient. Titles, tables, and diagrams should express the plan, with qualifications and sources placed according to [Reader And Disclosure Fit](external-facing-check.md). Keep the proposed targets distinct from observed results without repeatedly explaining the drafting process.

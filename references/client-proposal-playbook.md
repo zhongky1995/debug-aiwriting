@@ -19,7 +19,7 @@ Before a substantial proposal rewrite, use these six questions to understand the
 3. **Strategy mechanism**: What chain connects the action to the result?
 4. **Execution proof**: What minimum object proves it can run: SOP, role split, timeline, script, checklist, data table, dashboard, review rhythm, or sample asset?
 5. **Validation**: Which metric, milestone, or review question decides whether the work is working?
-6. **Boundary**: What this plan does not promise, does not solve yet, or needs the client to confirm.
+6. **Conditions**: Which assumptions, dependencies, or unresolved choices change the client's decision or the work that can proceed?
 
 ## Mature Proposal Patterns
 
@@ -121,11 +121,11 @@ The examples below demonstrate semantic clarity, not one mandatory tone. Compres
 
 ## Rewrite Procedure For Client Proposals
 
-1. Rewrite the page title or section opening as a claim, not a category.
+1. Orient the reader through the title or opening; useful labels need not become claims.
 2. Put the client-side problem before the provider capability.
 3. Explain the supported mechanism when a benefit is vague or its client-side effect is unclear. Keep an established professional expression when the surrounding material already makes that relationship intelligible.
 4. Add execution proof only from available materials.
-5. Add one boundary if the section could otherwise sound like an overpromise.
+5. Integrate consequential conditions using the shared qualification guidance, without a disclaimer per section.
 6. Remove ornamental confidence words unless supported by data or confirmed facts.
 
 ## Common Rewrites

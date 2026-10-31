@@ -39,7 +39,7 @@ Page/Section:
 - exclusion reason:
 ```
 
-Do not output this ledger unless the user asks. Use it to prevent skipped surfaces and to prove completion internally.
+Keep the ledger internal unless requested. It records coverage; a reviewed section can still fail the reader's task.
 
 ## Surface Order
 
@@ -57,13 +57,11 @@ Tables need special attention: a table cell that says only "承接 / 放大 / �
 
 ## Consistency Pass
 
-After editing, run three checks:
+After editing, check:
 
-1. **Old口径 scan**: search for old project words, old version labels, prior numeric targets, internal labels, and terms the user disliked.
-2. **Register scan**: check whether each page matches its local role and the document remains coherent. Consistency does not mean making strategy, execution, budget, and appendix pages sound identical.
-3. **Coverage scan**: verify each page/section has had every inventoried surface reviewed or explicitly excluded.
-4. **Correction propagation scan**: search for patterns analogous to every phrase the user rejected during the task.
-5. **Fact preservation scan**: compare names, numbers, claims, and evidence levels with the source.
+1. **Meaning and revisions:** compare required facts, relationships, numbers, and claim strength with the source. Trace corrections across analogous passages and obsolete wording; fidelity does not require irrelevant drafting history.
+2. **Reader fit:** read without editing notes. Check each section's contribution, language, and speaking position, including retained text. Apply `external-facing-check.md` for material handed to others; execution correctness alone is insufficient.
+3. **Coverage:** verify every inventoried surface was reviewed or excluded. Strategy, execution, budget, and appendix pages need not sound identical.
 
 ## When Replacing A Live Document
 
@@ -89,9 +87,4 @@ If one of these checks cannot be completed, state the limitation instead of clai
 
 ## Final Report
 
-When reporting back, mention:
-
-- what artifact was updated
-- which sections/pages were covered
-- what checks were run
-- any surface intentionally not changed, such as images, locked blocks, or source data tables
+Deliver the revised artifact. Report unreadable or excluded surfaces when they affect its use; provide detailed coverage and check results only when requested. Follow the output contract in `SKILL.md` rather than appending a routine audit report.

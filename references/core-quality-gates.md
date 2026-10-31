@@ -45,7 +45,7 @@ Missing measurements do not prohibit analysis. Explain a supplied process, compa
 
 ## Proportionate Qualification
 
-A qualification earns space when it changes the reader's understanding, expectation, decision, obligation, or safe action. Preserve applicable required disclosures. For other qualifications, identify the specific misunderstanding they prevent:
+Test a qualification against the finished passage: if omitted, what material misunderstanding or different action would result? Consider what nearby wording already makes clear. Keep required disclosures and consequential conditions; repeating that a proposal is unproven adds nothing when its provisional status is already clear. Choose the treatment by function:
 
 - **Claim condition:** integrate it into the claim. “连接同一家庭网络、允许互访的电脑和打印机，可以在家中传送打印任务。” The condition explains the relationship.
 - **Decision-relevant uncertainty:** give the strongest supported finding and identify the unresolved part. Missing sales data may limit a decision about scaling; it need not obscure observed attendance or completed work.
