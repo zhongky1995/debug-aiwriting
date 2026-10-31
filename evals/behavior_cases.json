@@ -1881,6 +1881,104 @@
         "原有衔接已经清楚时可保留，不把人物变化自动处理成观点转折。",
         "不添加普通研究员与资深顾问的高低评价或相互否定，不逐段补教学总结。"
       ]
+    },
+    {
+      "id": "handoff-plan-author-position",
+      "title": "交付方案从编写说明转成业务安排",
+      "task_type": "rewrite",
+      "genre": "client_proposal",
+      "scope": "L2",
+      "request": "把草稿整理成给区域门店负责人阅读的试行方案，保留安排与数量，不增加策略。",
+      "source": "用户提出在两家门店试行四周，每周安排一次体验活动。排班资料尚未提供，这只是工作假设，不代表已经安排到人。店长应在启动前确定值班人员。每店每周先争取12个预约，两周后按到店情况和人员时间调整。这不是实际业绩，也不能保证目标达成。内部复核要求保留试行性质。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "client-proposal-playbook.md",
+        "external-facing-check.md"
+      ],
+      "must_preserve": [
+        "四周",
+        "12"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "成稿直接向门店负责人说明计划，不讲委托人怎样给输入或复核怎样要求。",
+        "保留两店、四周、每周一次活动、每店每周12预约和两周调整的关系；目标没有变成业绩或保证。",
+        "把排班未定与店长启动前排班的责任说清，不虚构已有人员，也不反复免责。"
+      ]
+    },
+    {
+      "id": "handoff-internal-followup",
+      "title": "后续数字纠偏融入内部执行稿",
+      "task_type": "rewrite",
+      "genre": "internal_sop",
+      "scope": "L2",
+      "request": "上一轮把数量范围写错了：每周12场演示是三个小组合计，不是每组12场。把下面的安排修好，给三个组长直接用，其他安排保持。",
+      "source": "三个小组每周各完成12场演示。组长每天收工前更新预约和已完成数量，周五汇总。每场需要一名讲解和一名记录人员；讲解人员只有一名时先合并相邻时段，不同时开两场。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "internal-ops-register.md",
+        "external-facing-check.md",
+        "correction-propagation.md"
+      ],
+      "must_preserve": [
+        "12",
+        "周五"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "数量改为三个小组合计12场，保留每天更新、周五汇总和两类岗位。",
+        "正文体现正确安排，不出现向委托人汇报已按反馈修正的叙述。",
+        "保留讲解人不足时的排程约束；内部计划可以包含真实分工和人力限制。"
+      ]
+    },
+    {
+      "id": "handoff-research-source-retention",
+      "title": "研究结论保留读者必需的来源与局限",
+      "task_type": "rewrite",
+      "genre": "executive_report",
+      "scope": "L2",
+      "request": "把材料整理成供管理层决定是否扩大试点的简短研究结论，保留来源便于核查。",
+      "source": "来源：《客服试点台账》，2026年9月版，第4表。18名自愿参加的客服，在相同记录口径下，试点前后平均每单整理时间由10分钟降到7分钟。没有未参加试点的对照组，同期调整过排班。用户要求别写一堆免责声明。内部审稿提醒不能证明因果，不能说已经证明工具让全公司效率提高。",
+      "required_routes": [
+        "core-quality-gates.md",
+        "executive-report-register.md",
+        "external-facing-check.md"
+      ],
+      "must_preserve": [
+        "18",
+        "10分钟",
+        "7分钟",
+        "2026年9月"
+      ],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "保留可核查的台账名称、版本与表号，说明样本及时间变化。",
+        "保留自愿样本、无对照和同期排班变化对结论的影响，不把观察改成确定因果或全公司收益。",
+        "不把内部审稿与用户写作要求带进成稿；限制与是否扩大的判断关联，避免重复空泛免责。"
+      ]
+    },
+    {
+      "id": "handoff-process-is-subject",
+      "title": "编写过程本身是文章内容时保留",
+      "task_type": "rewrite",
+      "genre": "fiction",
+      "scope": "L2",
+      "request": "润色这个虚构编辑故事片段，保留第一人称、动作和对话顺序。",
+      "source": "我把第三稿递给老周。他没有看结尾，先指着第一页说：“你又把审稿意见写进故事了。”我想解释，那是为了让读者知道自己没有乱编。老周把稿子推回来：“读者要看的是故事。”我删掉开头两句，剩下的那句话忽然显得很孤单。",
+      "required_routes": [
+        "fiction-narrative-register.md"
+      ],
+      "must_preserve": [],
+      "must_remove": [],
+      "forbidden_additions": [],
+      "behavior_checks": [
+        "保留递稿、老周指第一页、叙述者想解释、推回、删句的顺序和第一人称。",
+        "编写与审稿正是故事内容，不能按对外方案规则删掉这一情节。",
+        "不在结尾追加写作教学总结，不新增人物经历或完成故事之外的结构改造。"
+      ]
     }
   ]
 }

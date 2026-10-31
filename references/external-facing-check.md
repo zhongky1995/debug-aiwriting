@@ -1,54 +1,41 @@
-# External-Facing Reader And Boundary Check
+# Reader And Disclosure Fit
 
-Use this reference for client emails, formal proposals, customer-facing decks, public releases, external statements, or any draft that may be read outside the user's own team.
+Use before composing and delivering material for other readers, including colleagues who lack the drafting conversation. Infer the audience from context; do not require another confirmation when it is clear.
 
-## Reader Anchor
+## Speaking Position
 
-Before writing, identify these items. Infer when obvious; ask only if the missing answer would materially change the draft.
+Separate requester, reader, and people discussed. A plan for a support manager may discuss customers without addressing them. Write from the intended author's position. Process can itself be relevant in a transcript, audit, research account, or retrospective.
 
-- **Reader**: role, knowledge level, relationship to the user, and what they care about.
-- **Scene**: formal proposal, client email, external release, public article, meeting follow-up, sales material, or other channel.
-- **Desired action**: approve, reply, understand, align, decide, attend, pay, revise, or forward.
-- **Reader should not know**: internal codenames, internal KPI names, internal assessment logic, private people/role splits, unpublished data, unconfirmed assumptions, internal complaints, or tactical judgments not meant for external readers.
+## Select Information For Its Use
 
-## Boundary Check
+Ask what each passage helps the reader understand, decide, or do, and whether disclosure is appropriate. Accurate, nonconfidential information can still be irrelevant.
 
-Read the draft sentence by sentence and ask:
+| Information | Treatment |
+| --- | --- |
+| Substance needed for the reader's task | State it directly, preserving facts, relationships, and claim strength. |
+| A condition affecting feasibility, interpretation, responsibility, or a commitment | Integrate it where it changes the decision or action. Apply [Proportionate Qualification](core-quality-gates.md#proportionate-qualification); do not restate it in every section. |
+| Prompt history, drafting decisions, review instructions, local retrieval paths | Keep in working records unless the reader needs that history. Incorporate a correction's content without announcing who instructed the edit. |
+| Evidence or source attribution | Keep what this genre and reader need to assess or use the claim. Use nearby attribution, notes, or a reference section as appropriate; preserve traceability in working records. |
+| Restricted information outside the authorized audience | Omit or generalize without falsifying it; clarify only when a necessary disclosure remains unresolved. |
 
-```text
-Would this reader understand this sentence?
-Should this reader be allowed to see this sentence?
-Does this sentence expose how we internally judge, price, staff, score, or complain about the work?
-```
+Research findings may require sources, dates, methods, and uncertainty in the main text. An operating plan may need staffing, cost, targets, and assumptions. Do not remove them merely because they originated internally. Conversely, a provenance log does not belong in every paragraph simply because a claim was checked.
 
-If a sentence fails, choose one:
+## Translate The Relationship
 
-- **Translate** it into reader-facing language.
-- **Generalize** it when the fact is usable but the internal detail is not.
-- **Delete** it when the reader does not need it.
-- **Ask for confirmation** only when disclosure may be intentional but risky.
+Illustrative source: the requester proposes testing two stores for four weeks; staffing is not yet assigned; the manager will assign shifts before launch.
 
-## Common Conversions
+Editorial account:
 
-- Internal codename -> public project, product, module, phase, or workstream name.
-- Internal KPI name -> reader-facing outcome, milestone, acceptance criterion, or business question.
-- Internal person name -> role or team, unless the person is meant to be named externally.
-- Unpublished number -> qualitative direction, range, or "based on current observations" if no number may be disclosed.
-- Internal complaint -> neutral risk, dependency, or boundary.
-- Provider capability list -> client-side problem, mechanism, execution object, and judgment standard.
+> 用户提出两店试点，排班尚未提供，这只是工作假设，不能理解为已经安排到人。
 
-## AI-Tone Cleanup For External Materials
+Usable plan:
 
-Remove or rewrite:
+> 建议先在两家门店试行四周，由店长在启动前确定值班人员。
 
-- hollow words: 赋能、抓手、闭环、深度、生态、全面提升、持续、多维度、进一步、有力支撑, unless a concrete mechanism follows.
-- forced parallelism: "不仅...而且...更是..." and three-part slogan structures.
-- conclusions without a fact, judgment, cost, tradeoff, or next action.
-- repeated paragraph rhythm: each paragraph should not be "topic sentence -> expansion -> summary."
-- "既要又要还要" language that avoids priority and cost.
+This retains the proposal's status and staffing dependency. If staffing affects whether launch can proceed, retain that consequence at the decision point; do not invent a contingency or guarantee.
 
-## Finished Copy And Editorial Notes
+## Read The Finished Artifact
 
-Return usable copy first. Run the boundary check internally; do not append a routine `【自检说明】` or require the user to opt out of it. Add a short separate note when requested or when a specific unresolved disclosure, fact, or commitment affects use of the draft.
+Read without the conversation or review notes. Can the reader use the text and distinguish plans, examples, and results? Accurate sentences can still explain the editor's caution instead of the subject. Repair that relationship, not just suspicious words.
 
-External writing still needs a substantive answer, explanation, or reason to act. Apply [Proportionate Qualification](core-quality-gates.md#proportionate-qualification): include the limits this reader needs, and express the positive supported content with equal precision. Do not copy internal cautions about unprovided evidence into the finished artifact by default.
+Return the requested artifact first. Keep routine review findings internal; report only requested findings or a specific unresolved issue that affects use. Disclosure permission, factual accuracy, surface coverage, and successful publication are separate from reader fit.
