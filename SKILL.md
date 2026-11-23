@@ -1,6 +1,6 @@
 ---
 name: debug-aiwriting
-description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、免责声明式表达、内容空洞、逻辑不完整、可读性差、修改跑偏 and voice alignment. Use for copy, articles, reports, proposals/decks, scripts, and narrative work. Develop useful substance, coherent reasoning, and genre-appropriate expression while preserving facts and authorized scope.
+description: Diagnose, generate, rewrite, and audit Chinese writing for 去AI味、免责声明式表达、内容空洞、逻辑不完整、可读性差、修改跑偏 and voice alignment. Use for social and marketing copy, articles, reports, proposals/decks, scripts, and narrative work. Develop useful substance, coherent reasoning, and genre-appropriate expression while preserving facts and authorized scope.
 ---
 
 # Debug AI Writing
@@ -64,6 +64,7 @@ Read triggered guidance at the stage it governs; do not load every reference or 
 | --- | --- | --- |
 | Nonfiction, product copy, email, translation, general rewrite | `references/core-quality-gates.md` | `references/rewrite-playbook.md` for long rewriting, generation, or voice extraction |
 | Social posts, 小红书图文/笔记/硬广, carousels, feed ads | `references/social-content-register.md` | `references/whole-artifact-writing.md` for generation or drift; reference calibration when actual examples are supplied |
+| Short-video-inspired social and marketing copy (短视频式社交与营销文案) | Current genre reference | [Short-form copy reference](references/short-form-social-marketing-copy.md) when the opening, progression, payoff, or path from audience interest to offer needs development |
 | Client proposal, sales material, strategy presentation | `references/client-proposal-playbook.md` | `references/client-deck-narrative-gate.md` only for multi-page `L3/L4` story repair |
 | Marketing, launch, KOC/KOS/UGC/community/search plan | `references/marketing-strategy-register.md` | Client-proposal reference when it must persuade a client |
 | Public whitepaper, case, industry report | `references/whitepaper-case-register.md` | Core quality and external-facing references |
@@ -86,6 +87,7 @@ Routing rules:
 - `client-deck-narrative-gate.md` is not for ordinary wording edits. Use it only when `L3/L4` page logic is authorized.
 - `ugc-persona-script-register.md` does not govern reports, proposals, articles, or emails.
 - Social finished copy uses `social-content-register.md`; a marketing plan uses `marketing-strategy-register.md`. Use the persona/script reference only when an actual speaker or audiovisual script needs it. Channel names and the term UGC alone do not determine the route.
+- When drafting or substantially revising social or marketing copy, consider the short-video-inspired type for unfamiliar audiences, including posts, carousels, feed ads, voice-over, and customer acquisition cases. Read its reference alongside the primary genre guidance when it fits. For marketing plans, apply it to content examples and creative briefs.
 - `fiction-narrative-register.md` overrides explanatory prose heuristics inside fiction.
 
 ## Conflict Priority
